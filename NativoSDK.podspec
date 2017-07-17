@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "NativoSDK"
-  s.version      = "4.1.0"
+  s.version      = "4.1.0j"
   s.summary      = "Monetize your app with true native, video, and clickout ads from Nativo."
 
   # This description is used to generate tags and improve search results.
@@ -24,8 +24,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
+  s.description  = "The NativoSDK is used to retrieve native, video, and clickout ads from Nativo. The NativoSDK is packed with features that will help you integrate native ads in your feed in a short amount of time."
 
   s.homepage     = "http://nativo.com"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -70,7 +69,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/MattMur/NativoSDK-Pod.git", :tag => "#{4.1.0}" }
+  s.source       = { :git => "https://github.com/MattMur/NativoSDK-Pod.git", :tag => "v#{s.version}" }
   s.vendored_frameworks = "Framework/NativoSDK.framework"
 
 
