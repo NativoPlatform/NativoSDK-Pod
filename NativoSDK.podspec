@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.authors            = "Nativo"
   s.social_media_url   = "http://twitter.com/nativoplatform"
   s.platform     = :ios, "8.0"
-  s.source       = { :git => "https://github.com/MattMur/NativoSDK-Pod.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/NativoPlatform/NativoSDK-Pod.git", :tag => "v#{s.version}" }
   s.vendored_frameworks = "Framework/NativoSDK.framework"
   s.framework  = "AVFoundation", "AdSupport"
   s.xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
