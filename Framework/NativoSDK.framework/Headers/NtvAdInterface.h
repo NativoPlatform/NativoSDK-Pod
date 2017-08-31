@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UILabel *)previewTextLabel;
 
 /// The `UIImageView` where image of the ad should display
-- (UIImageView *)imageView;
+- (UIImageView *)adImageView;
 
 /// The `UIImageView` where author/advertiser image of the ad should display
 - (UIImageView *)authorImageView;
