@@ -22,7 +22,7 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvSectionDelegate.h"
 #import "NtvVideoFullScreenControlsDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"4.1.2";
+static NSString * _Nonnull const kNativoSDKVersion = @"4.1.3";
 
 
 /**
@@ -32,7 +32,7 @@ static NSString * _Nonnull const kNativoSDKVersion = @"4.1.2";
  
  The NativoSDK works best by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. Upon each request to dequeue a cell, the NativoSDK will ask the section delegate if an ad should belong at this placement, if `YES`, it will either retrieve the ad from cache, or if not found, make a new request for the ad. While the ad is loading a blank cell will be returned with an activity indicator. When the ad data returns it will create a new view based on the ad type of the ad using the nib your registered previously using [NativoSDK registerNib:forAdTemplateType:]. The ad will then be injected into the previously returned cell. If there isn't an ad at the given index, the NativoSDK will dequeue a non-ad cell using the identifier passed in.
  
- __Version__: 4.1.2
+ __Version__: 4.1.3
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -142,7 +142,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return NtvAdData if any at given indexPath.
  
  */
-+ (NtvAdData *)getCachedAdAtIndex:(NSIndexPath *)index forSection:(NSString *)sectionUrl;
++ (nullable NtvAdData *)getCachedAdAtIndex:(NSIndexPath *)index forSection:(NSString *)sectionUrl;
 
 
 /**

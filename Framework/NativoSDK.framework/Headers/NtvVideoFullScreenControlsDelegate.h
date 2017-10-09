@@ -37,14 +37,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///@name Ad Data Labels and Sharing
 
-/// Video Player's title label
-- (UILabel *)titleLabel;
+/// Video Player's title
+- (void)setTitle:(NSString *)title;
 
 /// Video Player's advertiser name
-- (UILabel *)authorNameLabel;
+- (void)setAuthorName:(NSString *)author;
 
 /// Video Player's content/preview text
-- (UITextView *)contentTextView;
+- (void)setContentText:(NSString *)content;
 
 /// Video Player's social share button
 - (UIButton *)socialShareButton;

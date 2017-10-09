@@ -11,11 +11,11 @@
 
 /** Ad types */
 typedef NS_ENUM(NSUInteger, NtvAdType) {
-    NtvAdTypeNative,
-    NtvAdTypeClickout,
-    NtvAdTypeInFeedVideo,
-    NtvAdTypeInFeedAutoPlayVideo,
-    NtvAdTypePlaceholder
+    Native,
+    Display,
+    Video,
+    ScrollToPlayVideo,
+    Placeholder
 };
 
 
