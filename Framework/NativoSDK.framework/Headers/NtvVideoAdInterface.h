@@ -9,6 +9,7 @@
 @class AVPlayerItem;
 @class NtvAdData;
 
+
 /**
  The `NtvVideoAdInterface` protocol is used by the NativoSDK to populate views with in feed video ad data. It should be implemented by a subclass of the view used in your articles list. In most cases this will be UITableViewCell or UICollectionViewCell.
  */
@@ -53,8 +54,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)formatDate:(NSDate *)date;
 
 /**
-	@abstract		A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-	@discusssion	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+ @abstract A string defining how the video is displayed within an AVPlayerLayer bounds rect.
+ @discusssion Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
  and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
  See <AVFoundation/AVAnimation.h> for a description of these options.
  */
@@ -64,25 +65,40 @@ NS_ASSUME_NONNULL_BEGIN
 ///@name Video player notification methods
 
 /// Video player goes full screen
-- (void)videoPlayerViewDidGoFullScreen;
+- (void)videoPlayerViewDidGoFullScreenWithAd:(NtvAdData *)adData;
 
 /// Video player did exit full screen
-- (void)videoPlayerViewDidExitFullScreen;
+- (void)videoPlayerViewDidExitFullScreenWithAd:(NtvAdData *)adData;
 
 /// Video player will load an AVPlayerItem
-- (void)videoPlayerViewWillLoadPlayerItem:(nullable AVPlayerItem *)playerItem usingAd:(NtvAdData *)adData;
+- (void)videoPlayerViewWillLoadPlayerItem:(nullable AVPlayerItem *)playerItem withAd:(NtvAdData *)adData;
 
 /// Video player did load an AVPlayerItem
-- (void)videoPlayerViewDidLoadPlayerItem:(nullable AVPlayerItem *)playerItem usingAd:(NtvAdData *)adData;
+- (void)videoPlayerViewDidLoadPlayerItem:(nullable AVPlayerItem *)playerItem withAd:(NtvAdData *)adData;
 
 /// Video player rate did change
-- (void)videoPlayerViewPlayerRateChange:(float)rate;
+- (void)videoPlayerViewPlayerRateChange:(float)rate withAd:(NtvAdData *)adData;
 
 /// Video player did reach end
-- (void)videoPlayerViewDidReachEnd;
+- (void)videoPlayerViewDidReachEndWithAd:(NtvAdData *)adData;
 
 /// Video player did fail
-- (void)videoPlayerViewDidFailWithError:(NSError *)error;
+- (void)videoPlayerViewDidFailWithError:(NSError *)error withAd:(NtvAdData *)adData;
+
+/**
+ @abstract Video player will modify audio session category
+ @discusssion You may use this method to prevent the audio session category from being modified. Do so only if your app requires specific categories to be set.
+ Audio session categories are modified in order to allow muted videos to be played without pausing background audio.
+ @return If you return 'false', the audio category will not be modified
+ */
+- (BOOL)videoPlayerWillModifyAudioSessionCategory:(NSString *)category withAd:(NtvAdData *)adData;
+
+/**
+ @abstract Video player will deactivate the current audio session
+ @discusssion You may use this method to prevent the audio session from being deactivated. The video player will, be default, disable the audio session when the video has finished playing, is paused, or goes at least 50% off screen. Doing so will enable any background audio to resume playing.
+ @return If you return 'false', the audio session will not be deactivated
+ */
+- (BOOL)videoPlayerWillDeactiveAudioSessionWithAd:(NtvAdData *)adData;
 
 
 @end
