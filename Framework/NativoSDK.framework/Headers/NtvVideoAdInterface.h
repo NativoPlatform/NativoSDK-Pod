@@ -9,11 +9,20 @@
 @class AVPlayerItem;
 @class NtvAdData;
 
+NS_ASSUME_NONNULL_BEGIN
+
+// Audio session change reasons
+extern NSString *const NtvAudioSessionEndReasonResumeBackgroundAudio;
+extern NSString *const NtvAudioSessionEndReasonAppSuspended;
+extern NSString *const NtvAudioCategoryChangeReasonVideoFullscreen;
+extern NSString *const NtvAudioCategoryChangeReasonVideoExitFullscreen;
+extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundAudio;
+extern NSString *const NtvAudioCategoryChangeReasonPauseMutedVideo;
 
 /**
- The `NtvVideoAdInterface` protocol is used by the NativoSDK to populate views with in feed video ad data. It should be implemented by a subclass of the view used in your articles list. In most cases this will be UITableViewCell or UICollectionViewCell.
+ The `NtvVideoAdInterface` protocol is used by the NativoSDK to populate views with in feed video ad data. It is also used to notify the app of video related events. It should be implemented by a  view used in your articles list.
  */
-NS_ASSUME_NONNULL_BEGIN
+
 @protocol NtvVideoAdInterface <NSObject>
 
 ///@name Interface Labels
@@ -86,19 +95,21 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)videoPlayerViewDidFailWithError:(NSError *)error withAd:(NtvAdData *)adData;
 
 /**
- @abstract Video player will modify audio session category
- @discusssion You may use this method to prevent the audio session category from being modified. Do so only if your app requires specific categories to be set.
- Audio session categories are modified in order to allow muted videos to be played without pausing background audio.
+ @abstract Nativo will modify audio session category
+ @discusssion You may use this method to prevent the audio session category from being modified. Do so only if your app requires specific categories to be set. Audio session categories are modified to playback mode when a video goes fullscreen, and also in order to allow muted videos to be played without pausing background audio.
  @return If you return 'false', the audio category will not be modified
  */
-- (BOOL)videoPlayerWillModifyAudioSessionCategory:(NSString *)category withAd:(NtvAdData *)adData;
+- (BOOL)videoPlayerShouldModifyAudioSessionCategory:(NSString *)category withReason:(NSString *)reason;
 
 /**
- @abstract Video player will deactivate the current audio session
- @discusssion You may use this method to prevent the audio session from being deactivated. The video player will, be default, disable the audio session when the video has finished playing, is paused, or goes at least 50% off screen. Doing so will enable any background audio to resume playing.
+ @abstract Nativo will deactivate the current audio session
+ @discusssion You may use this method to prevent the audio session from being deactivated. The video player will, by default, disable the audio session when the video has finished playing, is paused, or if the app is suspended in the background, but only if background audio was previously playing. Doing so will enable any background audio to resume playing.
  @return If you return 'false', the audio session will not be deactivated
  */
-- (BOOL)videoPlayerWillDeactiveAudioSessionWithAd:(NtvAdData *)adData;
+- (BOOL)videoPlayerShouldDeactiveAudioSessionWithReason:(NSString *)reason;
+
+
+
 
 
 @end

@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 /**
-  The `NtvAdInterface` protocol is used by the NativoSDK to populate views with ad data. It should be implemented by a subclass of the view used in your articles list. In most cases this will be UITableViewCell or UICollectionViewCell.
+  The `NtvAdInterface` protocol is used by the NativoSDK to populate views with ad data. It should be implemented by a view used in your articles list.
  */
 NS_ASSUME_NONNULL_BEGIN
 @protocol NtvAdInterface <NSObject>

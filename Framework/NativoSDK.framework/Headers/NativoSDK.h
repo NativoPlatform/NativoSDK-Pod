@@ -22,7 +22,7 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvSectionDelegate.h"
 #import "NtvVideoFullScreenControlsDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"4.1.6";
+static NSString * _Nonnull const kNativoSDKVersion = @"4.1.7";
 
 
 /**
@@ -32,17 +32,17 @@ static NSString * _Nonnull const kNativoSDKVersion = @"4.1.6";
  
  The NativoSDK works best by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. Upon each request to dequeue a cell, the NativoSDK will ask the section delegate if an ad should belong at this placement, if `YES`, it will either retrieve the ad from cache, or if not found, make a new request for the ad. While the ad is loading a blank cell will be returned with an activity indicator. When the ad data returns it will create a new view based on the ad type of the ad using the nib your registered previously using [NativoSDK registerNib:forAdTemplateType:]. The ad will then be injected into the previously returned cell. If there isn't an ad at the given index, the NativoSDK will dequeue a non-ad cell using the identifier passed in.
  
- __Version__: 4.1.6
+ __Version__: 4.1.7
  
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface NativoSDK : NSObject
 
 
-/** @name Set Section Delegate */
+/** @name Set Delegates */
 
 /**
- @abstract Before calling any Nativo methods you must set the delegate for your section.
+ @abstract Set the delegate to be notified of section events. Before calling any Nativo methods you must set the delegate for your section.
  @param delegate The ViewController or object that conforms to NtvSectionDelegate.
  @param sectionUrl The section URL of the section. Please contact your account manager at Nativo for details.
  
@@ -64,8 +64,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- @abstract Register nib for a specific ad type with desired height.
- @discussion Call this method if you are using a layouts that have different heights depending on the ad type. For example, if your video ad layout requires a different height from your native ad layout, call this method and specify the desired height for each respective template type.
+ @abstract Register nib for a specific ad type with desired height. Do not use this method if using UITableView automatic cell heights.
+ @discussion Call this method if you are using a layouts that have different heights depending on the ad type. For example, if your video ad layout requires a different height from your native ad layout, call this method and specify the desired height for each respective template type. NOTE: Do not use this method if using UITableView automatic cell heights.
  @param nib The nib that builds a class that implements one of the NtvAdInterface protocols.
  @param templateType The template type that dictates if this nib should be used for Native or Video ads.
  @param height the expected height of the view from the nib file.
@@ -252,7 +252,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- Disable placeholder mode. Instead of reserving a view(placeholder) in the feed for an ad, inject the ad in the feed only when that ad is available.
+ Disable placeholder mode. Instead of reserving a view(placeholder) in the feed for an ad, inject the ad in the feed only when that ad is available and has content. You must disable placeholders in order to use UITableView automatic row heights.
  
  */
 + (void)disablePlaceholderMode;

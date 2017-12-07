@@ -73,65 +73,65 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @abstract The ad's title.
 */
-@property (readonly, nonatomic) NSString *title;
+@property (nullable, readonly, nonatomic) NSString *title;
 
 
 /**
  @abstract URL to the ad's content.
  @discussion Use this URL for both native and click-out ads. For click-out, display ad in a full-screen web view. For native ads, load this url in a WKWebView or UIWebView. The web view should be within a UIViewController that is style to look like the rest of your app using native components such as UILabels and UIImageViews for the title and article image. 
  */
-@property (readonly, nonatomic) NSURL* sponsoredArticleURL;
+@property (nullable, readonly, nonatomic) NSURL* sponsoredArticleURL;
 
 
 /**
  @abstract Call to action URL. The link set by advertisers that will click out to advertisers site.
  */
-@property (readonly, nonatomic, nullable) NSURL* ctaURL;
+@property (nullable, readonly, nonatomic) NSURL* ctaURL;
 
 
 /**
  @abstract The ad's date of creation.
  */
-@property (readonly, nonatomic, nullable) NSDate *date;
+@property (nullable, readonly, nonatomic) NSDate *date;
 
 
 /**
  @abstract The ad's preview text.
  */
-@property (readonly, nonatomic) NSString *previewText;
+@property (nullable, readonly, nonatomic) NSString *previewText;
 
 
 /**
  @abstract The ad's preview image URL.
  @discussion You may alternatively use `<resizePreviewImageUrlWithSize:usingCropMode:smartCropEnabled:>` to retrieve the URL of a pre-resized version of the preview image.
  */
-@property (readonly, nonatomic) NSString *previewImageURL;
+@property (nullable, readonly, nonatomic) NSString *previewImageURL;
 
 
 /**
  @abstract The advertiser's name.
  */
-@property (readonly, nonatomic) NSString *authorName;
+@property (nullable, readonly, nonatomic) NSString *authorName;
 
 
 /**
  @abstract The advertiser's website URL.
  */
-@property (readonly, nonatomic) NSString *authorURL;
+@property (nullable, readonly, nonatomic) NSString *authorURL;
 
 
 /**
  @abstract The advertiser's image URL.
  @discussion You may alternatively use `<resizeAuthorImageUrlWithSize:usingCropMode:smartCropEnabled:>` to retrieve the URL of a pre-resized version of the author image. 
  */
-@property (readonly, nonatomic) NSString *authorImageURL;
+@property (nullable, readonly, nonatomic) NSString *authorImageURL;
 
 
 /**
  @abstract Populated with custom key-value pairs that were set by the advertiser on admin.nativo.com.
  @discussion May contain custom data set on admin.nativo.com. If working directly with advertiser, they can populate data here.
  */
-@property (readonly, nonatomic, nullable) NSDictionary *customData;
+@property (nullable, readonly, nonatomic) NSDictionary *customData;
 
 
 
@@ -146,7 +146,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param enableSmartCrop If cropMode is set to `ntvCropModeAspectFill` and smart crop is enabled, then the image will be intelligently cropped so that the image's focal point is at the center. Enabling smart crop may slow down the request.
  
  */
--(NSURL *)resizePreviewImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop;
+-(nullable NSURL *)resizePreviewImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop;
 
 
 /**
@@ -157,7 +157,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param enableSmartCrop If cropMode is set to `ntvCropModeAspectFill` and smart crop is enabled, then the image will be intelligently cropped so that the image's focal point is at the center. Enabling smart crop may slow down the request.
  
  */
--(NSURL *)resizeAuthorImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop;
+-(nullable NSURL *)resizeAuthorImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop;
 
 
 @end
