@@ -22,7 +22,7 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvSectionDelegate.h"
 #import "NtvVideoFullScreenControlsDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"4.1.7";
+static NSString * _Nonnull const kNativoSDKVersion = @"4.1.8";
 
 
 /**
@@ -32,7 +32,7 @@ static NSString * _Nonnull const kNativoSDKVersion = @"4.1.7";
  
  The NativoSDK works best by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. Upon each request to dequeue a cell, the NativoSDK will ask the section delegate if an ad should belong at this placement, if `YES`, it will either retrieve the ad from cache, or if not found, make a new request for the ad. While the ad is loading a blank cell will be returned with an activity indicator. When the ad data returns it will create a new view based on the ad type of the ad using the nib your registered previously using [NativoSDK registerNib:forAdTemplateType:]. The ad will then be injected into the previously returned cell. If there isn't an ad at the given index, the NativoSDK will dequeue a non-ad cell using the identifier passed in.
  
- __Version__: 4.1.7
+ __Version__: 4.1.8
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -233,10 +233,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- @abstract Attempt to place ad in view provided at index path
- @discussion Optional method, only use if your app is not compatible with [NativoSDK  dequeueCellWithAdFromTableView:usingIdentifierIfNoAd:forSection:atPlacementIndex:options:delegate:] or [NativoSDK dequeueCellWithAdFromCollectionView:usingIdentifierIfNoAd:forSection:atPlacementIndex:options:delegate:]. 
-     Injects view with ad data if ad is available at given indexPath. If not, will make request and attempt to fill view asynchronously.
-     If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtIndex:] will be called so that the delegate can remove the empty view.
+ @abstract Optional method. Attempt to place ad in view provided with index path.
+ @discussion Asynchronously injects view with ad data at given indexPath. If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtIndex:] will be called so that the delegate can remove the empty view. Only use if your app is not compatible with [NativoSDK  dequeueCellWithAdFromTableView:usingIdentifierIfNoAd:forSection:atPlacementIndex:options:delegate:] or [NativoSDK dequeueCellWithAdFromCollectionView:usingIdentifierIfNoAd:forSection:atPlacementIndex:options:delegate:].
+ @note Please note that while using this API will lend you more flexibility in how you integrate, it will also increase the difficulty of implementing correctly, and will greatly increase the time it takes for Nativo to perform quality assurance on your app. This is due to the subtlety of ad placement tracking that needs to be performed manually when using this API. See our guide 'Using the basic API (placeAdInView)' for details on how to implement this method correctly.
  @return Will return `YES` if placement was successful.
  @param view UIView where ad will be injected. In most cases this will be a kind of `UITableViewCell` or `UICollectionViewCell`.
  @param container The view that contains the ad placement. Used for tracking purposes.

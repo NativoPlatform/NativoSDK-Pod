@@ -17,7 +17,7 @@ extern NSString *const NtvAudioSessionEndReasonAppSuspended;
 extern NSString *const NtvAudioCategoryChangeReasonVideoFullscreen;
 extern NSString *const NtvAudioCategoryChangeReasonVideoExitFullscreen;
 extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundAudio;
-extern NSString *const NtvAudioCategoryChangeReasonPauseMutedVideo;
+
 
 /**
  The `NtvVideoAdInterface` protocol is used by the NativoSDK to populate views with in feed video ad data. It is also used to notify the app of video related events. It should be implemented by a  view used in your articles list.
@@ -94,16 +94,23 @@ extern NSString *const NtvAudioCategoryChangeReasonPauseMutedVideo;
 /// Video player did fail
 - (void)videoPlayerViewDidFailWithError:(NSError *)error withAd:(NtvAdData *)adData;
 
+
+///@name Manage Audio Session
+
 /**
  @abstract Nativo will modify audio session category
- @discusssion You may use this method to prevent the audio session category from being modified. Do so only if your app requires specific categories to be set. Audio session categories are modified to playback mode when a video goes fullscreen, and also in order to allow muted videos to be played without pausing background audio.
+ @discussion You may use this method to prevent the audio session category from being modified. Do so only if your app requires specific categories to be set. Audio session categories are modified to playback
+    mode when a video goes fullscreen, and also in order to allow muted videos to be played without pausing background audio.
+ 
+While Nativo will handle the audio session for videos that we control, it is up to you to manage the session for your own videos. We highly recommend that you import AVFoundation and change the AVAudioSessionCategory to `AVAudioSessionCategoryPlayback` whenever a video in your app is played. This will prevent background audio from overlapping with the foreground video.
+
  @return If you return 'false', the audio category will not be modified
  */
 - (BOOL)videoPlayerShouldModifyAudioSessionCategory:(NSString *)category withReason:(NSString *)reason;
 
 /**
  @abstract Nativo will deactivate the current audio session
- @discusssion You may use this method to prevent the audio session from being deactivated. The video player will, by default, disable the audio session when the video has finished playing, is paused, or if the app is suspended in the background, but only if background audio was previously playing. Doing so will enable any background audio to resume playing.
+ @discussion You may use this method to prevent the audio session from being deactivated. The video player will, by default, disable the audio session when the video has finished playing, or if the app is suspended in the background, but only if background audio was previously playing. Doing so will enable any background audio to resume playing.
  @return If you return 'false', the audio session will not be deactivated
  */
 - (BOOL)videoPlayerShouldDeactiveAudioSessionWithReason:(NSString *)reason;
