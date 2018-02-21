@@ -14,6 +14,8 @@ extern const unsigned char NativoSDKVersionString[];
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UIWebView+NativoUtil.h"
+#import "WKWebView+NativoUtil.h"
+#import "NtvContentWebView.h"
 #import "NtvAdData.h"
 #import "NtvSharing.h"
 #import "NtvAdInterface.h"
@@ -22,7 +24,8 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvSectionDelegate.h"
 #import "NtvVideoFullScreenControlsDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"4.1.8";
+static NSString * _Nonnull const kNativoSDKVersion = @"4.2.0";
+
 
 
 /**
@@ -30,9 +33,9 @@ static NSString * _Nonnull const kNativoSDKVersion = @"4.1.8";
  
  The new SDK has the ability to automatically requests ads when needed and injects ad data into cells at requested spots in an app’s feed. Ad caching and tracking are automatically handled. Integrating with your `UICollectionViewCell`s and `UITableViewCell`s is now easier with interface template injection. Also, video ads are now supported in the feed.
  
- The NativoSDK works best by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. Upon each request to dequeue a cell, the NativoSDK will ask the section delegate if an ad should belong at this placement, if `YES`, it will either retrieve the ad from cache, or if not found, make a new request for the ad. While the ad is loading a blank cell will be returned with an activity indicator. When the ad data returns it will create a new view based on the ad type of the ad using the nib your registered previously using [NativoSDK registerNib:forAdTemplateType:]. The ad will then be injected into the previously returned cell. If there isn't an ad at the given index, the NativoSDK will dequeue a non-ad cell using the identifier passed in.
+ The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the basic API. The table/collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The basic API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
  
- __Version__: 4.1.8
+ __Version__: 4.2.0
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -54,70 +57,111 @@ NS_ASSUME_NONNULL_BEGIN
 /** @name Register Ad Templates */
 
 /**
-@abstract Register nib for a specific ad type.
-@discussion When the ad is being rendered, this nib will be used to change the layout of the ad based on the ad type. Nib's class must conform to one of the NtvAdInterface protocols.
-@param nib The nib that builds a class that implements one of the NtvAdInterface protocols.
-@param templateType The template type that dictates if this nib should be used for Native or Video ads.
-
-*/
+ @abstract Register nib for a specific ad type for all sections and placements.
+ @discussion Use this method to specify which nib should be used for each template type. This will set that nib to be used globally across all sections and placements. To set a nib for a specific section or placement, you must use the `NtvSectionDelegate` method - `section:registerNibNameForAdTemplateType:atLocationIdentifier:`
+ @note The nib's class must conform to NtvAdInterface, NtvVideoAdInterface, or NtvLandingPageInterface, depending on the template type it was registered with.
+ @param nib The `UINib` that builds a class that implements one of the NtvAdInterface protocols.
+ @param templateType The template type that dictates if this Nib should be used for Native ads, Video ads, or sponsored content landing pages. The Nib's class must conform to NtvAdInterface, NtvVideoAdInterface, or NtvLandingPageInterface.
+ 
+ */
 + (void)registerNib:(UINib *)nib forAdTemplateType:(NtvAdTemplateType)templateType;
 
 
-/**
- @abstract Register nib for a specific ad type with desired height. Do not use this method if using UITableView automatic cell heights.
- @discussion Call this method if you are using a layouts that have different heights depending on the ad type. For example, if your video ad layout requires a different height from your native ad layout, call this method and specify the desired height for each respective template type. NOTE: Do not use this method if using UITableView automatic cell heights.
- @param nib The nib that builds a class that implements one of the NtvAdInterface protocols.
- @param templateType The template type that dictates if this nib should be used for Native or Video ads.
- @param height the expected height of the view from the nib file.
- 
- */
-+ (void)registerNib:(UINib *)nib forAdTemplateType:(NtvAdTemplateType)templateType withDesiredHeight:(CGFloat)height;
 
-
-
-/** @name Dequeue Cells */
+/** @name Table/Collection View API */
 
 /**
- @abstract Will dequeue cell with provided identifier or create an ad cell if ad content is available at given index path.
- @discussion This is the main method you should use to request and manage ads in your app. It will ask the NtvSectionDelegate if this index path should be an ad placement. If so it will make request and attempt to fill cell asynchronously if ad data not yet available. After calling this method, you must check provided cell's [reuseIdentifier](http://apple.co/2m5TeZ1) to know if the cell returned is an ad or not. If reuse identifier matches the value you passed in, the cell does not contain an ad and should be populated with data as normal. If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtIndex:] will be called so that the delegate can remove the empty view.
+ @abstract Dequeue cell from table view. Use this method instead of [UITableView dequeueReusableCellWithIdentifier:]. Will attempt to inject ads at the index paths specified by the section delegate, otherwise returns cell with the reuse identifier specified.
+ @discussion This is the main method you should use to request and manage ads in your app. For each index path the `NtvSectionDelegate` will be asked if it should become an ad placement or not. If yes, it will make a request for an ad and attempt to fill the cell asynchronously. After calling this method, you must check provided cell's [reuseIdentifier](http://apple.co/2m5TeZ1) to know if the cell returned is an ad or not. If the reuse identifier matches the reuse identifier you passed in, then it does not contain an ad and should be populated with data as normal. Otherwise it contains ad data and no additional work is needed. If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtLocationIdentifier:forReason:] will be called so that the view can be removed on next reload.
  @param tableView The `UITableView` you are using to render your feed. Will also be used for ad tracking.
- @param identifier The identifier string that maps to your cells [reuseIdentifier](http://apple.co/2m5TeZ1)
+ @param reuseIdentifier The reuse identifier string that maps to your cells [reuseIdentifier](http://apple.co/2m5TeZ1)
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param index The index path where this ad is being placed.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
- @return Returns either a normal cell with identifier provided or ad cell if ad content is available at given index path. You must check the cell's reuseIdentifier to know if an ad was returned or not.
+ @return A cell with Nativo ad content if there is ad data available at given index path, otherwise a cell dequeued using the reuse identifier passed in.
  
  */
-+ (nullable __kindof UITableViewCell *)dequeueCellWithAdFromTableView:(UITableView *)tableView usingIdentifierIfNoAd:(NSString *)identifier forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary *)options;
-
++ (nullable __kindof UITableViewCell *)dequeueCellWithAdFromTableView:(UITableView *)tableView usingReuseIdentifierIfNoAd:(NSString *)reuseIdentifier forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary<NSString *, NSString *> *)options;
 
 /**
- @abstract Will dequeue cell with provided identifier or create an ad cell if ad content is available at given index path.
- @discussion This is the main method you should use to request and manage ads in your app. It will ask the NtvSectionDelegate if this index path should be an ad placement. If so it will make request and attempt to fill cell asynchronously if ad data not yet available. After calling this method, you must check provided cell's [reuseIdentifier](http://apple.co/2m5Bmxw) to know if the cell returned is an ad or not. If reuse identifier matches the value you passed in, the cell does not contain an ad and should be populated with data as normal. If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtIndex:] will be called so that the delegate can remove the empty view.
+ @abstract Dequeue cell from collection view. Use this method instead of [UICollectionView dequeueReusableCellWithReuseIdentifier:]. Will attempt to inject ads at the index paths specified by the section delegate, otherwise returns cell with the reuse identifier specified.
+ @discussion This is the main method you should use to request and manage ads in your app. For each index path the `NtvSectionDelegate` will be asked if it should become an ad placement or not. If yes, it will make a request for an ad and attempt to fill the cell asynchronously. After calling this method, you must check provided cell's [reuseIdentifier](http://apple.co/2m5TeZ1) to know if the cell returned is an ad or not. If the reuse identifier matches the reuse identifier you passed in, then it does not contain an ad and should be populated with data as normal. Otherwise it contains ad data and no additional work is needed. If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtLocationIdentifier:forReason:] will be called so that the view can be removed on next reload.
  @param collectionView The `UICollectionView` you are using to render your feed. Will also be used for ad tracking.
- @param identifier The identifier string that maps to your cells [reuseIdentifier](http://apple.co/2m5Bmxw)
+ @param reuseIdentifier The reuse identifier string that maps to your cells [reuseIdentifier](http://apple.co/2m5Bmxw)
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param index The index path where this ad is being placed.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
- @return Returns either a normal cell with identifier provided or ad cell if ad content is available at given index path. You must check the cell's reuseIdentifier to know if an ad was returned or not.
+ @return A cell with Nativo ad content if there is ad data available at given index path, otherwise a cell dequeued using the reuse identifier passed in.
  
  */
-+ (nullable __kindof UICollectionViewCell *)dequeueCellWithAdFromCollectionView:(UICollectionView *)collectionView usingIdentifierIfNoAd:(NSString *)identifier forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary *)options;
++ (nullable __kindof UICollectionViewCell *)dequeueCellWithAdFromCollectionView:(UICollectionView *)collectionView usingReuseIdentifierIfNoAd:(NSString *)reuseIdentifier forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary<NSString *, NSString *> *)options;
+
+
+
+/** @name Basic API */
+
+/**
+ @abstract Basic Ad Injection API. Attempts to place an ad in the view provided.
+ @discussion Asynchronously injects view with ad data at given indexPath. If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtLocationIdentifier:forReason:] will be called so that the delegate can remove the view.
+ @note Please note that while using this API will lend you more flexibility in how you integrate, it will also increase the difficulty of implementing correctly when used in a table or collection view. It may greatly increase the time it takes for Nativo to perform quality assurance on your app. This is due to the subtlety of ad placement tracking that needs to be performed manually when using this API. See our guide 'Using the basic API (placeAdInView)' for details on how to implement this method correctly.
+ @param view UIView where ad will be injected.
+ @param identifier The location identifier with which the ad will be associated.
+ @param container The view that contains the ad placement. Used for tracking purposes.
+ @param sectionUrl The section identifier used to request ads from Nativo.
+ @param options Dictionary of options used to request ads. Pass 'nil' for no options.
+ @return Will return true if Nativo ad returned with fill and was successfully injected into the view
+ 
+ */
++ (BOOL)placeAdInView:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl options:(nullable NSDictionary<NSString *, NSString *> *)options;
+
+/**
+ @abstract Track a view that would have been an ad placement, if there is no fill. Only needed when using the basic API inside a table or collection view.
+ @discussion Only required if using 'placeAdInView' inside a table or collection view. Nativo requires that ad placements (views designated for ad fill) get tracked, regardless of if there is fill for that view. This method will track the view where the ad would have been, if there had  been fill (With the table/collection view API this is handled automatically). You'll need to add this method at the point when you know there is no ad fill, and you have the view taking the place of where the ad would have been.
+ @param view The view to be tracked. View should be nested in UIScrollView.
+ @param identifier The location identifier or index path with which the ad is associated.
+ @param container The scroll view that contains the ad placement. Used for tracking purposes.
+ @param sectionUrl The section identifier used to request ads from Nativo.
+ 
+ */
++ (void)trackViewWithNoAdFill:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl;
+
+
+
+/** @name Manage Placements */
+
+/**
+ @abstract Optionally map an ad placement to a specific indexPath in your table or collection view.
+ @discussion The placement ID will be sent to you from your account manager as needed.
+ @param placementId The id of the placement that should be requested on the indexPath. Will be given to you by your representative at Nativo.
+ @param indexPath The index path with which the ad is associated.
+ @param sectionUrl The section identifier that the placement belongs to.
+ 
+ */
++ (void)mapPlacementId:(NSNumber *)placementId toIndexPath:(NSIndexPath *)indexPath inSection:(NSString *)sectionUrl;
+
+/**
+ @abstract Optionally map an ad placement to a specific identifier used with the basic API - 'placeAdInView'.
+ @discussion The placement ID will be sent to you from your account manager as needed.
+ @param placementId The id of the placement that should be requested. Will be given to you by your representative at Nativo.
+ @param identifier The location identifier with which the ad will be associated.
+ @param sectionUrl The section identifier that the placement belongs to.
+ 
+ */
++ (void)mapPlacementId:(NSNumber *)placementId toLocationIdentifier:(id)identifier inSection:(NSString *)sectionUrl;
 
 
 
 /** @name Manage Datasource */
 
 /**
- @abstract Modify index path provided to adjust for any ads currently received.
- @discussion Used to get an adjusted indexPath that has been modified to account for the number of ads that have been received. Used to prevent items in feed from being skipped/overridden by ads. For example, lets say there exists 5 articles in your datasource, and you have one ad at the third row. That makes 6 rows total (indexPaths.row 0-5). Lets say the user clicks on row 4. Now if even though it is the 4th row, you need to access the 3rd item in your datasource, since first row = datasource[0], second row = datasource[1], third row is nativo ad, then forth row = datasource[2]. If you had used the vanilla indexPath you would have accessed datasource[3] and an item in your feed would have been skipped. By using this method, you can prevent items in your feed from getting skipped, or worse, array out of bounds errors.
+ @abstract Modify an `NSIndexPath` from a table or collection view to adjust for any ads received.
+ @discussion Used to get an adjusted an indexPath that has been modified to account for the number of ads that have been received. Used to prevent items in feed from being skipped/overridden by ads. For example, lets say there exists 5 articles in your datasource, and you have one ad at the third row. That makes 6 rows total (indexPaths.row 0-5). Lets say the user clicks on row 4. Now if even though it is the 4th row, you need to access the 3rd item in your datasource, since first row = datasource[0], second row = datasource[1], third row is nativo ad, then forth row = datasource[2]. If you had used the vanilla indexPath you would have accessed datasource[3] and an item in your feed would have been skipped. Using this method you can prevent items in your feed from getting skipped, or worse, array out of bounds errors.
  @param indexPath The indexPath provided by the `UITableView` or `UICollectionView` delegate methods.
- @param sectionUrl The section identifier used to request ads from Nativo.
- @return Modified NSIndexPath based on number of ads with content received.
+ @param sectionUrl The Nativo section identifier used in the current section.
+ @return Modified `NSIndexPath` based on number of ads with content received.
  
  */
-+ (NSIndexPath *)getAdjustedIndexRowForPath:(NSIndexPath *)indexPath forSection:(NSString *)sectionUrl;
-
++ (NSIndexPath *)getAdjustedIndexPath:(NSIndexPath *)indexPath forAdsInjectedInSection:(NSString *)sectionUrl;
 
 /**
  @abstract Get the number of ads in the section.
@@ -130,6 +174,21 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSInteger)getNumberOfAdsInSection:(NSString *)sectionUrl inTableOrCollectionSection:(NSInteger)section forNumberOfItemsInDatasource:(NSInteger)itemsCount;
 
+/**
+ @abstract Reset the list of ads that have been received in a section.
+ @discussion This will force the Nativo server to return ads to your app that may already have been received.
+ @param sectionURL The section identifier used to request ads from Nativo.
+ 
+ */
++ (void)clearAdsInSection:(NSString *)sectionURL;
+
+/**
+ @abstract Frees all memories associated with the section, along with any ads
+ @param sectionURL The section identifier used to request ads from Nativo.
+ 
+ */
++ (void)clearSection:(NSString *)sectionURL;
+
 
 
 /** @name Get Ads From Cache */
@@ -137,22 +196,23 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @abstract Get ad at given indexPath.
  @discussion Use this method when you need to check an ads [NtvAdData adType] or get its [NtvAdData sponsoredArticleURL]. This method will not make a request to get the ad, it simply checks if an ad exists in cache. Requests are made as needed by 'dequeueCell' methods.
- @param index The indexPath provided by the `UITableView` or `UICollectionView` delegate methods.
+ @param identifier The location identifier or indexPath with which the ad is associated.
  @param sectionUrl The section identifier used to request ads from Nativo.
- @return NtvAdData if any at given indexPath.
+ @return NtvAdData Ad data if available at location identifier.
  
  */
-+ (nullable NtvAdData *)getCachedAdAtIndex:(NSIndexPath *)index forSection:(NSString *)sectionUrl;
-
++ (nullable NtvAdData *)getCachedAdAtLocationIdentifier:(id)identifier forSection:(NSString *)sectionUrl;
++ (nullable NtvAdData *)getCachedAdAtIndex:(NSIndexPath *)indexPath forSection:(NSString *)sectionUrl; // Convenience for use with table or collection views
 
 /**
- @abstract Check if there exists an ad with content at given indexPath.
- @param index The indexPath provided by the `UITableView` or `UICollectionView` delegate methods.
+ @abstract Check if there exists an ad with content(fill) at given indexPath.
+ @param identifier The location identifier or indexPath with which the ad is associated.
  @param sectionUrl The section identifier used to request ads from Nativo.
- @return Returns `YES` if ad has content at given indexPath.
+ @return Returns `YES` if ad with specified placement and section identifier has content(fill).
  
  */
-+ (BOOL)adPlacementHasContentAtIndex:(NSIndexPath *)index forSection:(NSString *)sectionUrl;
++ (BOOL)adPlacementHasContentAtLocationIdentifier:(id)identifier forSection:(NSString *)sectionUrl;
++ (BOOL)adPlacementHasContentAtIndexPath:(NSIndexPath *)indexPath forSection:(NSString *)sectionUrl; // Convenience for use with table or collection views
 
 
 
@@ -163,54 +223,32 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion This method allows you to have control over how the landing page view controller is instantiated. Only use this method if you are *not* registering a nib file that contains your sponsored landing page with [NativoSDK registerNib:forAdTemplateType:] and *not* implementing the section delegate methods [NtvSectionDelegate section:needsDisplayLandingPage:] and [NtvSectionDelegate section:needsDisplayClickoutURL:].  If you are registering a nib for your sponsored landing page then the NativoSDK will handle the ad unit click for you.
  @param viewController The view controller used to display sponsored articles.
  @param sectionUrl The section identifier used to request ads from Nativo.
- @param index The index path where this ad is being placed.
+ @param identifier The location identifier with which the ad is associated.
  
  */
-+ (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index;
++ (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl withAdAtLocationIdentifier:(id)identifier;
++ (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl withAdAtIndexPath:(NSIndexPath *)indexPath; // Convenience for use with table or collection views
 
 
 
-
-/** @name Infinite Scroll */
-
-/**
- @abstract Enable infinite scroll for given section.
- @discussion Infinite scroll enables the ability to make multiple requests for a given section, each time requesting a unique ad. If you want an 'unlimited' number of placements in your sections, then you should enable this property.
- @param sectionUrl The section identifier used to request ads from Nativo.
- 
- */
-+ (void)enableInfiniteScrollForSection:(NSString *)sectionUrl;
-
-
-/**
- @abstract Reset the list of ads that have been received.
- @discussion This will force the Nativo server to return ads to your app that may already have been received.
- @param sectionURL The section identifier used to request ads from Nativo.
- 
- */
-+ (void)clearAdsInSection:(NSString *)sectionURL;
-
-
-
-/// @name Requesting Ads with DFP
+/** @name Requesting Ads with DFP */
 
 /**
  @abstract For use with DFP only. Sets the app up for use with DFP. Must be called before prefetching or dequeing cells.
  
  */
-+ (void)enableDFPRequests;
-
++ (void)enableDFPRequestsWithVersion:(NSString *)versionStr;
 
 /**
  @abstract Use DFP as a way to flight and track your campaigns with Nativo.
  @param bannerView The banner view from Google's DFP SDK.
  @param sectionUrl The section identifier used to request ads from Nativo.
- @param indexPath The index path where this ad is being placed.
+ @param identifier The location identifier with which the ad will be associated.
  @discussion You should make the request to DFP first before calling this method. The values from the view passed will be extracted in order to make the proper request to Nativo's ad server.
  
  */
-+ (void)makeDFPRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atIndexPath:(NSIndexPath *)indexPath;
-
++ (void)makeDFPRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atLocationIdentifier:(id)identifier;
++ (void)makeDFPRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atIndexPath:(NSIndexPath *)indexPath; // Convenience for use with table or collection views
 
 
 /** @name Miscellaneous */
@@ -222,9 +260,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)setCustomFullScreenVideoControlsView:(UIView<NtvVideoFullScreenControlsDelegate> *)controlsView;
 
-
 /**
- @abstract Optional. Fetch ads for given section before they are required. Useful to avoid loading times for ads.
+ @abstract Optional. Prefetch an ad for given section. Useful to avoid reloading views.
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
  
@@ -232,30 +269,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)prefetchAdsForSection:(NSString *)sectionUrl options:(nullable NSDictionary *)options;
 
 
-/**
- @abstract Optional method. Attempt to place ad in view provided with index path.
- @discussion Asynchronously injects view with ad data at given indexPath. If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtIndex:] will be called so that the delegate can remove the empty view. Only use if your app is not compatible with [NativoSDK  dequeueCellWithAdFromTableView:usingIdentifierIfNoAd:forSection:atPlacementIndex:options:delegate:] or [NativoSDK dequeueCellWithAdFromCollectionView:usingIdentifierIfNoAd:forSection:atPlacementIndex:options:delegate:].
- @note Please note that while using this API will lend you more flexibility in how you integrate, it will also increase the difficulty of implementing correctly, and will greatly increase the time it takes for Nativo to perform quality assurance on your app. This is due to the subtlety of ad placement tracking that needs to be performed manually when using this API. See our guide 'Using the basic API (placeAdInView)' for details on how to implement this method correctly.
- @return Will return `YES` if placement was successful.
- @param view UIView where ad will be injected. In most cases this will be a kind of `UITableViewCell` or `UICollectionViewCell`.
- @param container The view that contains the ad placement. Used for tracking purposes.
- @param sectionUrl The section identifier used to request ads from Nativo.
- @param index The index path where this ad is being placed.
- @param options Dictionary of options used to request ads. Pass 'nil' for no options.
- 
- */
-+ (BOOL)placeAdInView:(UIView *)view inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary *)options;
-
 
 /** @name Modifying SDK Settings */
 
-
 /**
- Disable placeholder mode. Instead of reserving a view(placeholder) in the feed for an ad, inject the ad in the feed only when that ad is available and has content. You must disable placeholders in order to use UITableView automatic row heights.
+ Enable placeholder mode. This will reserve a view(placeholder) in the feed for an ad, inject the ad in the feed only when that ad is available and has content. May decrease the need to reload your views. Does not work well with UITableView automatic row heights.
  
  */
-+ (void)disablePlaceholderMode;
-
++ (void)enablePlaceholderMode;
 
 /**
  Sets the SDK to development mode. By enabling this, Nativo log messages become visible in the console.
@@ -263,13 +284,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)enableDevLogs;
 
-
 /**
  Sets the SDK to return demo advertisements for the purpose of testing.
  
  */
 + (void)enableTestAdvertisements;
-
 
 /**
  @abstract Sets the SDK to return demo advertisements for the purpose of testing. Useful for testing specific ad types.

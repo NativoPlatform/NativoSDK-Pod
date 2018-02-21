@@ -8,32 +8,65 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "NtvLandingPageInterface.h"
+#import "NtvAdData.h"
 @class NtvAdData;
 
-/**
- Implementers of this protocol decide where ads should be placed, handle how an ad's landing page gets displayed, and are notified when ads are recieved or a request fails.
- */
 NS_ASSUME_NONNULL_BEGIN
-@protocol NtvSectionDelegate <NSObject>
 
-/// @name Manage Ad Placement
+// Section reload reasons
+extern NSString *const NtvSectionReloadReasonRemoveView;
+extern NSString *const NtvSectionReloadReasonInjectView;
+extern NSString *const NtvSectionReloadReasonResizeView;
 
-/**
- @abstract Return `YES` if given index should be an ad placement.
-
- */
-- (BOOL)section:(NSString *)sectionUrl shouldPlaceAdAtIndex:(NSIndexPath *)index;
 
 /**
- @abstract Called when ads that are in loading state don't get filled. This is the chance for the delegate to remove the cell or view where ad would have been. Typically done by reloading data of `UITableView` or `UICollectionView`.
+ Implementers of this protocol decide where ads should be placed, handle how an ad's landing page gets displayed, and are notified when ads are received or a request fails.
  
  */
-- (void)section:(NSString *)sectionUrl needsReloadDatasourceAtIndex:(nullable NSIndexPath *)index;
+@protocol NtvSectionDelegate <NSObject>
+
+/// @name Manage Ad Placements
+
+/**
+ @abstract Reload the views where ads are served. Typically done by reloading data of a UITableView or UICollectionView.
+ @discussion Called when the view were ad is served needs to be refreshed. Typically this happens for one of three reasons:
+ 1. An ad that is in loading state doesn't get filled, and needs to be removed
+ 2. There is ad content available that needs to be injected into a view
+ 3. The height of the view passed in does not match the height of Nib registered for the ad type. Need to reload will appropriate sized view.
+ @param identifier The location identifier associated with the ad.
+ @param reason A string indicating the reason for reloading. Compare using constants `NtvSectionReloadReasonRemoveView`, `NtvSectionReloadReasonInjectView`, and `NtvSectionReloadReasonResizeView`.
+ @note Reloading with `UITableView` or `UICollectionView` will automatically cause the ad placeholder to be removed or resized. You should implement the delegate method `heightForRowAtIndex:` and specify the correct height for ad type in given row.
+ 
+ */
+- (void)section:(NSString *)sectionUrl needsReloadDatasourceAtLocationIdentifier:(nullable id)identifier forReason:(NSString *)reason;
 
 
 @optional
 
-/// @name Display Ad
+
+/**
+ @abstract Return `YES` if given index should be an ad placement.
+ @discussion Only required if using table/collection view API to dequeue cells in a table or collection view. Using this method you can indicate to the SDK where ad placements should be.
+ 
+ */
+- (BOOL)section:(NSString *)sectionUrl shouldPlaceAdAtIndex:(NSIndexPath *)index;
+
+
+/// @name Register Nibs
+
+/**
+ @abstract Return the file name of a specific nib to be used with an ad in the given section, placement identifier, and template type.
+ @discussion Optional method used if you need specific ad designs for different sections or placements. Only loads from the main bundle.
+ @param sectionUrl The section where ads are being injected.
+ @param templateType The template type associated with an certain ads (Native, Video, or LandingPage).
+ @param locationIdentifier The location identifier of where the Nib should be used.
+ @return The file name of the nib to be used for the specified section, placement identifier and template type. Returning `nil` will default to nib set in [NativoSDK registerNib:forAdTemplateType:] if set.
+ 
+ */
+- (NSString *)section:(NSString *)sectionUrl registerNibNameForAdTemplateType:(NtvAdTemplateType)templateType atLocationIdentifier:(id)locationIdentifier;
+
+
+/// @name Ad Placement Click Events
 
 /**
  @abstract Called when native ad is clicked and landing page should be displayed. Use this method to implement how the landing page will be displayed.
@@ -51,10 +84,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Handle Ad Response
 
 /**
- @abstract Notify delegate of ads received. Optional protocol.
+ @abstract Notify delegate of ad received. Optional protocol.
  
  */
-- (void)section:(NSString *)sectionUrl didRecieveAds:(NSArray<NtvAdData *> *)ads;
+- (void)section:(NSString *)sectionUrl didReceiveAd:(NtvAdData *)adData;
 
 /**
  @abstract Notify delegate of ad request failure.

@@ -13,7 +13,7 @@
 typedef NS_ENUM(NSUInteger, NtvAdType) {
     Native,
     Display,
-    Video,
+    ClickToPlayVideo,
     ScrollToPlayVideo,
     Placeholder
 };
@@ -38,7 +38,7 @@ typedef NS_ENUM(NSUInteger, NtvCropMode) {
 /**
  An instance of `NtvAdData` stores data of a single Nativo ad. You should never create an instance of `NtvAdData` yourself. They will be requested and handled for you automatically by the NativoSDK. If you do need access to the ad data of a placement, you can access it by calling [NativoSDK getCachedAdAtIndex:forSection:]. However this will not make a request for a new ad, it simply checks the cache for an ad already received.  Typically you will not need to handle NtvAdData unless using the NtvSharing APIs or adding custom behavior.
  
- **Note:** A `NtvAdData` object may or may not contain ad content. If the property `<isAdContentAvailable>` returns `NO`, it means that no ad will show at this placement, however the cell where the ad would have been placed will still be tracked for unfilled inventory.
+ **Note:** A `NtvAdData` object may or may not contain ad content. If the property `<isAdContentAvailable>` returns `NO`, it means that no ad will show at this placement, however the cell where the ad would have been placed will still need to be tracked.
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface NtvAdData : NSObject
@@ -132,6 +132,12 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion May contain custom data set on admin.nativo.com. If working directly with advertiser, they can populate data here.
  */
 @property (nullable, readonly, nonatomic) NSDictionary *customData;
+
+
+/**
+ @abstract The identifier of the placement to which the ad belongs.
+ */
+@property (readonly, nonatomic) NSNumber *placementId;
 
 
 
