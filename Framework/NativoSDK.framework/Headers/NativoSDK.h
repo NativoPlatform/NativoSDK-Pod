@@ -24,18 +24,16 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvSectionDelegate.h"
 #import "NtvVideoFullScreenControlsDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"4.2.0";
+static NSString * _Nonnull const kNativoSDKVersion = @"4.3.0";
 
 
 
 /**
- The `NativoSDK` is used to retrieve native, video, and clickout ads from Nativo. The NativoSDK is packed with features that will help you integrate native ads in your feed in a short amount of time. 
+ The `NativoSDK` is used to retrieve true native, native display, and video ads from Nativo. The NativoSDK is packed with features that will help you integrate native ads in your feed in a short amount of time.
  
- The new SDK has the ability to automatically requests ads when needed and injects ad data into cells at requested spots in an app’s feed. Ad caching and tracking are automatically handled. Integrating with your `UICollectionViewCell`s and `UITableViewCell`s is now easier with interface template injection. Also, video ads are now supported in the feed.
+ The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the View API. The Table/Collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The View API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
  
- The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the basic API. The table/collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The basic API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
- 
- __Version__: 4.2.0
+ __Version__: 4.3.0
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -98,12 +96,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-/** @name Basic API */
+/** @name View API */
 
 /**
- @abstract Basic Ad Injection API. Attempts to place an ad in the view provided.
+ @abstract View Ad Injection API. Attempts to place an ad in the view provided.
  @discussion Asynchronously injects view with ad data at given indexPath. If ad data is not available, the section delegate [NtvSectionDelegate section:needsReloadDatasourceAtLocationIdentifier:forReason:] will be called so that the delegate can remove the view.
- @note Please note that while using this API will lend you more flexibility in how you integrate, it will also increase the difficulty of implementing correctly when used in a table or collection view. It may greatly increase the time it takes for Nativo to perform quality assurance on your app. This is due to the subtlety of ad placement tracking that needs to be performed manually when using this API. See our guide 'Using the basic API (placeAdInView)' for details on how to implement this method correctly.
  @param view UIView where ad will be injected.
  @param identifier The location identifier with which the ad will be associated.
  @param container The view that contains the ad placement. Used for tracking purposes.
@@ -115,17 +112,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)placeAdInView:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl options:(nullable NSDictionary<NSString *, NSString *> *)options;
 
 /**
- @abstract Track a view that would have been an ad placement, if there is no fill. Only needed when using the basic API inside a table or collection view.
- @discussion Only required if using 'placeAdInView' inside a table or collection view. Nativo requires that ad placements (views designated for ad fill) get tracked, regardless of if there is fill for that view. This method will track the view where the ad would have been, if there had  been fill (With the table/collection view API this is handled automatically). You'll need to add this method at the point when you know there is no ad fill, and you have the view taking the place of where the ad would have been.
+ @abstract Deprecated. No longer needed and may safely be removed. All tracking scenarios are handled automatically.
  @param view The view to be tracked. View should be nested in UIScrollView.
  @param identifier The location identifier or index path with which the ad is associated.
  @param container The scroll view that contains the ad placement. Used for tracking purposes.
  @param sectionUrl The section identifier used to request ads from Nativo.
  
  */
-+ (void)trackViewWithNoAdFill:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl;
-
-
++ (void)trackViewWithNoAdFill:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl __deprecated_msg("No longer needed and may safely be removed. All tracking scenarios are handled automatically.");
 
 /** @name Manage Placements */
 
@@ -140,7 +134,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)mapPlacementId:(NSNumber *)placementId toIndexPath:(NSIndexPath *)indexPath inSection:(NSString *)sectionUrl;
 
 /**
- @abstract Optionally map an ad placement to a specific identifier used with the basic API - 'placeAdInView'.
+ @abstract Optionally map an ad placement to a specific identifier used with the View API - 'placeAdInView'.
  @discussion The placement ID will be sent to you from your account manager as needed.
  @param placementId The id of the placement that should be requested. Will be given to you by your representative at Nativo.
  @param identifier The location identifier with which the ad will be associated.
@@ -273,10 +267,14 @@ NS_ASSUME_NONNULL_BEGIN
 /** @name Modifying SDK Settings */
 
 /**
- Enable placeholder mode. This will reserve a view(placeholder) in the feed for an ad, inject the ad in the feed only when that ad is available and has content. May decrease the need to reload your views. Does not work well with UITableView automatic row heights.
- 
+  Disable placeholder mode. Instead of reserving a view(placeholder) in the feed for an ad, inject the ad in the feed only when that ad is available and has content. You might need to disable placeholders in order to use UITableView automatic row heights.
  */
-+ (void)enablePlaceholderMode;
++ (void)disablePlaceholderMode;
+
+/**
+ Deprecated. Placeholders are enabled by default.
+ */
++ (void)enablePlaceholderMode __deprecated_msg("Placeholder mode is enabled by default");
 
 /**
  Sets the SDK to development mode. By enabling this, Nativo log messages become visible in the console.

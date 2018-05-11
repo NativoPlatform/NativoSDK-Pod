@@ -31,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///@name Observe
 
+/// Used to be notified when a new video source is loading. Use to update UI.
+- (void)willLoadNewPlayerItem;
+
 /// Used to be notified when a new video is being played. Use to update UI and observe player item state as neccesary.
 - (void)didLoadNewPlayerItem:(nullable AVPlayerItem *)playerItem;
 

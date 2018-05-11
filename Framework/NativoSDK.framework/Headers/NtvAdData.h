@@ -38,7 +38,7 @@ typedef NS_ENUM(NSUInteger, NtvCropMode) {
 /**
  An instance of `NtvAdData` stores data of a single Nativo ad. You should never create an instance of `NtvAdData` yourself. They will be requested and handled for you automatically by the NativoSDK. If you do need access to the ad data of a placement, you can access it by calling [NativoSDK getCachedAdAtIndex:forSection:]. However this will not make a request for a new ad, it simply checks the cache for an ad already received.  Typically you will not need to handle NtvAdData unless using the NtvSharing APIs or adding custom behavior.
  
- **Note:** A `NtvAdData` object may or may not contain ad content. If the property `<isAdContentAvailable>` returns `NO`, it means that no ad will show at this placement, however the cell where the ad would have been placed will still need to be tracked.
+ **Note:** A `NtvAdData` object may or may not contain ad content. If the property `<isAdContentAvailable>` returns `NO`, it means that no ad will show at this placement.
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface NtvAdData : NSObject
@@ -152,7 +152,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param enableSmartCrop If cropMode is set to `ntvCropModeAspectFill` and smart crop is enabled, then the image will be intelligently cropped so that the image's focal point is at the center. Enabling smart crop may slow down the request.
  
  */
--(nullable NSURL *)resizePreviewImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop;
+-(nullable NSURL *)resizePreviewImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop __deprecated;
 
 
 /**
@@ -163,7 +163,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param enableSmartCrop If cropMode is set to `ntvCropModeAspectFill` and smart crop is enabled, then the image will be intelligently cropped so that the image's focal point is at the center. Enabling smart crop may slow down the request.
  
  */
--(nullable NSURL *)resizeAuthorImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop;
+-(nullable NSURL *)resizeAuthorImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop __deprecated;
 
 
 @end
