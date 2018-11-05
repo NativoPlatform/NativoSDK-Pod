@@ -2,7 +2,7 @@
 //  NtvSectionDelegate.h
 //  NativoSDK
 //
-//  Copyright © 2017 Nativo, Inc. All rights reserved.
+//  Copyright © 2018 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -38,7 +38,7 @@ extern NSString *const NtvSectionReloadReasonResizeView;
  @note Reloading with `UITableView` or `UICollectionView` will automatically cause the ad placeholder to be removed or resized. You should implement the delegate method `heightForRowAtIndex:` and specify the correct height for ad type in given row.
  
  */
-- (void)section:(NSString *)sectionUrl needsReloadDatasourceAtLocationIdentifier:(nullable id)identifier forReason:(NSString *)reason;
+- (void)section:(NSString *)sectionUrl needsReloadDatasourceAtLocationIdentifier:(id)identifier forReason:(NSString *)reason;
 
 
 @optional
@@ -56,14 +56,25 @@ extern NSString *const NtvSectionReloadReasonResizeView;
 
 /**
  @abstract Return the file name of a specific nib to be used with an ad in the given section, placement identifier, and template type.
- @discussion Optional method used if you need specific ad designs for different sections or placements. Only loads from the main bundle.
+ @discussion Optional method used if you need specific ad layouts for different sections or placements. Only loads from the main bundle.
  @param sectionUrl The section where ads are being injected.
  @param templateType The template type associated with an certain ads (Native, Video, or LandingPage).
  @param locationIdentifier The location identifier of where the Nib should be used.
- @return The file name of the nib to be used for the specified section, placement identifier and template type. Returning `nil` will default to nib set in [NativoSDK registerNib:forAdTemplateType:] if set.
+ @return The file name of the nib to be used for the specified section, placement identifier and template type. Returning `nil` will default to nib or reuse identifier set in [NativoSDK registerNib:forAdTemplateType:] if set.
  
  */
-- (NSString *)section:(NSString *)sectionUrl registerNibNameForAdTemplateType:(NtvAdTemplateType)templateType atLocationIdentifier:(id)locationIdentifier;
+- (nullable NSString *)section:(NSString *)sectionUrl registerNibNameForAdTemplateType:(NtvAdTemplateType)templateType atLocationIdentifier:(id)locationIdentifier;
+
+/**
+ @abstract Return the reuse identifier of a cell that will be used for ads in the given section, placement identifier, and template type.
+ @discussion Optional method used if you need specific ad layouts for different sections or placements.
+ @param sectionUrl The section where ads are being injected.
+ @param templateType The template type associated with the ad (Native or Video).
+ @param locationIdentifier The location identifier of where the Nib should be used.
+ @return The reuse identifier of the cell to be used for the specified section, placement identifier and template type. Returning `nil` will default to nib or reuse identifier set in [NativoSDK registerNib:forAdTemplateType:] if set.
+ 
+ */
+- (nullable NSString *)section:(NSString *)sectionUrl registerReuseIdForAdTemplateType:(NtvAdTemplateType)templateType atLocationIdentifier:(id)locationIdentifier;
 
 
 /// @name Ad Placement Click Events
