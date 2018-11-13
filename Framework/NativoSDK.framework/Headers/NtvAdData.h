@@ -2,7 +2,7 @@
 //  NtvAdData.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2017 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,13 +18,6 @@ typedef NS_ENUM(NSUInteger, NtvAdType) {
     Placeholder
 };
 
-typedef NS_ENUM(NSUInteger, NtvTestAdType) {
-    NtvTestAdTypeNative,
-    NtvTestAdTypeDisplay,
-    NtvTestAdTypeClickToPlayVideo,
-    NtvTestAdTypeScrollToPlayVideo,
-    NtvTestAdTypeNoFill
-};
 
 /** Enum of all the ad types that requre unique template nibs */
 typedef NS_ENUM(NSUInteger, NtvAdTemplateType) {
@@ -36,9 +29,9 @@ typedef NS_ENUM(NSUInteger, NtvAdTemplateType) {
 
 /** Image resize crop modes */
 typedef NS_ENUM(NSUInteger, NtvCropMode) {
-    NtvCropModeAspectFit,
-    NtvCropModeAspectFill,
-    NtvCropModePadding,
+    ntvCropModeAspectFit,
+    ntvCropModeAspectFill,
+    ntvCropModePadding,
 };
 
 

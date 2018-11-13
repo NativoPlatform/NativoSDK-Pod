@@ -2,7 +2,7 @@
 //  NativoSDK.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2017 Nativo, Inc. All rights reserved.
 //
 
 //! Project version number for NativoSDK.
@@ -24,7 +24,7 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvSectionDelegate.h"
 #import "NtvVideoFullScreenControlsDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"4.4.0";
+static NSString * _Nonnull const kNativoSDKVersion = @"4.3.4";
 
 
 
@@ -33,7 +33,7 @@ static NSString * _Nonnull const kNativoSDKVersion = @"4.4.0";
  
  The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the View API. The Table/Collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The View API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
  
- __Version__: 4.4.0
+ __Version__: 4.3.4
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -55,24 +55,14 @@ NS_ASSUME_NONNULL_BEGIN
 /** @name Register Ad Templates */
 
 /**
- @abstract Register a nib that will be used for the specified ad type.
- @discussion This will register a nib to be used globally across all sections and placements. If you need multiple layouts for ads within a section you can use the `NtvSectionDelegate` method - `section:registerNibNameForAdTemplateType:atLocationIdentifier:`
+ @abstract Register nib for a specific ad type for all sections and placements.
+ @discussion Use this method to specify which nib should be used for each template type. This will set that nib to be used globally across all sections and placements. To set a nib for a specific section or placement, you must use the `NtvSectionDelegate` method - `section:registerNibNameForAdTemplateType:atLocationIdentifier:`
  @note The nib's class must conform to NtvAdInterface, NtvVideoAdInterface, or NtvLandingPageInterface, depending on the template type it was registered with.
  @param nib The `UINib` that builds a class that implements one of the NtvAdInterface protocols.
- @param templateType The template type that dictates if this nib should be used for native ads, video ads, or sponsored content landing pages. The view's class must conform to NtvAdInterface, NtvVideoAdInterface, or NtvLandingPageInterface.
+ @param templateType The template type that dictates if this Nib should be used for Native ads, Video ads, or sponsored content landing pages. The Nib's class must conform to NtvAdInterface, NtvVideoAdInterface, or NtvLandingPageInterface.
  
  */
 + (void)registerNib:(UINib *)nib forAdTemplateType:(NtvAdTemplateType)templateType;
-
-/**
- @abstract Register a reuse identifier that will be used to create an ad view using your table or collection view.
- @discussion Use this method if you are using dynamic prototype cells with a table or collection view. The prototype cell in your table or collection view must be assigned the same reuse identifier. This will assign that cell to be globally across all sections and placements for the specified ad type. If you need multiple layouts for ads within a section you can use the `NtvSectionDelegate` method - `section:registerReuseIdForAdTemplateType:atLocationIdentifier:`.
- @note The view must conform to NtvAdInterface or NtvVideoAdInterface depending on the template type it was registered with.
- @param reuseId The reuse identifier that is assigned to a cell in your table or collection view.
- @param templateType The template type dictates for which type of ads this view will be used. The view's class must conform to NtvAdInterface or NtvVideoAdInterface.
- 
- */
-+ (void)registerReuseId:(NSString *)reuseId forAdTemplateType:(NtvAdTemplateType)templateType;
 
 
 
@@ -89,7 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return A cell with Nativo ad content if there is ad data available at given index path, otherwise a cell dequeued using the reuse identifier passed in.
  
  */
-+ (UITableViewCell *)dequeueCellWithAdFromTableView:(UITableView *)tableView usingReuseIdentifierIfNoAd:(NSString *)reuseIdentifier forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary<NSString *, NSString *> *)options;
++ (nullable __kindof UITableViewCell *)dequeueCellWithAdFromTableView:(UITableView *)tableView usingReuseIdentifierIfNoAd:(NSString *)reuseIdentifier forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary<NSString *, NSString *> *)options;
 
 /**
  @abstract Dequeue cell from collection view. Use this method instead of [UICollectionView dequeueReusableCellWithReuseIdentifier:]. Will attempt to inject ads at the index paths specified by the section delegate, otherwise returns cell with the reuse identifier specified.
@@ -102,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return A cell with Nativo ad content if there is ad data available at given index path, otherwise a cell dequeued using the reuse identifier passed in.
  
  */
-+ (UICollectionViewCell *)dequeueCellWithAdFromCollectionView:(UICollectionView *)collectionView usingReuseIdentifierIfNoAd:(NSString *)reuseIdentifier forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary<NSString *, NSString *> *)options;
++ (nullable __kindof UICollectionViewCell *)dequeueCellWithAdFromCollectionView:(UICollectionView *)collectionView usingReuseIdentifierIfNoAd:(NSString *)reuseIdentifier forSection:(NSString *)sectionUrl atPlacementIndex:(NSIndexPath *)index options:(nullable NSDictionary<NSString *, NSString *> *)options;
 
 
 
@@ -265,13 +255,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setCustomFullScreenVideoControlsView:(UIView<NtvVideoFullScreenControlsDelegate> *)controlsView;
 
 /**
- @abstract Optional. Prefetch an ad for given section. Useful to avoid loading views.
+ @abstract Optional. Prefetch an ad for given section. Useful to avoid reloading views.
  @param sectionUrl The section identifier used to request ads from Nativo.
- @param identifier The location identifier with which the ad will be associated.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
  
  */
-+ (void)prefetchAdForSection:(NSString *)sectionUrl atLocationIdentifier:(id)identifier options:(nullable NSDictionary *)options;
++ (void)prefetchAdsForSection:(NSString *)sectionUrl options:(nullable NSDictionary *)options;
 
 
 
@@ -304,7 +293,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param adType The specific type of ad you want to receive
  
  */
-+ (void)enableTestAdvertisementsWithAdType:(NtvTestAdType)adType;
++ (void)enableTestAdvertisementsWithAdType:(NtvAdType)adType;
 
 
 @end
