@@ -2,7 +2,7 @@
 //  NtvSharing.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2017 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -2,14 +2,14 @@
 //  NtvVideoAdInterface.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2017 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 @class AVPlayerItem;
 @class NtvAdData;
 
-
+NS_ASSUME_NONNULL_BEGIN
 
 // Audio session change reasons
 extern NSString *const NtvAudioSessionEndReasonResumeBackgroundAudio;
@@ -28,24 +28,24 @@ extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundA
 ///@name Interface Labels
 
 /// A view that will contain the video for your ad.
-@property (nonatomic, readonly) UIView *videoView;
+- (UIView *)videoView;
 
 /// The label where the title of the ad should display
-@property (nonatomic, readonly) UILabel *titleLabel;
+- (UILabel *)titleLabel;
 
 /// The label where the name of the ad's author/advertiser name should display
-@property (nonatomic, readonly) UILabel *authorNameLabel;
+- (UILabel *)authorNameLabel;
 
 @optional
 
 /// The label where the preview text of the ad should display
-@property (nonatomic, readonly) UILabel *previewTextLabel;
+- (UILabel *)previewTextLabel;
 
 /// The `UIImageView` where author/advertiser image of the ad should display
-@property (nonatomic, readonly) UIImageView *authorImageView;
+- (UIImageView *)authorImageView;
 
 /// The label where the date of the ad should display
-@property (nonatomic, readonly) UILabel *dateLabel;
+- (UILabel *)dateLabel;
 
 
 ///@name Layout formatting
@@ -60,7 +60,7 @@ extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundA
  @abstract If implemented this method will be called to format the ad's date into a string.
  @discussion Use this method when you require specific date-time formatting to match the rest of your app
  */
-- (nonnull NSString *)formatDate:(nullable NSDate *)date;
+- (NSString *)formatDate:(NSDate *)date;
 
 /**
  @abstract A string defining how the video is displayed within an AVPlayerLayer bounds rect.
@@ -68,31 +68,31 @@ extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundA
  and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
  See <AVFoundation/AVAnimation.h> for a description of these options.
  */
-- (nonnull NSString *)videoFillMode;
+- (NSString *)videoFillMode;
 
 
 ///@name Video player notification methods
 
 /// Video player goes full screen
-- (void)videoPlayerViewDidGoFullScreenWithAd:(nonnull NtvAdData *)adData;
+- (void)videoPlayerViewDidGoFullScreenWithAd:(NtvAdData *)adData;
 
 /// Video player did exit full screen
-- (void)videoPlayerViewDidExitFullScreenWithAd:(nonnull NtvAdData *)adData;
+- (void)videoPlayerViewDidExitFullScreenWithAd:(NtvAdData *)adData;
 
 /// Video player will load an AVPlayerItem
-- (void)videoPlayerViewWillLoadPlayerItem:(nullable AVPlayerItem *)playerItem withAd:(nonnull NtvAdData *)adData;
+- (void)videoPlayerViewWillLoadPlayerItem:(nullable AVPlayerItem *)playerItem withAd:(NtvAdData *)adData;
 
 /// Video player did load an AVPlayerItem
-- (void)videoPlayerViewDidLoadPlayerItem:(nullable AVPlayerItem *)playerItem withAd:(nonnull NtvAdData *)adData;
+- (void)videoPlayerViewDidLoadPlayerItem:(nullable AVPlayerItem *)playerItem withAd:(NtvAdData *)adData;
 
 /// Video player rate did change
-- (void)videoPlayerViewPlayerRateChange:(float)rate withAd:(nonnull NtvAdData *)adData;
+- (void)videoPlayerViewPlayerRateChange:(float)rate withAd:(NtvAdData *)adData;
 
 /// Video player did reach end
-- (void)videoPlayerViewDidReachEndWithAd:(nonnull NtvAdData *)adData;
+- (void)videoPlayerViewDidReachEndWithAd:(NtvAdData *)adData;
 
 /// Video player did fail
-- (void)videoPlayerViewDidFailWithError:(NSError *)error withAd:(nonnull NtvAdData *)adData;
+- (void)videoPlayerViewDidFailWithError:(NSError *)error withAd:(NtvAdData *)adData;
 
 
 ///@name Manage Audio Session
@@ -106,13 +106,18 @@ While Nativo will handle the audio session for videos that we control, it is up 
 
  @return If you return 'false', the audio category will not be modified
  */
-- (BOOL)videoPlayerShouldModifyAudioSessionCategory:(nonnull NSString *)category withReason:(nonnull NSString *)reason;
+- (BOOL)videoPlayerShouldModifyAudioSessionCategory:(NSString *)category withReason:(NSString *)reason;
 
 /**
  @abstract Nativo will deactivate the current audio session
  @discussion You may use this method to prevent the audio session from being deactivated. The video player will, by default, disable the audio session when the video has finished playing, or if the app is suspended in the background, but only if background audio was previously playing. Doing so will enable any background audio to resume playing.
  @return If you return 'false', the audio session will not be deactivated
  */
-- (BOOL)videoPlayerShouldDeactiveAudioSessionWithReason:(nonnull NSString *)reason;
+- (BOOL)videoPlayerShouldDeactiveAudioSessionWithReason:(NSString *)reason;
+
+
+
+
 
 @end
+NS_ASSUME_NONNULL_END

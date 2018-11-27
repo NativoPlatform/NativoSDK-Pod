@@ -2,7 +2,7 @@
 //  NtvLandingPageInterface.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2017 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,6 +11,7 @@
 
 @import WebKit;
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol NtvLandingPageInterface <NSObject>
 
 
@@ -19,7 +20,7 @@
  @param link The URL that was clicked.
  
  */
-- (void)handleExternalLink:(nonnull NSURL *)link;
+- (void)handleExternalLink:(NSURL *)link;
 
 
 @optional
@@ -32,8 +33,7 @@
  @warning You should not attempt to assign an object as this web view's delegate. The NativoSDK will act as the delegate for this web view.
  
  */
-@property (nonatomic, readonly) UIWebView *contentWebView;
-
+- (UIWebView *)contentWebView;
 
 /**
  @abstract Should return a NtvContentWebView that will be used as the landing page's body. NtvContentWebView is a subclass of WKWebView.
@@ -41,8 +41,16 @@
  @warning You should not attempt to assign an object as this web view's navigation delegate. The NativoSDK will act as the navigation delegate for this web view.
  
  */
-@property (nonatomic, readonly) WKWebView *contentWKWebView;
+- (WKWebView *)contentWKWebView;
 
+/// @name Ad Data
+
+/**
+ @abstract Called when finished loading a new ad into the landing page.
+ @discussion You will need a reference to the ad in order to use the NtvSharing APIs.
+
+ */
+- (void)didLoadContentWithAd:(NtvAdData *)adData;
 
 
 ///@name Interface Properties
@@ -51,47 +59,38 @@
  @abstract The label that will be used to display the article's title
  
  */
-@property (nonatomic, readonly) UILabel *titleLabel;
+- (UILabel *)titleLabel;
 
 /**
  @abstract The label that will be used to display the advertiser's name
  
  */
-@property (nonatomic, readonly) UILabel *authorNameLabel;
+- (UILabel *)authorNameLabel;
 
 /**
  @abstract The image view that will be used to display the advertiser's logo
  
  */
-@property (nonatomic, readonly) UIImageView *authorImageView;
+- (UIImageView *)authorImageView;
 
 /**
  @abstract The image view that will be used to display the article's preview image
  
  */
-@property (nonatomic, readonly) UIImageView *previewImageView;
+- (UIImageView *)previewImageView;
 
 /**
  @abstract The label that will be used to display the article's previewText
  
  */
-@property (nonatomic, readonly) UILabel *previewTextLabel;
+- (UILabel *)previewTextLabel;
 
 /**
  @abstract The label that will be used to display the article's date
  
  */
-@property (nonatomic, readonly) UILabel *dateLabel;
+- (UILabel *)dateLabel;
 
-
-/// @name Ad Data
-
-/**
- @abstract Called when finished loading a new ad into the landing page.
- @discussion You will need a reference to the ad in order to use the NtvSharing APIs.
- 
- */
-- (void)didLoadContentWithAd:(nonnull NtvAdData *)adData;
 
 ///@name Layout Formatting
 
@@ -100,7 +99,7 @@
  @discussion Use this method when you require specific date-time formatting to match the rest of your app
  
  */
-- (nonnull NSString *)formatDate:(nullable NSDate *)date;
+- (NSString *)formatDate:(nullable NSDate *)date;
 
 
 /// @name Manage Web View Events
@@ -127,3 +126,4 @@
 
 
 @end
+NS_ASSUME_NONNULL_END
