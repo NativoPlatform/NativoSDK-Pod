@@ -147,6 +147,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) NSNumber *placementId;
 
 
+/**
+ @abstract Object that identifies the ad's location. Will most likely be an `NSIndexPath`
+ */
+@property (nullable, readonly, nonatomic) id locationIdentifier;
+
+
 
 
 ///@name Remotely Resizing an ad Image
