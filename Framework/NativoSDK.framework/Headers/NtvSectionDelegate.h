@@ -92,6 +92,17 @@ extern NSString *const NtvSectionReloadReasonResizeView;
 - (void)section:(NSString *)sectionUrl needsDisplayClickoutURL:(NSURL *)url;
 
 
+/// @name Handle Video
+
+/**
+ @abstract Return the view where you want the full screen video controls to be injected. Default is `window.rootViewController.view`.
+ @discussion Optional method. By default will inject in `window.rootViewController.view`.
+ @return The view where the full screen video controls will be injected.
+ 
+ */
+- (UIView *)getContainerForFullScreenVideoInSection:(NSString *)sectionUrl;
+
+
 /// @name Handle Ad Response
 
 /**

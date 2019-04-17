@@ -32,7 +32,7 @@
  @warning You should not attempt to assign an object as this web view's delegate. The NativoSDK will act as the delegate for this web view.
  
  */
-@property (nonatomic, readonly) UIWebView *contentWebView;
+@property (nonatomic, readonly, null_unspecified) UIWebView *contentWebView;
 
 
 /**
@@ -41,7 +41,7 @@
  @warning You should not attempt to assign an object as this web view's navigation delegate. The NativoSDK will act as the navigation delegate for this web view.
  
  */
-@property (nonatomic, readonly) WKWebView *contentWKWebView;
+@property (nonatomic, readonly, null_unspecified) WKWebView *contentWKWebView;
 
 
 
@@ -51,37 +51,37 @@
  @abstract The label that will be used to display the article's title
  
  */
-@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *titleLabel;
 
 /**
  @abstract The label that will be used to display the advertiser's name
  
  */
-@property (nonatomic, readonly) UILabel *authorNameLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *authorNameLabel;
 
 /**
  @abstract The image view that will be used to display the advertiser's logo
  
  */
-@property (nonatomic, readonly) UIImageView *authorImageView;
+@property (nonatomic, readonly, null_unspecified) UIImageView *authorImageView;
 
 /**
  @abstract The image view that will be used to display the article's preview image
  
  */
-@property (nonatomic, readonly) UIImageView *previewImageView;
+@property (nonatomic, readonly, null_unspecified) UIImageView *previewImageView;
 
 /**
  @abstract The label that will be used to display the article's previewText
  
  */
-@property (nonatomic, readonly) UILabel *previewTextLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *previewTextLabel;
 
 /**
  @abstract The label that will be used to display the article's date
  
  */
-@property (nonatomic, readonly) UILabel *dateLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *dateLabel;
 
 
 /// @name Ad Data
@@ -123,7 +123,7 @@
  @abstract Handle web view load failures
 
  */
-- (void)contentWebViewDidFailLoadWithError:(NSError *)error;
+- (void)contentWebViewDidFailLoadWithError:(nullable NSError *)error;
 
 
 @end

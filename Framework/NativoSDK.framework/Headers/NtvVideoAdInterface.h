@@ -7,16 +7,16 @@
 
 #import <Foundation/Foundation.h>
 @class AVPlayerItem;
+@class AVPlayer;
 @class NtvAdData;
 
 
-
 // Audio session change reasons
-extern NSString *const NtvAudioSessionEndReasonResumeBackgroundAudio;
-extern NSString *const NtvAudioSessionEndReasonAppSuspended;
-extern NSString *const NtvAudioCategoryChangeReasonVideoFullscreen;
-extern NSString *const NtvAudioCategoryChangeReasonVideoExitFullscreen;
-extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundAudio;
+extern NSString * _Nonnull const NtvAudioSessionEndReasonResumeBackgroundAudio;
+extern NSString * _Nonnull const NtvAudioSessionEndReasonAppSuspended;
+extern NSString * _Nonnull const NtvAudioCategoryChangeReasonVideoFullscreen;
+extern NSString * _Nonnull const NtvAudioCategoryChangeReasonVideoExitFullscreen;
+extern NSString * _Nonnull const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundAudio;
 
 
 /**
@@ -28,24 +28,24 @@ extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundA
 ///@name Interface Labels
 
 /// A view that will contain the video for your ad.
-@property (nonatomic, readonly) UIView *videoView;
+@property (nonatomic, readonly, null_unspecified) UIView *videoView;
 
 /// The label where the title of the ad should display
-@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *titleLabel;
 
 /// The label where the name of the ad's author/advertiser name should display
-@property (nonatomic, readonly) UILabel *authorNameLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *authorNameLabel;
 
 @optional
 
 /// The label where the preview text of the ad should display
-@property (nonatomic, readonly) UILabel *previewTextLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *previewTextLabel;
 
 /// The `UIImageView` where author/advertiser image of the ad should display
-@property (nonatomic, readonly) UIImageView *authorImageView;
+@property (nonatomic, readonly, null_unspecified) UIImageView *authorImageView;
 
 /// The label where the date of the ad should display
-@property (nonatomic, readonly) UILabel *dateLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *dateLabel;
 
 
 ///@name Layout formatting
@@ -73,6 +73,9 @@ extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundA
 
 ///@name Video player notification methods
 
+/// Video player did load
+- (void)videoPlayerViewDidLoadWithPlayer:(nonnull AVPlayer *)player;
+
 /// Video player goes full screen
 - (void)videoPlayerViewDidGoFullScreenWithAd:(nonnull NtvAdData *)adData;
 
@@ -92,7 +95,7 @@ extern NSString *const NtvAudioCategoryChangeReasonPlayMutedVideoWithBackgroundA
 - (void)videoPlayerViewDidReachEndWithAd:(nonnull NtvAdData *)adData;
 
 /// Video player did fail
-- (void)videoPlayerViewDidFailWithError:(NSError *)error withAd:(nonnull NtvAdData *)adData;
+- (void)videoPlayerViewDidFailWithError:(nullable NSError *)error withAd:(nonnull NtvAdData *)adData;
 
 
 ///@name Manage Audio Session

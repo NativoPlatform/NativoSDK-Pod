@@ -16,24 +16,24 @@
 ///@name Interface Labels
 
 /// The label where the title of the ad should display
-@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *titleLabel;
 
 /// The label where the name of the ad's author/advertiser name should display
-@property (nonatomic, readonly) UILabel *authorNameLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *authorNameLabel;
 
 @optional
 
 /// The label where the preview text of the ad should display
-@property (nonatomic, readonly) UILabel *previewTextLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *previewTextLabel;
 
 /// The `UIImageView` where image of the ad should display
-@property (nonatomic, readonly) UIImageView *adImageView;
+@property (nonatomic, readonly, null_unspecified) UIImageView *adImageView;
 
 /// The `UIImageView` where author/advertiser image of the ad should display
-@property (nonatomic, readonly) UIImageView *authorImageView;
+@property (nonatomic, readonly, null_unspecified) UIImageView *authorImageView;
 
 /// The label where the date of the ad should display
-@property (nonatomic, readonly) UILabel *dateLabel;
+@property (nonatomic, readonly, null_unspecified) UILabel *dateLabel;
 
 
 ///@name Layout formatting
