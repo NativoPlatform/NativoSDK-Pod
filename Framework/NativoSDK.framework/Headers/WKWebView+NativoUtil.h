@@ -2,7 +2,7 @@
 //  WKWebView+NativoUtil.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <WebKit/WebKit.h>

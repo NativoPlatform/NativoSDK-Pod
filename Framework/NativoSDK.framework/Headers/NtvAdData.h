@@ -2,7 +2,7 @@
 //  NtvAdData.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,6 +13,7 @@
 typedef NS_ENUM(NSUInteger, NtvAdType) {
     Native,
     Display,
+    StandardDisplay,
     ClickToPlayVideo,
     ScrollToPlayVideo,
     Placeholder
@@ -21,8 +22,11 @@ typedef NS_ENUM(NSUInteger, NtvAdType) {
 typedef NS_ENUM(NSUInteger, NtvTestAdType) {
     NtvTestAdTypeNative,
     NtvTestAdTypeDisplay,
+    NtvTestAdTypeAdChoicesDisplay,
+    NtvTestAdTypeStandardDisplay,
     NtvTestAdTypeClickToPlayVideo,
     NtvTestAdTypeScrollToPlayVideo,
+    NtvTestAdTypeAdChoicesVideo,
     NtvTestAdTypeNoFill
 };
 
@@ -30,6 +34,7 @@ typedef NS_ENUM(NSUInteger, NtvTestAdType) {
 typedef NS_ENUM(NSUInteger, NtvAdTemplateType) {
     NtvAdTemplateTypeNative = 1,
     NtvAdTemplateTypeVideo,
+    NtvAdTemplateTypeStandardDisplay,
     NtvAdTemplateTypeLandingPage
 };
 
@@ -152,7 +157,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nullable, readonly, nonatomic) id locationIdentifier;
 
-
+/**
+ @abstract The size of the standard display ad. If ad type not 'StandardDisplay' this will return CGSizeZero.
+ */
+@property (nonatomic) CGSize standardDisplaySize;
 
 
 ///@name Remotely Resizing an ad Image

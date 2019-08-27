@@ -2,7 +2,7 @@
 //  NtvVideoFullScreenControlsDelegate.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,14 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///@name Set Player
 
+/// Return the view that will be used to diplay video
+@property (nonatomic, readonly) UIView *videoContainer;
+
 /// Set the given player in your Custom full screen controls class. Use to play, pause, observe state.
 - (void)setPlayer:(nullable AVPlayer *)player;
 
-/// Use this method to insert given playerLayer into your custom full screen controls, otherwise video will not be shown.
-- (void)insertPlayerLayerIntoView:(nullable AVPlayerLayer *)playerLayer;
-
 /// Use this method to return a button that can be used to clickout to an advertisers site, where users can learn more. A new click target will automatically be added to this button to open the ad's link in Safari.
 - (UIButton *)learnMoreButton;
+
 
 @optional
 

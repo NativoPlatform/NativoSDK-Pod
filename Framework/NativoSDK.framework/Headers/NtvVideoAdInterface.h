@@ -2,7 +2,7 @@
 //  NtvVideoAdInterface.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -47,6 +47,12 @@ extern NSString * _Nonnull const NtvAudioCategoryChangeReasonPlayMutedVideoWithB
 /// The label where the date of the ad should display
 @property (nonatomic, readonly, null_unspecified) UILabel *dateLabel;
 
+/**
+ @abstract The view that will contain the AdChoices icon button.
+ @discussion This will optionally be displayed only if the ad returned uses audience data targeting. The AdChoices button will click-out to a Nativo website that explains AdChoices and audience targeting. If the ad doesn't use targeting, then this view will be set to zero height and width. Your ad view should handle this by setting appropriate constraints to handle this change in size. Will add 3px insets on each side. Recommended 20x20 width and height. You can test this by calling `NativoSDK.enableTestAdvertisementsWithAdType(NtvTestAdTypeAdChoicesDisplay)`.
+ */
+@property (nonatomic, readonly, null_unspecified) UIView *adChoicesIconView;
+
 
 ///@name Layout formatting
 
@@ -63,8 +69,13 @@ extern NSString * _Nonnull const NtvAudioCategoryChangeReasonPlayMutedVideoWithB
 - (nonnull NSString *)formatDate:(nullable NSDate *)date;
 
 /**
+ @abstract Defaults to true. Return false if you don't need 'By' prepended to the author name.
+ */
+- (BOOL)shouldPrependAuthorByline;
+
+/**
  @abstract A string defining how the video is displayed within an AVPlayerLayer bounds rect.
- @discusssion Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+ @discussion Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
  and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
  See <AVFoundation/AVAnimation.h> for a description of these options.
  */

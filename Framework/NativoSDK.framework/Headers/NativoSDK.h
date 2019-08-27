@@ -2,7 +2,7 @@
 //  NativoSDK.h
 //  NativoSDK
 //
-//  Copyright © 2018 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 //! Project version number for NativoSDK.
@@ -19,21 +19,23 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvAdData.h"
 #import "NtvSharing.h"
 #import "NtvAdInterface.h"
+#import "NtvStandardDisplayAdInterface.h"
 #import "NtvVideoAdInterface.h"
 #import "NtvLandingPageInterface.h"
 #import "NtvSectionDelegate.h"
 #import "NtvVideoFullScreenControlsDelegate.h"
+#import "NtvCollectionViewCellMaxWidthDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"4.5.0";
+static NSString * _Nonnull const kNativoSDKVersion = @"5.0.0";
 
 
 
 /**
- The `NativoSDK` is used to retrieve true native, native display, and video ads from Nativo. The NativoSDK is packed with features that will help you integrate native ads in your feed in a short amount of time.
+ The `NativoSDK` is used to retrieve true native, native display, standard display and video ads from Nativo. The NativoSDK is packed with features that will help you integrate native ads in your feed in a short amount of time.
  
  The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the View API. The Table/Collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The View API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
  
- __Version__: 4.5.0
+ __Version__: 5.0.0
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -59,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion This will register a nib to be used globally across all sections and placements. If you need multiple layouts for ads within a section you can use the `NtvSectionDelegate` method - `section:registerNibNameForAdTemplateType:atLocationIdentifier:`
  @note The nib's class must conform to NtvAdInterface, NtvVideoAdInterface, or NtvLandingPageInterface, depending on the template type it was registered with.
  @param nib The `UINib` that builds a class that implements one of the NtvAdInterface protocols.
- @param templateType The template type that dictates if this nib should be used for native ads, video ads, or sponsored content landing pages. The view's class must conform to NtvAdInterface, NtvVideoAdInterface, or NtvLandingPageInterface.
+ @param templateType The template type that dictates if this nib should be used for native ads, video ads, or sponsored content landing pages. The view's class must conform to NtvAdInterface, NtvVideoAdInterface, NtvStandardDisplayAdInterface or NtvLandingPageInterface.
  
  */
 + (void)registerNib:(UINib *)nib forAdTemplateType:(NtvAdTemplateType)templateType;
@@ -73,6 +75,16 @@ NS_ASSUME_NONNULL_BEGIN
  
  */
 + (void)registerReuseId:(NSString *)reuseId forAdTemplateType:(NtvAdTemplateType)templateType;
+
+/**
+ @abstract Register a Class that will be used to create an ad view.
+ @discussion Use this method if you are creating you ad views programatically without the use of Nibs or dynamic prototype cells. If you need multiple layouts for ads within a section you can use the `NtvSectionDelegate` method - `section:registerClassNameForAdTemplateType:atLocationIdentifier:`.
+ @note The class **must** be a UIView subclass that conform to the NtvAdInterface, NtvVideoAdInterface, NtvStandardDisplayAdInterface, or the NtvLandingPageInterface depending on the template type it was registered with.
+ @param className The class that is a UIView subclass that conforms to one of the `NtvAdInterface`s
+ @param templateType The template type dictates for which type of ads this view will be used. The view's class must conform to NtvAdInterface, NtvVideoAdInterface, NtvStandardDisplayAdInterface or NtvLandingPageInterface.
+ 
+ */
++ (void)registerClass:(Class)className forAdTemplateType:(NtvAdTemplateType)templateType;
 
 
 
@@ -121,37 +133,32 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)placeAdInView:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl options:(nullable NSDictionary<NSString *, NSString *> *)options;
 
+
+
+/** @name Prefetching */
+
 /**
- @abstract Deprecated. No longer needed and may safely be removed. All tracking scenarios are handled automatically.
- @param view The view to be tracked. View should be nested in UIScrollView.
- @param identifier The location identifier or index path with which the ad is associated.
- @param container The scroll view that contains the ad placement. Used for tracking purposes.
+ @abstract Optional. Prefetches an ad for given section. Useful to avoid loading views.
+ @discussion You can greatly increase the performance of your app's scrolling by prefetching ad data before it is required. Read the iOS optimization guide for tips and strategies https://sdk.nativo.com/docs/optimization_ios
  @param sectionUrl The section identifier used to request ads from Nativo.
- 
- */
-+ (void)trackViewWithNoAdFill:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl __deprecated_msg("No longer needed and may safely be removed. All tracking scenarios are handled automatically.");
-
-/** @name Manage Placements */
-
-/**
- @abstract Optionally map an ad placement to a specific indexPath in your table or collection view.
- @discussion The placement ID will be sent to you from your account manager as needed.
- @param placementId The id of the placement that should be requested on the indexPath. Will be given to you by your representative at Nativo.
- @param indexPath The index path with which the ad is associated.
- @param sectionUrl The section identifier that the placement belongs to.
- 
- */
-+ (void)mapPlacementId:(NSNumber *)placementId toIndexPath:(NSIndexPath *)indexPath inSection:(NSString *)sectionUrl;
-
-/**
- @abstract Optionally map an ad placement to a specific identifier used with the View API - 'placeAdInView'.
- @discussion The placement ID will be sent to you from your account manager as needed.
- @param placementId The id of the placement that should be requested. Will be given to you by your representative at Nativo.
  @param identifier The location identifier with which the ad will be associated.
- @param sectionUrl The section identifier that the placement belongs to.
+ @param options Dictionary of options used to request ads. Pass 'nil' for no options.
  
  */
-+ (void)mapPlacementId:(NSNumber *)placementId toLocationIdentifier:(id)identifier inSection:(NSString *)sectionUrl;
++ (void)prefetchAdForSection:(NSString *)sectionUrl atLocationIdentifier:(id)identifier options:(nullable NSDictionary *)options;
+
+
+
+/** @name Web View API */
+
+/**
+ @abstract Inject an html based ad into a webview used by an article page.
+ @discussion Used for injecting Nativo ads into your article content pages that are web views. Will load Nativo javascript into the page and attempt to load ads in placements specified in Nativo's admin controls. Speak to your account manager if this is something you wish to do.
+ @param webView WKWebView where ad(s) will be injected.
+ @param sectionUrl The section URL with which the ad will be associated.
+ 
+ */
++ (void)placeAdInWebView:(WKWebView *)webView forSection:(NSString *)sectionUrl;
 
 
 
@@ -199,7 +206,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract Get ad at given indexPath.
- @discussion Use this method when you need to check an ads [NtvAdData adType] or get its [NtvAdData sponsoredArticleURL]. This method will not make a request to get the ad, it simply checks if an ad exists in cache. Requests are made as needed by 'dequeueCell' methods.
+ @discussion Use this method when you need to check an ads [NtvAdData adType] or get its [NtvAdData sponsoredArticleURL]. This method will not make a request to get the ad, it simply checks if an ad exists in cache. Requests are made as needed when calling TableView/CollectionView API, View API, or Prefetch API methods.
  @param identifier The location identifier or indexPath with which the ad is associated.
  @param sectionUrl The section identifier used to request ads from Nativo.
  @return NtvAdData Ad data if available at location identifier.
@@ -255,7 +262,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)makeDFPRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atIndexPath:(NSIndexPath *)indexPath; // Convenience for use with table or collection views
 
 
-/** @name Miscellaneous */
+
+/** @name Custom Video Controls */
 
 /**
  @abstract Optional. Call this method to override the default full screen video controls with custom UI.
@@ -264,28 +272,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)setCustomFullScreenVideoControlsView:(UIView<NtvVideoFullScreenControlsDelegate> *)controlsView;
 
-/**
- @abstract Optional. Prefetch an ad for given section. Useful to avoid loading views.
- @param sectionUrl The section identifier used to request ads from Nativo.
- @param identifier The location identifier with which the ad will be associated.
- @param options Dictionary of options used to request ads. Pass 'nil' for no options.
- 
- */
-+ (void)prefetchAdForSection:(NSString *)sectionUrl atLocationIdentifier:(id)identifier options:(nullable NSDictionary *)options;
-
 
 
 /** @name Modifying SDK Settings */
-
-/**
-  Disable placeholder mode. Instead of reserving a view(placeholder) in the feed for an ad, inject the ad in the feed only when that ad is available and has content. You might need to disable placeholders in order to use UITableView automatic row heights.
- */
-+ (void)disablePlaceholderMode;
-
-/**
- Enable placeholder mode. Will attempt to reserve a place for an ad while requests are being made. Call this method if you are using the `placeAdInView` API and you are working under the assumption that all ad units will get fill until proven otherwise.
- */
-+ (void)enablePlaceholderMode;
 
 /**
  Sets the SDK to development mode. By enabling this, Nativo log messages become visible in the console.
@@ -306,6 +295,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)enableTestAdvertisementsWithAdType:(NtvTestAdType)adType;
 
+/**
+ Disable placeholder mode. Instead of reserving a view(placeholder) in the feed for an ad, inject the ad in the feed only when that ad is available and has content. You might need to disable placeholders in order to use UITableView automatic row heights.
+ */
++ (void)disablePlaceholderMode;
+
+/**
+ Enable placeholder mode. Will attempt to reserve a place for an ad while requests are being made. Call this method if you are using the `placeAdInView` API and you are working under the assumption that all ad units will get fill until proven otherwise.
+ */
++ (void)enablePlaceholderMode;
 
 @end
 NS_ASSUME_NONNULL_END
