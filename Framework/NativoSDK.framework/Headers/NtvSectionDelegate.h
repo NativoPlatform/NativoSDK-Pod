@@ -113,6 +113,13 @@ extern NSString *const NtvSectionReloadReasonResizeView;
  */
 - (UIView *)getContainerForFullScreenVideoInSection:(NSString *)sectionUrl;
 
+/**
+@abstract When the user clicks the share button on a video they will be presented with a UIActivityController. By default will be presented using the window's root view controller.
+@discussion Optional method. By default will be presented in the window's root view controller.
+
+*/
+- (void)section:(NSString *)sectionUrl shouldPresentShareActivity:(UIActivityViewController *)shareActivity;
+
 
 /// @name Handle Ad Response
 
