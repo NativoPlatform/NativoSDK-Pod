@@ -13,7 +13,6 @@ extern const unsigned char NativoSDKVersionString[];
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "UIWebView+NativoUtil.h"
 #import "WKWebView+NativoUtil.h"
 #import "NtvContentWebView.h"
 #import "NtvAdData.h"
@@ -26,7 +25,7 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvVideoFullScreenControlsDelegate.h"
 #import "NtvCollectionViewCellMaxWidthDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"5.0.2";
+static NSString * _Nonnull const kNativoSDKVersion = @"5.1.0";
 
 
 
@@ -35,7 +34,7 @@ static NSString * _Nonnull const kNativoSDKVersion = @"5.0.2";
  
  The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the View API. The Table/Collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The View API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
  
- __Version__: 5.0.2
+ __Version__: 5.1.0
  
  */
 NS_ASSUME_NONNULL_BEGIN

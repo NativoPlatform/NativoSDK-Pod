@@ -76,8 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract The ad's type. Certain ad types require different ad templates and on-click behaviors.
- @discussion The ad types are Native, Click-out, Autoplay Video, and Click-to-Play Video. Since certain ad types should be handled differently it is important to check this property.
- Click-out ads require a dedicated web view that consume the full screen. Native ads should be displayed in a UIViewController containing UILabel for title and UIWebView or WKWebView for the ad's content.
+ @discussion The ad types are Native, Click-out, Autoplay Video, and Click-to-Play Video.
  */
 @property (readonly, nonatomic) NtvAdType adType;
 
@@ -90,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract URL to the ad's content.
- @discussion Use this URL for both native and click-out ads. For click-out, display ad in a full-screen web view. For native ads, load this url in a WKWebView or UIWebView. The web view should be within a UIViewController that is style to look like the rest of your app using native components such as UILabels and UIImageViews for the title and article image. 
+ @discussion Use this URL for both native and click-out ads. 
  */
 @property (nullable, readonly, nonatomic) NSURL* sponsoredArticleURL;
 

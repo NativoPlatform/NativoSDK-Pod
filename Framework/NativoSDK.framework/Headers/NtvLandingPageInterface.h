@@ -27,15 +27,6 @@
 /// @name Content Web View
 
 /**
- @abstract Should return an empty web view that will be used as the landing page's content.
- @discussion The web view will be resized by the NativoSDK based on the length of content. For this reason the entire landing page should be nested in a scroll view so that the content can scroll if neccessary. Please be careful to not apply auto-layout constraints that might conflict with the webviews intrinsic height as is grows or shrinks.
- @warning You should not attempt to assign an object as this web view's delegate. The NativoSDK will act as the delegate for this web view.
- 
- */
-@property (nonatomic, readonly, null_unspecified) UIWebView *contentWebView;
-
-
-/**
  @abstract Should return a NtvContentWebView that will be used as the landing page's body. NtvContentWebView is a subclass of WKWebView.
  @discussion The web view will be resized by the NativoSDK based on the length of content. For this reason the entire landing page should be nested in a scroll view so that the content can scroll if neccessary. Please be careful to not apply auto-layout constraints that might conflict with the webviews intrinsic height as is grows or shrinks.
  @warning You should not attempt to assign an object as this web view's navigation delegate. The NativoSDK will act as the navigation delegate for this web view.
