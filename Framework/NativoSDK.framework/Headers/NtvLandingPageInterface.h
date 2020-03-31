@@ -105,10 +105,11 @@
 
 
 /**
- @abstract Optionally implement additional logic when content web view finishes loading article
+ @abstract Optionally implement additional logic when content web view finishes loading article. May get called multiple times as content gets loaded in.
  
  */
 - (void)contentWebViewDidFinishLoad;
+
 
 /**
  @abstract Handle web view load failures
