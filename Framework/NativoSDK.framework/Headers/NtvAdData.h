@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract The ad's type. Certain ad types require different ad templates and on-click behaviors.
- @discussion The ad types are Native, Click-out, Autoplay Video, and Click-to-Play Video.
+ @discussion The ad types are Native, Display, Autoplay Video, and Click-to-Play Video.
  */
 @property (readonly, nonatomic) NtvAdType adType;
 

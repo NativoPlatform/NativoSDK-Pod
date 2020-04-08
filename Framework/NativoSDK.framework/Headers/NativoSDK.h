@@ -25,7 +25,7 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvVideoFullScreenControlsDelegate.h"
 #import "NtvCollectionViewCellMaxWidthDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"5.1.2";
+static NSString * _Nonnull const kNativoSDKVersion = @"5.2.0";
 
 
 
@@ -34,7 +34,7 @@ static NSString * _Nonnull const kNativoSDKVersion = @"5.1.2";
  
  The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the View API. The Table/Collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The View API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
  
- __Version__: 5.1.2
+ __Version__: 5.2.0
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -130,20 +130,29 @@ NS_ASSUME_NONNULL_BEGIN
  @return Will return true if Nativo ad returned with fill and was successfully injected into the view
  
  */
-+ (BOOL)placeAdInView:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIScrollView *)container forSection:(NSString *)sectionUrl options:(nullable NSDictionary<NSString *, NSString *> *)options;
++ (BOOL)placeAdInView:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIView *)container forSection:(NSString *)sectionUrl options:(nullable NSDictionary<NSString *, NSString *> *)options;
 
 
 
 /** @name Prefetching */
 
 /**
- @abstract Optional. Prefetches an ad for given section. Useful to avoid loading views.
+ @abstract Optional. Prefetches an ad for given section for any location. Useful to avoid loading views.
  @discussion You can greatly increase the performance of your app's scrolling by prefetching ad data before it is required. Read the iOS optimization guide for tips and strategies https://sdk.nativo.com/docs/optimization_ios
  @param sectionUrl The section identifier used to request ads from Nativo.
- @param identifier The location identifier with which the ad will be associated.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
  
  */
++ (void)prefetchAdForSection:(NSString *)sectionUrl options:(nullable NSDictionary *)options;
+
+/**
+ @abstract Optional. Prefetches an ad for given section at specific location. Useful to avoid loading views.
+ @discussion The same as `prefetchAdForSection()` however this only loads an ad for a specific location. https://sdk.nativo.com/docs/optimization_ios
+ @param sectionUrl The section identifier used to request ads from Nativo.
+ @param identifier The location identifier for the ad.
+ @param options Dictionary of options used to request ads. Pass 'nil' for no options.
+
+*/
 + (void)prefetchAdForSection:(NSString *)sectionUrl atLocationIdentifier:(id)identifier options:(nullable NSDictionary *)options;
 
 

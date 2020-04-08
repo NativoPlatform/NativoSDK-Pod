@@ -15,6 +15,11 @@
  */
 @protocol NtvCollectionViewCellMaxWidthDelegate <NSObject>
 
+/**
+@abstract Set the maximum width of the cell
+@discussion Implement this method in your UICollectionViewCell subclass. Create a layout constraint for width and place it in the cell.
+@param maxWidth the desired width of the cell
+*/
 - (void)setMaxWidth:(CGFloat)maxWidth;
 
 @end
