@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NativoSDK"
-  s.version      = "5.2.0-alpha.5"
+  s.version      = "5.2.1-alpha.1"
   s.summary      = "Monetize your app with native article, native display, standard display and video ads from Nativo."
   s.description  = "The NativoSDK is used to retrieve native, video, and display ads from Nativo. The NativoSDK is packed with features that will help you integrate native ads in your feed in a short amount of time."
   s.homepage     = "http://sdk.nativo.com"
