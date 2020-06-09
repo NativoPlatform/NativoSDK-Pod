@@ -46,6 +46,8 @@ typedef NS_ENUM(NSUInteger, NtvCropMode) {
     NtvCropModePadding,
 };
 
+// Ad size (3x3) for use with Google Ads
+extern CGSize const kGADAdSizeNativoDefault;
 
 /**
  An instance of `NtvAdData` stores data of a single Nativo ad. You should never create an instance of `NtvAdData` yourself. They will be requested and handled for you automatically by the NativoSDK. If you do need access to the ad data of a placement, you can access it by calling [NativoSDK getCachedAdAtIndex:forSection:]. However this will not make a request for a new ad, it simply checks the cache for an ad already received.  Typically you will not need to handle NtvAdData unless using the NtvSharing APIs or adding custom behavior.
