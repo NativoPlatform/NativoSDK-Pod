@@ -25,7 +25,7 @@ extern const unsigned char NativoSDKVersionString[];
 #import "NtvVideoFullScreenControlsDelegate.h"
 #import "NtvCollectionViewCellMaxWidthDelegate.h"
 
-static NSString * _Nonnull const kNativoSDKVersion = @"5.2.2-alpha.3";
+static NSString * _Nonnull const kNativoSDKVersion = @"5.2.2-alpha.4";
 
 
 
