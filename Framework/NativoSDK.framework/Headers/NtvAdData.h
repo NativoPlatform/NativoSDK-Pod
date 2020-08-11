@@ -16,7 +16,6 @@ typedef NS_ENUM(NSUInteger, NtvAdType) {
     StandardDisplay,
     ClickToPlayVideo,
     ScrollToPlayVideo,
-    Story,
     Placeholder
 };
 
@@ -28,7 +27,6 @@ typedef NS_ENUM(NSUInteger, NtvTestAdType) {
     NtvTestAdTypeClickToPlayVideo,
     NtvTestAdTypeScrollToPlayVideo,
     NtvTestAdTypeAdChoicesVideo,
-    NtvTestAdTypeStory,
     NtvTestAdTypeNoFill
 };
 
