@@ -2,13 +2,13 @@
 //  NtvSectionDelegate.h
 //  NativoSDK
 //
-//  Copyright © 2019 Nativo, Inc. All rights reserved.
+//  Copyright © 2020 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "NtvLandingPageInterface.h"
-#import "NtvAdData.h"
+#import <NativoSDK/NtvLandingPageInterface.h>
+#import <NativoSDK/NtvAdData.h>
 @class NtvAdData;
 
 NS_ASSUME_NONNULL_BEGIN
