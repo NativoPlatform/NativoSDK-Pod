@@ -2,12 +2,10 @@
 //  NtvAdInterface.h
 //  NativoSDK
 //
-//  Copyright © 2020 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <NativoSDK/NtvAdData.h>
-
 
 /**
   The `NtvAdInterface` protocol is used by the NativoSDK to populate views with ad data. It should be implemented by a view used in your articles list.
@@ -45,19 +43,6 @@
  @discussion This will optionally be displayed only if the ad returned uses audience data targeting. The AdChoices button will click-out to a Nativo website that explains AdChoices and audience targeting. If the ad doesn't use targeting, then this view will be set to zero height and width. Your ad view should handle this by setting appropriate constraints to handle this change in size. Will add 3px insets on each side. Recommended 20x20 width and height. You can test this by calling `NativoSDK.enableTestAdvertisementsWithAdType(NtvTestAdTypeAdChoicesDisplay)`.
  */
 @property (nonatomic, readonly, null_unspecified) UIView *adChoicesIconView;
-
-
-///@name Sharing
-
-/**
-  @abstract Will be set by the NativoSDK. Use to share link to the ad content.
- */
-@property (nonatomic, nullable) NSString *shareUrl;
-
-/**
-  @abstract Call this function pointer when a user succesfully shares the ad's shareUrl
- */
-@property (nonatomic, nonnull) TrackDidShareBlock trackDidShare;
 
 
 ///@name Layout formatting

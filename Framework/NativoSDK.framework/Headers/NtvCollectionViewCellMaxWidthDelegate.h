@@ -2,7 +2,7 @@
 //  NtvCollectionViewCellMaxWidthDelegate.h
 //  NativoSDK
 //
-//  Copyright © 2020 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

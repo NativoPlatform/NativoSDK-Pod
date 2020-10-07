@@ -2,13 +2,13 @@
 //  NtvVideoAdInterface.h
 //  NativoSDK
 //
-//  Copyright © 2020 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <NativoSDK/NtvAdData.h>
 @class AVPlayerItem;
 @class AVPlayer;
+@class NtvAdData;
 
 
 // Audio session change reasons
@@ -128,18 +128,5 @@ While Nativo will handle the audio session for videos that we control, it is up 
  @return If you return 'false', the audio session will not be deactivated
  */
 - (BOOL)videoPlayerShouldDeactiveAudioSessionWithReason:(nonnull NSString *)reason;
-
-
-///@name Sharing
-
-/**
-  @abstract Will be set by the NativoSDK. Use to share link to the ad content.
- */
-@property (nonatomic, nullable) NSString *shareUrl;
-
-/**
-  @abstract Call this function pointer when a user succesfully shares the ad's shareUrl
- */
-@property (nonatomic, nonnull) TrackDidShareBlock trackDidShare;
 
 @end

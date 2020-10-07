@@ -2,7 +2,7 @@
 //  NtvAdData.h
 //  NativoSDK
 //
-//  Copyright © 2020 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,7 +16,6 @@ typedef NS_ENUM(NSUInteger, NtvAdType) {
     StandardDisplay,
     ClickToPlayVideo,
     ScrollToPlayVideo,
-    Story,
     Placeholder
 };
 
@@ -28,7 +27,6 @@ typedef NS_ENUM(NSUInteger, NtvTestAdType) {
     NtvTestAdTypeClickToPlayVideo,
     NtvTestAdTypeScrollToPlayVideo,
     NtvTestAdTypeAdChoicesVideo,
-    NtvTestAdTypeStory,
     NtvTestAdTypeNoFill
 };
 
@@ -47,19 +45,6 @@ typedef NS_ENUM(NSUInteger, NtvCropMode) {
     NtvCropModeAspectFill,
     NtvCropModePadding,
 };
-
-/** Share link types. Primarily used for tracking purposes. Use `NtvSharePlatformOther` if you are not sure of share plateform. */
-typedef NS_ENUM(NSUInteger, NtvSharePlatform) {
-    NtvSharePlatformFacebook,
-    NtvSharePlatformTwitter,
-    NtvSharePlatformLinkedIn,
-    NtvSharePlatformGooglePlus,
-    NtvSharePlatformPinterest,
-    NtvSharePlatformStumbleUpon,
-    NtvSharePlatformOther
-};
-
-typedef void(^TrackDidShareBlock)(NtvSharePlatform);
 
 // Ad size (3x3) for use with Google Ads
 extern CGSize const kGADAdSizeNativoDefault;
@@ -177,6 +162,30 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract The size of the standard display ad. If ad type not 'StandardDisplay' this will return CGSizeZero.
  */
 @property (nonatomic) CGSize standardDisplaySize;
+
+
+///@name Remotely Resizing an ad Image
+
+/**
+ @abstract Returns the URL for a resized version of the ad's preview image.
+ @discussion Nativo provides a service to remotely resize the preview image of an ad. Use this method to get the resized version of the URL.
+ @param size The desired height and width. If either height or width is set to 0 (not both), then the image will be scaled based on aspect ratio.
+ @param cropMode There are three different crop modes. We recommend using `ntvCropModeAspectFit`, however use whichever mode best suites your app. Defaults to 'ntvCropModeAspectFit'.
+ @param enableSmartCrop If cropMode is set to `ntvCropModeAspectFill` and smart crop is enabled, then the image will be intelligently cropped so that the image's focal point is at the center. Enabling smart crop may slow down the request.
+ 
+ */
+-(nullable NSURL *)resizePreviewImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop __deprecated;
+
+
+/**
+ @abstract Returns the URL for a resized version of `<authorImageURL>`.
+ @discussion Nativo provides a service to remotely resize the author image of an ad. Use this method to get the resized version of the URL.
+ @param size The desired height and width. If either height or width is set to 0 (not both), then the image will be scaled based on aspect ratio.
+ @param cropMode There are three different crop modes. We recommend using `ntvCropModeAspectFit`, however use whichever mode best suites your app. Defaults to 'ntvCropModeAspectFit'.
+ @param enableSmartCrop If cropMode is set to `ntvCropModeAspectFill` and smart crop is enabled, then the image will be intelligently cropped so that the image's focal point is at the center. Enabling smart crop may slow down the request.
+ 
+ */
+-(nullable NSURL *)resizeAuthorImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop __deprecated;
 
 
 @end

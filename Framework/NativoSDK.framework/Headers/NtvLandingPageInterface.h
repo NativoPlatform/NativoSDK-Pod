@@ -2,11 +2,11 @@
 //  NtvLandingPageInterface.h
 //  NativoSDK
 //
-//  Copyright © 2020 Nativo, Inc. All rights reserved.
+//  Copyright © 2019 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <NativoSDK/NtvAdData.h>
+@class NtvAdData;
 @class NtvContentWebView;
 
 @import WebKit;
@@ -73,19 +73,6 @@
  
  */
 @property (nonatomic, readonly, null_unspecified) UILabel *dateLabel;
-
-
-///@name Sharing
-
-/**
-  @abstract Will be set by the NativoSDK. Use to share link to the ad content.
- */
-@property (nonatomic, nullable) NSString *shareUrl;
-
-/**
-  @abstract Call this function pointer when a user succesfully shares the ad's shareUrl
- */
-@property (nonatomic, nonnull) TrackDidShareBlock trackDidShare;
 
 
 /// @name Ad Data
