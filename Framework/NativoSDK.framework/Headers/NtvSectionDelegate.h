@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "NtvLandingPageInterface.h"
-#import "NtvAdData.h"
+#import <NativoSDK/NtvLandingPageInterface.h>
+#import <NativoSDK/NtvAdData.h>
 @class NtvAdData;
 
 NS_ASSUME_NONNULL_BEGIN

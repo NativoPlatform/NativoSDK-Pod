@@ -13,19 +13,19 @@ extern const unsigned char NativoSDKVersionString[];
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "WKWebView+NativoUtil.h"
-#import "NtvContentWebView.h"
-#import "NtvAdData.h"
-#import "NtvSharing.h"
-#import "NtvAdInterface.h"
-#import "NtvStandardDisplayAdInterface.h"
-#import "NtvVideoAdInterface.h"
-#import "NtvLandingPageInterface.h"
-#import "NtvSectionDelegate.h"
-#import "NtvVideoFullScreenControlsDelegate.h"
-#import "NtvCollectionViewCellMaxWidthDelegate.h"
+#import <NativoSDK/WKWebView+NativoUtil.h>
+#import <NativoSDK/NtvContentWebView.h>
+#import <NativoSDK/NtvAdData.h>
+#import <NativoSDK/NtvSharing.h>
+#import <NativoSDK/NtvAdInterface.h>
+#import <NativoSDK/NtvStandardDisplayAdInterface.h>
+#import <NativoSDK/NtvVideoAdInterface.h>
+#import <NativoSDK/NtvLandingPageInterface.h>
+#import <NativoSDK/NtvSectionDelegate.h>
+#import <NativoSDK/NtvVideoFullScreenControlsDelegate.h>
+#import <NativoSDK/NtvCollectionViewCellMaxWidthDelegate.h>
 
-static NSString * _Nonnull const kNativoSDKVersion = @"5.2.6";
+static NSString * _Nonnull const kNativoSDKVersion = @"5.2.7";
 
 
 
@@ -34,7 +34,7 @@ static NSString * _Nonnull const kNativoSDKVersion = @"5.2.6";
  
  The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the View API. The Table/Collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The View API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
  
- __Version__: 5.2.6
+ __Version__: 5.2.7
  
  */
 NS_ASSUME_NONNULL_BEGIN
