@@ -2,7 +2,7 @@
 //  NativoSDK.h
 //  NativoSDK
 //
-//  Copyright © 2019 Nativo, Inc. All rights reserved.
+//  Copyright © 2020 Nativo, Inc. All rights reserved.
 //
 
 //! Project version number for NativoSDK.
@@ -25,7 +25,7 @@ extern const unsigned char NativoSDKVersionString[];
 #import <NativoSDK/NtvVideoFullScreenControlsDelegate.h>
 #import <NativoSDK/NtvCollectionViewCellMaxWidthDelegate.h>
 
-static NSString * _Nonnull const kNativoSDKVersion = @"5.2.7";
+static NSString * _Nonnull const kNativoSDKVersion = @"5.3.0";
 
 
 
@@ -34,7 +34,7 @@ static NSString * _Nonnull const kNativoSDKVersion = @"5.2.7";
  
  The NativoSDK has two main APIs for injecting ads into your views. The first is the table/collection view API, the second is the View API. The Table/Collection view API works by allowing it to manage how your cells get dequeued from a `UITableView` or `UICollectionView`. This is the most streamlined and convenient API for getting ad injected into your feed in no time. The View API works by simply passing in a `UIView` container which will be injected with ad content. In both APIs, the ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
  
- __Version__: 5.2.7
+ __Version__: 5.3.0
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -153,7 +153,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
 
 */
-+ (void)prefetchAdForSection:(NSString *)sectionUrl atLocationIdentifier:(id)identifier options:(nullable NSDictionary *)options;
++ (void)prefetchAdForSection:(NSString *)sectionUrl atLocationIdentifier:(nullable id)identifier options:(nullable NSDictionary *)options;
 
 
 
