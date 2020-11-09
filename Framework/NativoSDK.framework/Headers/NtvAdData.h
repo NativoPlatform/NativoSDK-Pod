@@ -2,7 +2,7 @@
 //  NtvAdData.h
 //  NativoSDK
 //
-//  Copyright © 2019 Nativo, Inc. All rights reserved.
+//  Copyright © 2020 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, NtvAdType) {
     StandardDisplay,
     ClickToPlayVideo,
     ScrollToPlayVideo,
+    Story,
     Placeholder
 };
 
@@ -27,6 +28,7 @@ typedef NS_ENUM(NSUInteger, NtvTestAdType) {
     NtvTestAdTypeClickToPlayVideo,
     NtvTestAdTypeScrollToPlayVideo,
     NtvTestAdTypeAdChoicesVideo,
+    NtvTestAdTypeStory,
     NtvTestAdTypeNoFill
 };
 
@@ -46,13 +48,25 @@ typedef NS_ENUM(NSUInteger, NtvCropMode) {
     NtvCropModePadding,
 };
 
+/** Share link types. Primarily used for tracking purposes. Use `NtvSharePlatformOther` if you are not sure of share plateform. */
+typedef NS_ENUM(NSUInteger, NtvSharePlatform) {
+    NtvSharePlatformFacebook,
+    NtvSharePlatformTwitter,
+    NtvSharePlatformLinkedIn,
+    NtvSharePlatformGooglePlus,
+    NtvSharePlatformPinterest,
+    NtvSharePlatformStumbleUpon,
+    NtvSharePlatformOther
+};
+
+typedef void(^TrackDidShareBlock)(NtvSharePlatform);
+
 // Ad size (3x3) for use with Google Ads
 extern CGSize const kGADAdSizeNativoDefault;
 
 /**
- An instance of `NtvAdData` stores data of a single Nativo ad. You should never create an instance of `NtvAdData` yourself. They will be requested and handled for you automatically by the NativoSDK. If you do need access to the ad data of a placement, you can access it by calling [NativoSDK getCachedAdAtIndex:forSection:]. However this will not make a request for a new ad, it simply checks the cache for an ad already received.  Typically you will not need to handle NtvAdData unless using the NtvSharing APIs or adding custom behavior.
+ An instance of `NtvAdData` stores data of a single Nativo ad. Ads will be requested and handled for you automatically by the NativoSDK. Typically you will not need to handle NtvAdData yourself, as ad data is automatically propagated to your ad templates.  If you do need access to the ad data of a placement, you can access it by calling `[NativoSDK getCachedAdAtIndex:forSection:]`. However this will not make a request for a new ad, it simply checks the cache for an ad already received.
  
- **Note:** A `NtvAdData` object may or may not contain ad content. If the property `<isAdContentAvailable>` returns `NO`, it means that no ad will show at this placement.
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface NtvAdData : NSObject
@@ -162,31 +176,6 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract The size of the standard display ad. If ad type not 'StandardDisplay' this will return CGSizeZero.
  */
 @property (nonatomic) CGSize standardDisplaySize;
-
-
-///@name Remotely Resizing an ad Image
-
-/**
- @abstract Returns the URL for a resized version of the ad's preview image.
- @discussion Nativo provides a service to remotely resize the preview image of an ad. Use this method to get the resized version of the URL.
- @param size The desired height and width. If either height or width is set to 0 (not both), then the image will be scaled based on aspect ratio.
- @param cropMode There are three different crop modes. We recommend using `ntvCropModeAspectFit`, however use whichever mode best suites your app. Defaults to 'ntvCropModeAspectFit'.
- @param enableSmartCrop If cropMode is set to `ntvCropModeAspectFill` and smart crop is enabled, then the image will be intelligently cropped so that the image's focal point is at the center. Enabling smart crop may slow down the request.
- 
- */
--(nullable NSURL *)resizePreviewImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop __deprecated;
-
-
-/**
- @abstract Returns the URL for a resized version of `<authorImageURL>`.
- @discussion Nativo provides a service to remotely resize the author image of an ad. Use this method to get the resized version of the URL.
- @param size The desired height and width. If either height or width is set to 0 (not both), then the image will be scaled based on aspect ratio.
- @param cropMode There are three different crop modes. We recommend using `ntvCropModeAspectFit`, however use whichever mode best suites your app. Defaults to 'ntvCropModeAspectFit'.
- @param enableSmartCrop If cropMode is set to `ntvCropModeAspectFill` and smart crop is enabled, then the image will be intelligently cropped so that the image's focal point is at the center. Enabling smart crop may slow down the request.
- 
- */
--(nullable NSURL *)resizeAuthorImageUrlWithSize:(CGSize)size usingCropMode:(NtvCropMode)cropMode smartCropEnabled:(BOOL)enableSmartCrop __deprecated;
-
 
 @end
 NS_ASSUME_NONNULL_END
