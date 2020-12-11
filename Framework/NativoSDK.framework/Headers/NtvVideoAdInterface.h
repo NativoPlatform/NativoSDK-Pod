@@ -140,6 +140,6 @@ While Nativo will handle the audio session for videos that we control, it is up 
 /**
   @abstract Call this function pointer when a user succesfully shares the ad's shareUrl
  */
-@property (nonatomic, nonnull) TrackDidShareBlock trackDidShare;
+@property (nonatomic, null_unspecified) TrackDidShareBlock trackDidShare;
 
 @end

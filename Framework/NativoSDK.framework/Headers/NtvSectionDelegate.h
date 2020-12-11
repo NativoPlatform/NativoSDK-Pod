@@ -28,14 +28,14 @@ extern NSString *const NtvSectionReloadReasonResizeView;
 /// @name Manage Ad Placements
 
 /**
- @abstract Reload your datasource so that new ads can be injected into view.
- @discussion Called when ad data becomes available and the feed needs to be reloaded so the ad can be injected into view. Typically done by reloading data of a UITableView or UICollectionView.
- Called when the view were ad is served needs to be refreshed. Typically this happens for one of three reasons:
- 1. There is ad content available that needs to be injected into a view
- 2. An ad that is in loading state doesn't get filled, and needs to be removed
- 3. The height of the view passed in does not match the height of NtvAdInterface template registered for the ad type. Need to reload will appropriate sized view.
+ @abstract Reload the views where ads are served. Typically done by reloading data of a UITableView or UICollectionView.
+ @discussion Called when the view were ad is served needs to be refreshed. Typically this happens for one of three reasons:
+ 1. An ad that is in loading state doesn't get filled, and needs to be removed
+ 2. There is ad content available that needs to be injected into a view
+ 3. The height of the view passed in does not match the height of Nib registered for the ad type. Need to reload will appropriate sized view.
  @param identifier The location identifier associated with the ad.
  @param reason A string indicating the reason for reloading. Compare using constants `NtvSectionReloadReasonRemoveView`, `NtvSectionReloadReasonInjectView`, and `NtvSectionReloadReasonResizeView`.
+ @note Reloading with `UITableView` or `UICollectionView` will automatically cause the ad placeholder to be removed or resized. You should implement the delegate method `heightForRowAtIndex:` and specify the correct height for ad type in given row.
  
  */
 - (void)section:(NSString *)sectionUrl needsReloadDatasourceAtLocationIdentifier:(id)identifier forReason:(NSString *)reason;
