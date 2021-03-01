@@ -57,14 +57,14 @@
 /**
   @abstract Call this function pointer when a user succesfully shares the ad's shareUrl
  */
-@property (nonatomic, nonnull) TrackDidShareBlock trackDidShare;
+@property (nonatomic, null_unspecified) TrackDidShareBlock trackDidShare;
 
 
 ///@name Layout formatting
 
 /**
  @abstract Called with isSponsored `YES` when object is being used as an ad
- @discussion Implement this method when using the same view for both articles and sponsored articles. If using this approach, you should implement this method and show sponsored indicators if `YES`, otherwise hide sponsored indicators if `NO`.
+ @discussion Implement this method when using the same view for both articles and sponsored articles. If using this approach, you should implement this method and show sponsored indicators if `YES`, otherwise hide sponsored indicators if `NO`. See https://sdk.nativo.com/docs/dual-disclosure-best-practices.
  */
 - (void)displaySponsoredIndicators:(BOOL)isSponsored;
 

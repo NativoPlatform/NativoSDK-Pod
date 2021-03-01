@@ -11,13 +11,13 @@
 
 /** Ad types */
 typedef NS_ENUM(NSUInteger, NtvAdType) {
-    Native,
-    Display,
-    StandardDisplay,
-    ClickToPlayVideo,
-    ScrollToPlayVideo,
-    Story,
-    Placeholder
+    NtvAdTypeNative,
+    NtvAdTypeDisplay,
+    NtvAdTypeStandardDisplay,
+    NtvAdTypeClickToPlayVideo,
+    NtvAdTypeScrollToPlayVideo,
+    NtvAdTypeStory,
+    NtvAdTypePlaceholder
 };
 
 typedef NS_ENUM(NSUInteger, NtvTestAdType) {

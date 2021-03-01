@@ -57,10 +57,23 @@ extern NSString * _Nonnull const NtvAudioCategoryChangeReasonPlayMutedVideoWithB
 ///@name Layout formatting
 
 /**
- @abstract Called with isSponsored `YES` when view is being used as an ad
- @discussion Implement this method when using the same view for both video and sponsored video. If using this approach, you should implement this method and show sponsored indicators if `YES`, otherwise hide sponsored indicators if `NO`.
+ @abstract A string defining how the video is displayed within an AVPlayerLayer bounds rect.
+ @discussion Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+ and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
+ See <AVFoundation/AVAnimation.h> for a description of these options.
  */
-- (void)displaySponsoredIndicators:(BOOL)isSponsored;
+- (nonnull NSString *)videoFillMode;
+
+/**
+ @abstract Set the edge insets to use for the full screen video player.
+ @discussion By default edges are set to respect top safe area inset from window. You can override the default here if needed.
+ */
+- (UIEdgeInsets)edgesForFullScreenVideo;
+
+/**
+ @abstract Required only if supporting VAST ads. The view controller containing the ad container. Will attempt to use window's root view controller if not implemented.
+ */
+- (nonnull UIViewController *)viewController;
 
 /**
  @abstract If implemented this method will be called to format the ad's date into a string.
@@ -74,12 +87,10 @@ extern NSString * _Nonnull const NtvAudioCategoryChangeReasonPlayMutedVideoWithB
 - (BOOL)shouldPrependAuthorByline;
 
 /**
- @abstract A string defining how the video is displayed within an AVPlayerLayer bounds rect.
- @discussion Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
- and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
- See <AVFoundation/AVAnimation.h> for a description of these options.
+ @abstract Called with isSponsored `YES` when view is being used as an ad
+ @discussion Implement this method when using the same view for both video and sponsored video. If using this approach, you should implement this method and show sponsored indicators if `YES`, otherwise hide sponsored indicators if `NO`. See https://sdk.nativo.com/docs/dual-disclosure-best-practices.
  */
-- (nonnull NSString *)videoFillMode;
+- (void)displaySponsoredIndicators:(BOOL)isSponsored;
 
 
 ///@name Video player notification methods
@@ -140,6 +151,7 @@ While Nativo will handle the audio session for videos that we control, it is up 
 /**
   @abstract Call this function pointer when a user succesfully shares the ad's shareUrl
  */
-@property (nonatomic, nonnull) TrackDidShareBlock trackDidShare;
+@property (nonatomic, null_unspecified) TrackDidShareBlock trackDidShare;
+
 
 @end

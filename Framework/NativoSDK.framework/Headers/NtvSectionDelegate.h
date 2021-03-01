@@ -13,11 +13,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-// Section reload reasons
-extern NSString *const NtvSectionReloadReasonRemoveView;
-extern NSString *const NtvSectionReloadReasonInjectView;
-extern NSString *const NtvSectionReloadReasonResizeView;
-
 
 /**
  Implementers of this protocol decide where ads should be placed, handle how an ad's landing page gets displayed, and are notified when ads are received or a request fails.
@@ -28,29 +23,27 @@ extern NSString *const NtvSectionReloadReasonResizeView;
 /// @name Manage Ad Placements
 
 /**
- @abstract Reload the views where ads are served. Typically done by reloading data of a UITableView or UICollectionView.
- @discussion Called when the view were ad is served needs to be refreshed. Typically this happens for one of three reasons:
- 1. An ad that is in loading state doesn't get filled, and needs to be removed
- 2. There is ad content available that needs to be injected into a view
- 3. The height of the view passed in does not match the height of Nib registered for the ad type. Need to reload will appropriate sized view.
+ @abstract Reload the ad view and call placeAdInView to inject ad. Typically done by reloading data of a UITableView or UICollectionView.
+ @discussion Calling NativoSDK.placeAdInView() the first time, without a previous prefetch call, will return false and will make an async request for a new ad. When the new ad returns, this method will be called. Called when an ad was requested asynchronous and has returned with fill. Need to reload views and call NativoSDK.placeAdInView() at this location.
+ @param sectionUrl the section where ads are being injected.
  @param identifier The location identifier associated with the ad.
- @param reason A string indicating the reason for reloading. Compare using constants `NtvSectionReloadReasonRemoveView`, `NtvSectionReloadReasonInjectView`, and `NtvSectionReloadReasonResizeView`.
- @note Reloading with `UITableView` or `UICollectionView` will automatically cause the ad placeholder to be removed or resized. You should implement the delegate method `heightForRowAtIndex:` and specify the correct height for ad type in given row.
+ @note For most applications, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
  
  */
-- (void)section:(NSString *)sectionUrl needsReloadDatasourceAtLocationIdentifier:(id)identifier forReason:(NSString *)reason;
+- (void)section:(NSString *)sectionUrl needsPlaceAdInViewAtLocation:(id)identifier;
+
+/**
+ @abstract Remove the ad view at the given location. Typically done by reloading data of a UITableView or UICollectionView.
+ @discussion Called when an ad view needs to be removed for any reason.
+ @param sectionUrl the section where ads are being injected.
+ @param identifier The location identifier associated with the ad.
+ @note For most applications, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
+ 
+ */
+- (void)section:(NSString *)sectionUrl needsRemoveAdViewAtLocation:(id)identifier;
 
 
 @optional
-
-
-/**
- @abstract Return `YES` if given index should be an ad placement.
- @discussion Only required if using table/collection view API to dequeue cells in a table or collection view. Using this method you can indicate to the SDK where ad placements should be.
- 
- */
-- (BOOL)section:(NSString *)sectionUrl shouldPlaceAdAtIndex:(NSIndexPath *)index;
-
 
 /// @name Register Nibs
 
@@ -106,9 +99,9 @@ extern NSString *const NtvSectionReloadReasonResizeView;
 /// @name Handle Video
 
 /**
- @abstract Return the view where you want the full screen video controls to be injected. Default is `window.rootViewController.view`.
+ @abstract Return the view where you want the full screen video and Nativo Story ads to be injected. Default is `window.rootViewController.view`.
  @discussion Optional method. By default will inject in `window.rootViewController.view`.
- @return The view where the full screen video controls will be injected.
+ @return The view where the full screen video and Nativo Story ads will be injected.
  
  */
 - (UIView *)getContainerForFullScreenVideoInSection:(NSString *)sectionUrl;

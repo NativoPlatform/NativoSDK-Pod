@@ -8,9 +8,9 @@
 #import <Foundation/Foundation.h>
 
 /**
- Optional protocol used when implementing a UICollectionView with automatic sizing cells.
- Use with Nativo ad cells to set the desired width of the cell. When autolayout constraints are setup appropriately the cell's height will grow dynamically.
- See https://sdk.nativo.com/v5.0/docs/cell-resizing-ios for more information.
+ Optional protocol used when you want to implementing automatic sizing cells within UICollectionViewFlowLayout.
+ Allows you to set a width constrain on views that implement. When autolayout constraints are setup appropriately the cell's height will size dynamically based on inner content.
+ See https://sdk.nativo.com/docs/cell-resizing-ios for more information.
  
  */
 @protocol NtvCollectionViewCellMaxWidthDelegate <NSObject>
