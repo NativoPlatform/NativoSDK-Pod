@@ -65,9 +65,8 @@ typedef void(^TrackDidShareBlock)(NtvSharePlatform);
 extern CGSize const kGADAdSizeNativoDefault;
 
 /**
- An instance of `NtvAdData` stores data of a single Nativo ad. You should never create an instance of `NtvAdData` yourself. They will be requested and handled for you automatically by the NativoSDK. If you do need access to the ad data of a placement, you can access it by calling [NativoSDK getCachedAdAtIndex:forSection:]. However this will not make a request for a new ad, it simply checks the cache for an ad already received.  Typically you will not need to handle NtvAdData unless using the NtvSharing APIs or adding custom behavior.
+ An instance of `NtvAdData` stores data of a single Nativo ad. You should never create an instance of `NtvAdData` yourself. They will be requested and handled for you automatically by the NativoSDK. If you do need access to the ad data of a placement, you can access it by calling `NativoSDK.getCachedAd()`. However this will not make a request for a new ad, it simply checks the cache for an ad already received. Ads are automatically requested and cached when calling `NativoSDK.prefetchAd()` and `NativoSDK.placeAdInView()`.
  
- **Note:** A `NtvAdData` object may or may not contain ad content. If the property `<isAdContentAvailable>` returns `NO`, it means that no ad will show at this placement.
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface NtvAdData : NSObject
@@ -76,24 +75,16 @@ NS_ASSUME_NONNULL_BEGIN
 ///@name Verifying the Availability of Ad Content
 
 /**
- @abstract Returns `YES` if this object carries ad content.
- @discussion  Sometimes requests for ads cannot be filled. When this happens the ad will still return, however there will be no content. In these cases the NativoSDK will make sure that the empty cell gets removed from your datasource, and the cell will be tracked as unfilled inventory.
+ @abstract Returns `true` if ad content is available.
+ @discussion Sometimes requests for ads cannot be filled. When this happens the ad will still return, however there will be no content. In these cases calling `placeAdInView()` will return `false` at this location identifier and no ad will be rendered.
  */
 @property (readonly, nonatomic) BOOL isAdContentAvailable;
-
-
-/**
- @abstract Returns 'YES' if this ad placement should be reserved until the request for ads is complete.
- @discussion  Ad placeholders are used when a cell must be reserved while the request for ads is still processing. Used when the cell UI is needed before the `NativoSDK` has time to return ad data.
- */
-@property (readonly, nonatomic) BOOL isPlaceholder;
 
 
 ///@name Ad Properties
 
 /**
  @abstract The ad's type. Certain ad types require different ad templates and on-click behaviors.
- @discussion The ad types are Native, Display, Autoplay Video, and Click-to-Play Video.
  */
 @property (readonly, nonatomic) NtvAdType adType;
 
@@ -130,8 +121,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- @abstract The ad's preview image URL.
- @discussion You may alternatively use `<resizePreviewImageUrlWithSize:usingCropMode:smartCropEnabled:>` to retrieve the URL of a pre-resized version of the preview image.
+ @abstract The ad's image URL.
  */
 @property (nullable, readonly, nonatomic) NSString *previewImageURL;
 
@@ -150,7 +140,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract The advertiser's image URL.
- @discussion You may alternatively use `<resizeAuthorImageUrlWithSize:usingCropMode:smartCropEnabled:>` to retrieve the URL of a pre-resized version of the author image. 
  */
 @property (nullable, readonly, nonatomic) NSString *authorImageURL;
 
@@ -174,7 +163,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, readonly, nonatomic) id locationIdentifier;
 
 /**
- @abstract The size of the standard display ad. If ad type not 'StandardDisplay' this will return CGSizeZero.
+ @abstract The size of the standard display ad. If ad type is not 'NtvAdTypeStandardDisplay' this will return CGSizeZero.
  */
 @property (nonatomic) CGSize standardDisplaySize;
 

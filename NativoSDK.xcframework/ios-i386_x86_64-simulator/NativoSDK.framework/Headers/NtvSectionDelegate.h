@@ -23,22 +23,22 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Manage Ad Placements
 
 /**
- @abstract Reload the ad view and call placeAdInView to inject ad. Typically done by reloading data of a UITableView or UICollectionView.
- @discussion Calling NativoSDK.placeAdInView() the first time, without a previous prefetch call, will return false and will make an async request for a new ad. When the new ad returns, this method will be called. Called when an ad was requested asynchronous and has returned with fill. Need to reload views and call NativoSDK.placeAdInView() at this location.
+ @abstract Called when a new ad should be placed in view. Reload the table, collection, or scroll views and call NativoSDK.placeAdInView() to inject the ad.
+ @discussion Calling NativoSDK.placeAdInView() the first time, without a previous prefetch call, will return false and will make an async request for a new ad. When the new ad returns, this method will be called. Called when an ad was requested asynchronous and has returned with fill. You will need to reload views and call NativoSDK.placeAdInView() at this location.
  @param sectionUrl the section where ads are being injected.
  @param identifier The location identifier associated with the ad.
- @note For most applications, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
+ @note If using the example implementation from the guide, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
  
  */
 - (void)section:(NSString *)sectionUrl needsPlaceAdInViewAtLocation:(id)identifier;
 
 /**
  @abstract Remove the ad view at the given location. Typically done by reloading data of a UITableView or UICollectionView.
- @discussion Called when an ad view needs to be removed for any reason.
+ @discussion When an ad request fails, or ad content is not available, you may be left with a blank ad unit. This method will be called in these scenarios so that you can remove the ad view and refresh your content.
  @param sectionUrl the section where ads are being injected.
  @param identifier The location identifier associated with the ad.
- @note For most applications, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
- 
+ @note If using the example implementation from the guide, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
+
  */
 - (void)section:(NSString *)sectionUrl needsRemoveAdViewAtLocation:(id)identifier;
 

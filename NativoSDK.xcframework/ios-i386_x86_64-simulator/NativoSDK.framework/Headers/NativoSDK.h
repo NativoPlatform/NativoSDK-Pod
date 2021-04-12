@@ -16,7 +16,6 @@ extern const unsigned char NativoSDKVersionString[];
 #import <NativoSDK/WKWebView+NativoUtil.h>
 #import <NativoSDK/NtvContentWebView.h>
 #import <NativoSDK/NtvAdData.h>
-#import <NativoSDK/NtvSharing.h>
 #import <NativoSDK/NtvAdInterface.h>
 #import <NativoSDK/NtvStandardDisplayAdInterface.h>
 #import <NativoSDK/NtvVideoAdInterface.h>
@@ -28,9 +27,9 @@ extern const unsigned char NativoSDKVersionString[];
 
 
 /**
- The `NativoSDK` is used to retrieve true native, native display, standard display and video ads from Nativo. The NativoSDK is packed with features that will help you integrate native ads in your feed in a short amount of time.
+ The Nativo SDK is used to render native article, native display, standard display, story and video ad formats with Nativo. It is packed with features that will help you integrate native ads into your app in no time.
  
- The NativoSDK works by simply passing in a `UIView` container which will be injected with ad content. The ad's view will be created using a nib that you registered previously using [NativoSDK registerNib:forAdTemplateType:], or via the `NtvSectionDelegate` method `registerNibNameForAdTemplateType:atLocationIdentifier:`.
+ Refer to https://sdk.nativo.com for guides and documentation.
  
  __Version__: 6.0.0
  
