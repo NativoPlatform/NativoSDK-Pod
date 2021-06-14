@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
-		XkEggEhpoHmVzwNj7eyEGYw2/NE=
+		87xONPTptOCRiCRYKABzsPvo2fE=
 		</data>
 		<key>Headers/NtvAdData.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		F0y0X6qfDZh+t1Gfl9aewWZAwMA=
+		tEayjwzSZswd/TNpqX3+PXhx5uE=
 		</data>
 		<key>Layer 10@3x.png</key>
 		<data>
@@ -242,15 +242,15 @@
 		</data>
 		<key>NtvCollectionViewCell.nib</key>
 		<data>
-		rdW2py9oFGs5g8SMv8/Bd6Nv0ac=
+		qK9FqQJdosnMI6qEmvHL5jZn0sM=
 		</data>
 		<key>NtvTableViewCell.nib</key>
 		<data>
-		YgQPbWmYD+ky1m+RY8047uMonjM=
+		rbB/v7vQlefGJ99p8sQHyS6lSTA=
 		</data>
 		<key>NtvVideoControlsView.nib</key>
 		<data>
-		zaN/UlzFRQtPRWO4IspbdBHWNWk=
+		ckl48mVg0qyOkfsDw4qQ0sxWzXs=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -278,11 +278,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XkEggEhpoHmVzwNj7eyEGYw2/NE=
+			87xONPTptOCRiCRYKABzsPvo2fE=
 			</data>
 			<key>hash2</key>
 			<data>
-			UqRo9TZid3TS4j1YUOHPF3jddCyiCNLpBCQcwsPHiNk=
+			ucYUW4kSbJpTuLpo8aPDc6qWGmH2kKrYClXeYLZ3Izk=
 			</data>
 		</dict>
 		<key>Headers/NtvAdData.h</key>
@@ -905,33 +905,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rdW2py9oFGs5g8SMv8/Bd6Nv0ac=
+			qK9FqQJdosnMI6qEmvHL5jZn0sM=
 			</data>
 			<key>hash2</key>
 			<data>
-			rwRBHFvhFfV5+xoO8Zmr7ykA2QxpgugPURFu2t4OKqE=
+			gq/17bG30ztU+ssIxFIf0EqsYTlXVTypBU1/BEjoSi0=
 			</data>
 		</dict>
 		<key>NtvTableViewCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YgQPbWmYD+ky1m+RY8047uMonjM=
+			rbB/v7vQlefGJ99p8sQHyS6lSTA=
 			</data>
 			<key>hash2</key>
 			<data>
-			iwGECJ0ciVBjYNiQtYU8AsTF0qe/pObXbdr0N0IJmoU=
+			U80pluCFz27Kg034eZDKbDwOuENsncJ7sPk65qHJICI=
 			</data>
 		</dict>
 		<key>NtvVideoControlsView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zaN/UlzFRQtPRWO4IspbdBHWNWk=
+			ckl48mVg0qyOkfsDw4qQ0sxWzXs=
 			</data>
 			<key>hash2</key>
 			<data>
-			nvptdh03mxIH4c44QW59NWAf+5ZwTBrp2sj8BAvOrq0=
+			wF8u0KPGEXsVTf9tPOdF0NAXABI1hu1Q2lVUZtPX4Xg=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
