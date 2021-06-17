@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NativoSDK"
-  s.version      = "6.0.0"
+  s.version      = "6.0.1"
   s.summary      = "The Nativo SDK enables the best user experience for mobile ad content."
   s.description  = "The Nativo SDK is used to retrieve native article, video, story and display ads from Nativo. Enabling the best user experience for mobile ad content."
   s.homepage     = "https://sdk.nativo.com"
@@ -13,6 +13,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/NativoPlatform/NativoSDK-Pod.git", :tag => "v#{s.version}" }
   s.vendored_frameworks = "NativoSDK.xcframework"
   s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 end
