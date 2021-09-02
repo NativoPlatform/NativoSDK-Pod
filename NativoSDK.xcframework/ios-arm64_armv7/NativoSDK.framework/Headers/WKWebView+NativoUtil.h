@@ -31,10 +31,17 @@
  @discussion This prevents the webView's inner scrollView from scrolling, since the webView's contentSize will be the same as its frame. Use this method if the web view will be contained within a UIScrollView, and is intended to scroll inside a parent's view hierarchy. NOTE: This method will only scale the height. The width should be set by some means independantly.
  */
 - (void)expandWebViewToFitContents;
+- (void)expandWebViewToFitContentsWithCompletion:(void (^_Nullable)(void))completion;
 
 /**
  @abstract Used to stop video playback on the webView. The implementation uses JavaScript to parse the html for video tags to pause and exit fullscreen mode.
  */
 - (void)stopVideoPlayback;
+
+/**
+ @abstract Manual override to send UIScroll content offset events to Nativo JS trackers
+ */
+- (void)sendScrollEventsToJS:(float)adUnitY;
+- (void)cancelSendScrollEvents;
 
 @end
