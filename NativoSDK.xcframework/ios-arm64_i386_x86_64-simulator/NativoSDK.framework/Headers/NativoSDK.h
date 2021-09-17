@@ -31,7 +31,7 @@ extern const unsigned char NativoSDKVersionString[];
  
  Refer to https://sdk.nativo.com for guides and documentation.
  
- __Version__: 6.0.1
+ __Version__: 6.0.2
  
  */
 NS_ASSUME_NONNULL_BEGIN

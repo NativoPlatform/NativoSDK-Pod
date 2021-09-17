@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
-		87xONPTptOCRiCRYKABzsPvo2fE=
+		0HuAxw9QWkX8uevQinfKSiaSu8c=
 		</data>
 		<key>Headers/NtvAdData.h</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Headers/WKWebView+NativoUtil.h</key>
 		<data>
-		i2M42BV1dfEcMKijDh18BrLc3Bw=
+		8Db1is4LuamLUq5rbnvwz0ZdgHE=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		tEayjwzSZswd/TNpqX3+PXhx5uE=
+		BvfJpMRHMw8BxKpTZK52Yyz1NOE=
 		</data>
 		<key>Layer 10@3x.png</key>
 		<data>
@@ -242,15 +242,15 @@
 		</data>
 		<key>NtvCollectionViewCell.nib</key>
 		<data>
-		5eOR0RUVPdT4oNOUZnuM8MSNId8=
+		5DRhvq2Y+4dLxdkJ7auwnZmeu/I=
 		</data>
 		<key>NtvTableViewCell.nib</key>
 		<data>
-		idNXeqJ9s2ZQJtvAu1NYCITEVPU=
+		8auKTp0/UuzZKwuPlpQBZ5rxg3U=
 		</data>
 		<key>NtvVideoControlsView.nib</key>
 		<data>
-		XDgwm6GtKfdQaUhk7JadJ3GhisU=
+		iZ7GvC+C7VSTY7m9d+SdrCYB9Y8=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -278,11 +278,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			87xONPTptOCRiCRYKABzsPvo2fE=
+			0HuAxw9QWkX8uevQinfKSiaSu8c=
 			</data>
 			<key>hash2</key>
 			<data>
-			ucYUW4kSbJpTuLpo8aPDc6qWGmH2kKrYClXeYLZ3Izk=
+			t8hX+jerpuqluNl0eKLwKNMun+Yh1seOSlZrpNzTW/E=
 			</data>
 		</dict>
 		<key>Headers/NtvAdData.h</key>
@@ -399,11 +399,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			i2M42BV1dfEcMKijDh18BrLc3Bw=
+			8Db1is4LuamLUq5rbnvwz0ZdgHE=
 			</data>
 			<key>hash2</key>
 			<data>
-			leB8s7ZQDOKn/hN1qYoAVxPfK1UCbzL+pC+9VMZHsu0=
+			I6tOIov0Nn9AZHpGeEGQ3QOBXlhj0ccs5kA12+Mf6iE=
 			</data>
 		</dict>
 		<key>Layer 10@3x.png</key>
@@ -905,33 +905,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5eOR0RUVPdT4oNOUZnuM8MSNId8=
+			5DRhvq2Y+4dLxdkJ7auwnZmeu/I=
 			</data>
 			<key>hash2</key>
 			<data>
-			LR3J8Wxul7nqvVQsXW281i+S/uBO1vNxJJ9rtpLonys=
+			5R0dFOlUR6TNoUPYiAWzmpccTaoIASQLjbq/CEM3dNU=
 			</data>
 		</dict>
 		<key>NtvTableViewCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			idNXeqJ9s2ZQJtvAu1NYCITEVPU=
+			8auKTp0/UuzZKwuPlpQBZ5rxg3U=
 			</data>
 			<key>hash2</key>
 			<data>
-			Y9c3o30iPgZvJZWmicdQjcj/Zp6aHuYgGwYstJNoOMQ=
+			5zYeQXjpYZEc2DSHxNYP69Saztn+GNtHJ5d6wVndFMI=
 			</data>
 		</dict>
 		<key>NtvVideoControlsView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XDgwm6GtKfdQaUhk7JadJ3GhisU=
+			iZ7GvC+C7VSTY7m9d+SdrCYB9Y8=
 			</data>
 			<key>hash2</key>
 			<data>
-			HgI+p+3HECnH478t9ix/zl5HvmlAD0I2lssQmhiZrA4=
+			298DnXi7Mgp5ISCCHhN9wXQUL4C/XZ0wjImpOsj1Kw4=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
