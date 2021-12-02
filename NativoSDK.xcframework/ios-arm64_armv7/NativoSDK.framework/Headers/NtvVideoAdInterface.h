@@ -71,7 +71,7 @@ extern NSString * _Nonnull const NtvAudioCategoryChangeReasonPlayMutedVideoWithB
 - (UIEdgeInsets)edgesForFullScreenVideo;
 
 /**
- @abstract Required only if supporting VAST ads. The view controller containing the ad container. Will attempt to use window's root view controller if not implemented.
+ @abstract Manually set the owning view controller. Only required if supporting VAST ads. Will override NtvSectionDelegate method `viewControllerForFullScreenInSection:`. Will attempt to use window's root view controller if neither method has been implemented.
  */
 - (nonnull UIViewController *)viewController;
 

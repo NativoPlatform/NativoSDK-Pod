@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		a6pU6rBPbEiF/0AxHlGIbVni/oU=
+		pRRwhcXtUxNPzRI8e6i6M59XE6Y=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/NtvSectionDelegate.h</key>
 		<data>
-		dNbyTfkmTVROF1nhdbOa7+IUC6A=
+		bh1iUDT4s9tUxU3EoyA+Nx9duZQ=
 		</data>
 		<key>Headers/NtvStandardDisplayAdInterface.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Headers/NtvVideoAdInterface.h</key>
 		<data>
-		db55d713lSy5oicK+WxBGfF94J8=
+		TTDGknfV7a8Vz/PsUVNanGAEQkY=
 		</data>
 		<key>Headers/NtvVideoFullScreenControlsDelegate.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WpjbxHMZ/bW1cmMb5yZljGY/jXs=
+		YGrEqLHxsCfKhqq5Hlia+9mksyg=
 		</data>
 		<key>Layer 10@3x.png</key>
 		<data>
@@ -242,15 +242,15 @@
 		</data>
 		<key>NtvCollectionViewCell.nib</key>
 		<data>
-		Z/3na8fzB/rVptYkGoMR1yzoQFg=
+		gO+T76qQAAoCi+RFY8s3WIH85AA=
 		</data>
 		<key>NtvTableViewCell.nib</key>
 		<data>
-		oHaOMQIlpRpzmF9aaKXtIj4wz58=
+		fXiLWMS039N26C46rl9ghOqJcP0=
 		</data>
 		<key>NtvVideoControlsView.nib</key>
 		<data>
-		LVGwAgRlSIylV+1Gkw7Bgj8zR+4=
+		kK+ovRkTPAqNDucOae1i1r/Ww9Q=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -267,11 +267,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a6pU6rBPbEiF/0AxHlGIbVni/oU=
+			pRRwhcXtUxNPzRI8e6i6M59XE6Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			NgJfsxRNiADrpln6WnJDmaWY/y1rZKfscAWBLcewl3U=
+			oQinN5VBCSqFPWPGOJiBQGEriMQb1y+BtJgXLMFnoEs=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
@@ -355,11 +355,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dNbyTfkmTVROF1nhdbOa7+IUC6A=
+			bh1iUDT4s9tUxU3EoyA+Nx9duZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			5YLB9LsXL8Z9bm2AY95qmkXuKNiv30P6cQN1qhjj2AU=
+			IyUmrKauhcmPa6kw1KO2nDELhFuqY7rFA5SnpTxog1U=
 			</data>
 		</dict>
 		<key>Headers/NtvStandardDisplayAdInterface.h</key>
@@ -377,11 +377,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			db55d713lSy5oicK+WxBGfF94J8=
+			TTDGknfV7a8Vz/PsUVNanGAEQkY=
 			</data>
 			<key>hash2</key>
 			<data>
-			WnxYiG6+IMdEfiCl6BIwdJqlqgHqZm7Vvf5r1oQlAWA=
+			4MlWx8PFgGCIiFIQH0uVFW5Bg5IIrRkaWVbz91/NW1o=
 			</data>
 		</dict>
 		<key>Headers/NtvVideoFullScreenControlsDelegate.h</key>
@@ -905,33 +905,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Z/3na8fzB/rVptYkGoMR1yzoQFg=
+			gO+T76qQAAoCi+RFY8s3WIH85AA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Eq8uO7YzGlAmf+I/HvgGHwfCzFk7UBV7Cmx6m+LQ+ys=
+			ilo4a/5niAALTjn+YMFQWa61JLVZusEPD7ngr51SzIg=
 			</data>
 		</dict>
 		<key>NtvTableViewCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oHaOMQIlpRpzmF9aaKXtIj4wz58=
+			fXiLWMS039N26C46rl9ghOqJcP0=
 			</data>
 			<key>hash2</key>
 			<data>
-			hYtrtSR9mhquCJrRDor6Yb/YBMG39ULyBsluOoCe4zk=
+			KhO+SJgJFkoQBLIzLyUNqvtDb5RjE/MW0sUcRk0HfUo=
 			</data>
 		</dict>
 		<key>NtvVideoControlsView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LVGwAgRlSIylV+1Gkw7Bgj8zR+4=
+			kK+ovRkTPAqNDucOae1i1r/Ww9Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			AjIAtOcqkS6FI1teo1SOvbEZaTbZG3ePz2ozK+tygFA=
+			IRp5tuWDPymURq1kBoa6dRjCk1Xj9vd/gWWLC8zjjU0=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
