@@ -96,15 +96,26 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)section:(NSString *)sectionUrl needsDisplayClickoutURL:(NSURL *)url;
 
 
-/// @name Handle Video
+/// @name Handle Full Screen Player
 
 /**
- @abstract Return the view where you want the full screen video and Nativo Story ads to be injected. Default is `window.rootViewController.view`.
- @discussion Optional method. By default will inject in `window.rootViewController.view`.
- @return The view where the full screen video and Nativo Story ads will be injected.
+ @abstract Return the view controller where you want the full screen video and story ad player to be injected.
+ @discussion Optional method. Control where the full screen player will be injected. By default will inject in `window.rootViewController`. The NtvVideoAdDelegate protocol method 'viewController' will override this if implemented.
+ @note If using VAST video demand, the view controller returned here will also be used as a parameter for rendering VAST video. If the view controller returned here does not match the video's parent view controller, the Google IMA SDK will throw an exception.
+ @return The view controller where the full screen video and story ad player will be injected.
  
  */
-- (UIView *)getContainerForFullScreenVideoInSection:(NSString *)sectionUrl;
+- (UIViewController *)viewControllerForFullScreenInSection:(NSString *)sectionUrl;
+
+
+/**
+ @abstract Return the view where you want the full screen video and story ad player to be injected.
+ @discussion Deprecated. Please use `viewControllerForFullScreenInSection` instead. By default will inject into root window.
+ @return The view where the full screen video and story ad player will be injected.
+ 
+ */
+- (UIView *)getContainerForFullScreenVideoInSection:(NSString *)sectionUrl __deprecated;
+
 
 /**
 @abstract When the user clicks the share button on a video they will be presented with a UIActivityController. By default will be presented using the window's root view controller.
