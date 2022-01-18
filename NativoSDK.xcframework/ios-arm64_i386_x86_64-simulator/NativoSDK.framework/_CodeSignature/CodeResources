@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		pRRwhcXtUxNPzRI8e6i6M59XE6Y=
+		LvDMNVjq/JtjwAFx08J99sArk74=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
-		0xlv6Cg4CX9oq4DsDWc6J/mkvnY=
+		GPNE4Fd/1mINg7I+0/vzOW/LWoI=
 		</data>
 		<key>Headers/NtvAdData.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YGrEqLHxsCfKhqq5Hlia+9mksyg=
+		5M+EawfrkTonuVmACIzAb1bZE1s=
 		</data>
 		<key>Layer 10@3x.png</key>
 		<data>
@@ -267,22 +267,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pRRwhcXtUxNPzRI8e6i6M59XE6Y=
+			LvDMNVjq/JtjwAFx08J99sArk74=
 			</data>
 			<key>hash2</key>
 			<data>
-			oQinN5VBCSqFPWPGOJiBQGEriMQb1y+BtJgXLMFnoEs=
+			Oyt4w3SE9aGoKC+4/jlApG3dxB74rF1WtBERQXhoCL0=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0xlv6Cg4CX9oq4DsDWc6J/mkvnY=
+			GPNE4Fd/1mINg7I+0/vzOW/LWoI=
 			</data>
 			<key>hash2</key>
 			<data>
-			BNY0sM6PhrAR+BxvfDbVrUs1twFezTAMtA9gkNQRYTI=
+			dpMyS6WlQbWfcGPhiSdi1iG0fxjOpBjmgyK6PhwUNF8=
 			</data>
 		</dict>
 		<key>Headers/NtvAdData.h</key>
