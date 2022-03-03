@@ -152,6 +152,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @abstract Get the number of ads in the section.
  @discussion You will need this method when a `UITableViewDataSource` or `UICollectionViewDataSource` protocol method asks you for the number of rows. Use this method to provide an accurate count based on the number of ads received that have fill.
+ @note Please note that this ONLY works when using `NSIndexPath` as your location parameter with
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param section The section of the `UITableView` or `UICollectionView`.
  @param itemsCount The current number of items in your datasource for given section
