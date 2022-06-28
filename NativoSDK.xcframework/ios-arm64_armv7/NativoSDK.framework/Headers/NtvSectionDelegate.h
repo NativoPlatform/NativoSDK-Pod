@@ -23,27 +23,70 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Manage Ad Placements
 
 /**
- @abstract Called when a new ad should be placed in view. Reload the table, collection, or scroll views and call NativoSDK.placeAdInView() to inject the ad.
- @discussion Calling NativoSDK.placeAdInView() the first time, without a previous prefetch call, will return false and will make an async request for a new ad. When the new ad returns, this method will be called. Called when an ad was requested asynchronous and has returned with fill. You will need to reload views and call NativoSDK.placeAdInView() at this location.
- @param sectionUrl the section where ads are being injected.
- @param identifier The location identifier associated with the ad.
- @note If using the example implementation from the guide, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
+ @abstract Notification of an ad response.
+ @discussion Called when an ad request from [NativoSDK.prefetchAdForSection] or [NativoSDK.placeAdInView] returns. Use this to reload your views as needed.
+ @param sectionUrl The section that requested an ad
+ @param didGetFill True if ad returned with content. False if successful request was made but no ad was available.
  
  */
-- (void)section:(NSString *)sectionUrl needsPlaceAdInViewAtLocation:(id)identifier;
+- (void)section:(NSString *)sectionUrl didReceiveAd:(BOOL)didGetFill;
 
 /**
- @abstract Remove the ad view at the given location. Typically done by reloading data of a UITableView or UICollectionView.
- @discussion When an ad request fails, or ad content is not available, you may be left with a blank ad unit. This method will be called in these scenarios so that you can remove the ad view and refresh your content.
+ @abstract Notifes when an ad has been assigned to a location.
+ @discussion Use this to keep track of what rows contain Nativo ad data in order to update your datasource and inject new rows if needed.
+ @note Calling NativoSDK.placeAdInView() the first time, without a previous prefetch call, will return false and will make an async request for a new ad. When the new ad returns, this method will be called and you will need to reload your views and call NativoSDK.placeAdInView() at the location provided.
  @param sectionUrl the section where ads are being injected.
+ @param adData The Nativo ad data for this location
  @param identifier The location identifier associated with the ad.
+ @param container The root container in which the ad belongs
+ 
+ */
+- (void)section:(NSString *)sectionUrl didAssignAd:(NtvAdData *)adData toLocation:(id)identifier container:(UIView *)container;
+
+/**
+ @abstract Notifies when an ad, or ad request fails. If `atLocation` is provided it is your responsibility to remove the ad view at the given location.
+ @discussion When an ad request fails, or ad content is not available, you may be left with a blank ad unit. This method will be called in these scenarios so that you can remove the ad view and refresh your content.
+ @param sectionUrl the section where the ad failed.
+ @param identifier The location identifier associated with the ad. Nil if ad not assigned to location yet.
+ @param view The UIView that the ad is placed in. Nil if ad not placed in view yet.
+ @param errMsg The error message if any.
+ @param container The root container in which the ad belongs
  @note If using the example implementation from the guide, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
 
  */
-- (void)section:(NSString *)sectionUrl needsRemoveAdViewAtLocation:(id)identifier;
+- (void)section:(NSString *)sectionUrl didFailAdAtLocation:(nullable id)identifier inView:(nullable UIView *)view withError:(nullable NSString *)errMsg container:(nullable UIView *)container;
 
 
 @optional
+
+/**
+ @abstract Notifies when an ad has been placed in view at location.
+ @note May be called multiple times as a user scrolls up and down and views are recycled.
+ @param sectionUrl the section where ads are being injected.
+ @param adData The Nativo ad data for this location.
+ @param view The UIView that the ad is placed in.
+ @param identifier The location identifier associated with the ad.
+ @param container The root container in which the ad belongs
+ 
+ */
+- (void)section:(NSString *)sectionUrl didPlaceAd:(NtvAdData *)adData inView:(UIView *)view atLocation:(id)identifier  container:(UIView *)container;
+
+
+/// @name Ad Placement Click Events
+
+/**
+ @abstract Called when native ad is clicked and landing page should be displayed. Use this method to implement how the landing page will be displayed.
+ 
+ */
+- (void)section:(NSString *)sectionUrl needsDisplayLandingPage:(nullable UIViewController<NtvLandingPageInterface> *)sponsoredLandingPageViewController;
+
+/**
+ @abstract Called when click-out ad is clicked and a web view of some sort should be displayed. Use this method to implement how the web view will be displayed.
+ 
+ */
+- (void)section:(NSString *)sectionUrl needsDisplayClickoutURL:(NSURL *)url;
+
+
 
 /// @name Register Nibs
 
@@ -81,20 +124,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable Class)section:(NSString *)sectionUrl registerClassNameForAdTemplateType:(NtvAdTemplateType)templateType atLocationIdentifier:(id)locationIdentifier;
 
 
-/// @name Ad Placement Click Events
-
-/**
- @abstract Called when native ad is clicked and landing page should be displayed. Use this method to implement how the landing page will be displayed.
- 
- */
-- (void)section:(NSString *)sectionUrl needsDisplayLandingPage:(nullable UIViewController<NtvLandingPageInterface> *)sponsoredLandingPageViewController;
-
-/**
- @abstract Called when click-out ad is clicked and a web view of some sort should be displayed. Use this method to implement how the web view will be displayed.
- 
- */
-- (void)section:(NSString *)sectionUrl needsDisplayClickoutURL:(NSURL *)url;
-
 
 /// @name Handle Full Screen Player
 
@@ -123,21 +152,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 */
 - (void)section:(NSString *)sectionUrl shouldPresentShareActivity:(UIActivityViewController *)shareActivity;
-
-
-/// @name Handle Ad Response
-
-/**
- @abstract Notify delegate of ad received. Optional protocol.
- 
- */
-- (void)section:(NSString *)sectionUrl didReceiveAd:(NtvAdData *)adData;
-
-/**
- @abstract Notify delegate of ad request failure.
- 
- */
-- (void)section:(NSString *)sectionUrl requestDidFailWithError:(nullable NSError *)error;
 
 
 @end

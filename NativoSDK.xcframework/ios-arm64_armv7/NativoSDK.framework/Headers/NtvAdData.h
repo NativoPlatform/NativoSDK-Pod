@@ -11,13 +11,13 @@
 
 /** Ad types */
 typedef NS_ENUM(NSUInteger, NtvAdType) {
-    NtvAdTypeNative,
-    NtvAdTypeDisplay,
-    NtvAdTypeStandardDisplay,
-    NtvAdTypeClickToPlayVideo,
-    NtvAdTypeScrollToPlayVideo,
-    NtvAdTypeStory,
-    NtvAdTypePlaceholder
+    NtvAdTypeNative = 0,
+    NtvAdTypeDisplay = 2,
+    NtvAdTypeClickToPlayVideo = 3,
+    NtvAdTypeScrollToPlayVideo = 5,
+    NtvAdTypeStandardDisplay = 6,
+    NtvAdTypeStory = 7,
+    NtvAdTypeNoFill = 8
 };
 
 typedef NS_ENUM(NSUInteger, NtvTestAdType) {
@@ -65,7 +65,7 @@ typedef void(^TrackDidShareBlock)(NtvSharePlatform);
 extern CGSize const kGADAdSizeNativoDefault;
 
 /**
- An instance of `NtvAdData` stores data of a single Nativo ad. You should never create an instance of `NtvAdData` yourself. They will be requested and handled for you automatically by the NativoSDK. If you do need access to the ad data of a placement, you can access it by calling `NativoSDK.getCachedAd()`. However this will not make a request for a new ad, it simply checks the cache for an ad already received. Ads are automatically requested and cached when calling `NativoSDK.prefetchAd()` and `NativoSDK.placeAdInView()`.
+ An instance of `NtvAdData` stores data of a single Nativo ad.  Ads are automatically requested and cached when calling `NativoSDK.prefetchAd()` and `NativoSDK.placeAdInView()`.
  
  */
 NS_ASSUME_NONNULL_BEGIN
@@ -156,6 +156,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (readonly, nonatomic) NSNumber *placementId;
 
+/**
+ @abstract The identifier for this ad.
+ */
+@property (readonly, nonatomic) NSNumber *adId;
 
 /**
  @abstract Object that identifies the ad's location. Will most likely be an `NSIndexPath`
