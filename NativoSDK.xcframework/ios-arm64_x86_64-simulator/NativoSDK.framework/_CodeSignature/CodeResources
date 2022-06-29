@@ -8,6 +8,18 @@
 		<data>
 		LvDMNVjq/JtjwAFx08J99sArk74=
 		</data>
+		<key>Frameworks/NtvCore.framework/Info.plist</key>
+		<data>
+		eYlIUUf85kcrbUncVPRmvCQqElQ=
+		</data>
+		<key>Frameworks/NtvCore.framework/NtvCore</key>
+		<data>
+		9GdisU2f1VApyZ6kDNVlW87nSVI=
+		</data>
+		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
+		<data>
+		8S2cuIPcluLcxc5JGoYsNqFo074=
+		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
 		KTp/1jpLGGzRIn2msclzkAtTx84=
@@ -256,10 +268,6 @@
 		<data>
 		Ems7L7olaMFNsfopu9Q6LFMf1o4=
 		</data>
-		<key>strip-frameworks.sh</key>
-		<data>
-		bENFeKfMHTdHyWS5AygjhdAo44Q=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -272,6 +280,39 @@
 			<key>hash2</key>
 			<data>
 			Oyt4w3SE9aGoKC+4/jlApG3dxB74rF1WtBERQXhoCL0=
+			</data>
+		</dict>
+		<key>Frameworks/NtvCore.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eYlIUUf85kcrbUncVPRmvCQqElQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			HLHGPUGJSsJQIJRBtCo6Iio/y8THTOlAZJyZpgldWRw=
+			</data>
+		</dict>
+		<key>Frameworks/NtvCore.framework/NtvCore</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9GdisU2f1VApyZ6kDNVlW87nSVI=
+			</data>
+			<key>hash2</key>
+			<data>
+			mKZG0rNlisXRkQlkcoqNAIOLQzTavDgF5FdUBP4W+WU=
+			</data>
+		</dict>
+		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8S2cuIPcluLcxc5JGoYsNqFo074=
+			</data>
+			<key>hash2</key>
+			<data>
+			C7naxuaLMqXTE3ysWfgd4cifjMXUTCqxPLXMsNjCQAk=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
@@ -943,17 +984,6 @@
 			<key>hash2</key>
 			<data>
 			7iIUqUiqUQl4h44JRTshyF8bz+eKfFVBImithaX7FH0=
-			</data>
-		</dict>
-		<key>strip-frameworks.sh</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			bENFeKfMHTdHyWS5AygjhdAo44Q=
-			</data>
-			<key>hash2</key>
-			<data>
-			TdoX67LzludHG3MJM/ykgPmTswRtyXdokveq/f6XloI=
 			</data>
 		</dict>
 	</dict>
