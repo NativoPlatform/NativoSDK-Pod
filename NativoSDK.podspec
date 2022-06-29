@@ -15,6 +15,5 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = "NativoSDK.xcframework"
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386', 'OTHER_LDFLAGS' => '-ObjC' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
-  s.user
 
 end
