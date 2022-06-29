@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param keyValues Key-value pairs used for targeting in this section.
  
  */
-+ (void)setSectionDelegate:(id<NtvSectionDelegate>)delegate forSection:(NSString *)sectionUrl withTargeting:(nullable NSDictionary *)keyValues;
++ (void)setSectionDelegate:(id<NtvSectionDelegate>)delegate forSection:(NSString *)sectionUrl withTargeting:(nullable NSDictionary<NSString *, id>*)keyValues;
 
 
 /** @name Register Ad Templates */
