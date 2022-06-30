@@ -4,13 +4,44 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/NtvCore.h</key>
+		<data>
+		f9vwNIi9TNUZNebwD1eOk4cqF+Q=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		eYlIUUf85kcrbUncVPRmvCQqElQ=
 		</data>
+		<key>Modules/module.modulemap</key>
+		<data>
+		NWz9UCYCk8+TlOsPbbAx8E3m/ro=
+		</data>
 	</dict>
 	<key>files2</key>
-	<dict/>
+	<dict>
+		<key>Headers/NtvCore.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			f9vwNIi9TNUZNebwD1eOk4cqF+Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			uf/REeN3f+5QWDJ8OozQOlMPlsIEfIniLlJo3kUSz5k=
+			</data>
+		</dict>
+		<key>Modules/module.modulemap</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NWz9UCYCk8+TlOsPbbAx8E3m/ro=
+			</data>
+			<key>hash2</key>
+			<data>
+			23Y7Jpy2WPr7lHk8TYlk83qqjbqmizxFYck45TH+GUo=
+			</data>
+		</dict>
+	</dict>
 	<key>rules</key>
 	<dict>
 		<key>^.*</key>

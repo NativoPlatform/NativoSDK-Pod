@@ -8,17 +8,25 @@
 		<data>
 		LvDMNVjq/JtjwAFx08J99sArk74=
 		</data>
+		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
+		<data>
+		f9vwNIi9TNUZNebwD1eOk4cqF+Q=
+		</data>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
 		<data>
 		eYlIUUf85kcrbUncVPRmvCQqElQ=
 		</data>
+		<key>Frameworks/NtvCore.framework/Modules/module.modulemap</key>
+		<data>
+		NWz9UCYCk8+TlOsPbbAx8E3m/ro=
+		</data>
 		<key>Frameworks/NtvCore.framework/NtvCore</key>
 		<data>
-		9GdisU2f1VApyZ6kDNVlW87nSVI=
+		1DpTYNZzEq4I9H84S4Hpz3xTpD0=
 		</data>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		8S2cuIPcluLcxc5JGoYsNqFo074=
+		vpkk1JcGES6t8TwCX4DeF/7nDLM=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
@@ -70,7 +78,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		trm71RSHkZDIUhgWsnPrG2rt5l4=
+		UZF7bWzd116h5eXbi5EimTPA4H4=
 		</data>
 		<key>Layer 10@3x.png</key>
 		<data>
@@ -282,6 +290,17 @@
 			Oyt4w3SE9aGoKC+4/jlApG3dxB74rF1WtBERQXhoCL0=
 			</data>
 		</dict>
+		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			f9vwNIi9TNUZNebwD1eOk4cqF+Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			uf/REeN3f+5QWDJ8OozQOlMPlsIEfIniLlJo3kUSz5k=
+			</data>
+		</dict>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -293,26 +312,37 @@
 			HLHGPUGJSsJQIJRBtCo6Iio/y8THTOlAZJyZpgldWRw=
 			</data>
 		</dict>
+		<key>Frameworks/NtvCore.framework/Modules/module.modulemap</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NWz9UCYCk8+TlOsPbbAx8E3m/ro=
+			</data>
+			<key>hash2</key>
+			<data>
+			23Y7Jpy2WPr7lHk8TYlk83qqjbqmizxFYck45TH+GUo=
+			</data>
+		</dict>
 		<key>Frameworks/NtvCore.framework/NtvCore</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9GdisU2f1VApyZ6kDNVlW87nSVI=
+			1DpTYNZzEq4I9H84S4Hpz3xTpD0=
 			</data>
 			<key>hash2</key>
 			<data>
-			mKZG0rNlisXRkQlkcoqNAIOLQzTavDgF5FdUBP4W+WU=
+			2N/CYs9UXa/Osu6IqMMyE93Ua3jzRwDJZAC1pBq8FJg=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8S2cuIPcluLcxc5JGoYsNqFo074=
+			vpkk1JcGES6t8TwCX4DeF/7nDLM=
 			</data>
 			<key>hash2</key>
 			<data>
-			C7naxuaLMqXTE3ysWfgd4cifjMXUTCqxPLXMsNjCQAk=
+			NTtAVMZwD2ZTxynehVdJxwgVNv79FUzCLrqbfUU3rR8=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
