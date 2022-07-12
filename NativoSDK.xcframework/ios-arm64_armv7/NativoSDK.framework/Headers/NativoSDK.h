@@ -28,9 +28,7 @@ extern const unsigned char NativoSDKVersionString[];
 
 /**
  Refer to https://sdk.nativo.com for guides and documentation.
- 
- __Version__: 7.0.0
- 
+  
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface NativoSDK : NSObject

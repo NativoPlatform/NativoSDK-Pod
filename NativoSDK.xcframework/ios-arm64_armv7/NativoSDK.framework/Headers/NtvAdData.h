@@ -23,11 +23,11 @@ typedef NS_ENUM(NSUInteger, NtvAdType) {
 typedef NS_ENUM(NSUInteger, NtvTestAdType) {
     NtvTestAdTypeNative,
     NtvTestAdTypeDisplay,
-    NtvTestAdTypeAdChoicesDisplay,
     NtvTestAdTypeStandardDisplay,
     NtvTestAdTypeClickToPlayVideo,
     NtvTestAdTypeScrollToPlayVideo,
-    NtvTestAdTypeAdChoicesVideo,
+    NtvTestAdTypeVASTVideoScroll,
+    NtvTestAdTypeVASTVideoClick,
     NtvTestAdTypeStory,
     NtvTestAdTypeNoFill
 };

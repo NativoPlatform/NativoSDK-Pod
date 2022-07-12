@@ -10,7 +10,7 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
 		<data>
-		f9vwNIi9TNUZNebwD1eOk4cqF+Q=
+		inGbT1ruRP+sJWFZgIbqc+hEQM4=
 		</data>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
 		<data>
@@ -22,19 +22,19 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/NtvCore</key>
 		<data>
-		/kRUzPtgs1zCcQMOK7FrfSntogc=
+		0lwF91xa9e3R88knDVaXjDA5mSM=
 		</data>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		vpkk1JcGES6t8TwCX4DeF/7nDLM=
+		2L5qQZsiNXI0qWeOwwsMhx+c8QE=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
-		KTp/1jpLGGzRIn2msclzkAtTx84=
+		UYIpTojSCIpiGYaA94M8eHrEmP8=
 		</data>
 		<key>Headers/NtvAdData.h</key>
 		<data>
-		KIu/6oevHEts9vO2lb1VVHVfAKc=
+		ptILxAfQwsZn44hQkTJGdHul/dc=
 		</data>
 		<key>Headers/NtvAdInterface.h</key>
 		<data>
@@ -270,7 +270,7 @@
 		</data>
 		<key>NtvVideoControlsView.nib</key>
 		<data>
-		kK+ovRkTPAqNDucOae1i1r/Ww9Q=
+		MlvLuGub9oKRj6cJ9apBipIx544=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -294,11 +294,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			f9vwNIi9TNUZNebwD1eOk4cqF+Q=
+			inGbT1ruRP+sJWFZgIbqc+hEQM4=
 			</data>
 			<key>hash2</key>
 			<data>
-			uf/REeN3f+5QWDJ8OozQOlMPlsIEfIniLlJo3kUSz5k=
+			oQUH5CyDq1tzguWUgrXtVaRbEGt0xsCkdoPyBhBzjVA=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
@@ -327,44 +327,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/kRUzPtgs1zCcQMOK7FrfSntogc=
+			0lwF91xa9e3R88knDVaXjDA5mSM=
 			</data>
 			<key>hash2</key>
 			<data>
-			NEC9bZzBZtMyQoFHIwgYl1DLZhzqyYYX40Z7C/gZqBg=
+			dMCTG03h/4WLrmhtk+L3DWcRPWjznlpZZksiJRrfY0U=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vpkk1JcGES6t8TwCX4DeF/7nDLM=
+			2L5qQZsiNXI0qWeOwwsMhx+c8QE=
 			</data>
 			<key>hash2</key>
 			<data>
-			NTtAVMZwD2ZTxynehVdJxwgVNv79FUzCLrqbfUU3rR8=
+			wxjs61J/Z+HM9V4Qvyfo82EjfyVQoWLyxcl7dY1Iq9g=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KTp/1jpLGGzRIn2msclzkAtTx84=
+			UYIpTojSCIpiGYaA94M8eHrEmP8=
 			</data>
 			<key>hash2</key>
 			<data>
-			K5kIxD38RwCZx+T7SfhBLouRBz4a8xlR8k/ZvkaRo/M=
+			smaGvjye/RM1rKI82ngufSZETTbjEoGUo4likvaA7eo=
 			</data>
 		</dict>
 		<key>Headers/NtvAdData.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KIu/6oevHEts9vO2lb1VVHVfAKc=
+			ptILxAfQwsZn44hQkTJGdHul/dc=
 			</data>
 			<key>hash2</key>
 			<data>
-			b52YVMNnIZCOv2Hi4/VYDo+CdZ7MGtIVN7nYUYXD1fU=
+			i3iAv1kaswtuL7m534114FwcO+65+7hwPPu+Z1QpaXw=
 			</data>
 		</dict>
 		<key>Headers/NtvAdInterface.h</key>
@@ -998,11 +998,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kK+ovRkTPAqNDucOae1i1r/Ww9Q=
+			MlvLuGub9oKRj6cJ9apBipIx544=
 			</data>
 			<key>hash2</key>
 			<data>
-			IRp5tuWDPymURq1kBoa6dRjCk1Xj9vd/gWWLC8zjjU0=
+			6w9Jv/W4QaiIhmmOtFe9DC2d5srxX2d2r/6UtHhlmGY=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
