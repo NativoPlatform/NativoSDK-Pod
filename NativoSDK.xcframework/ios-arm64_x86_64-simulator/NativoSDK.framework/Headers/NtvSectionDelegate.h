@@ -37,24 +37,24 @@ NS_ASSUME_NONNULL_BEGIN
  @note Calling NativoSDK.placeAdInView() the first time, without a previous prefetch call, will return false and will make an async request for a new ad. When the new ad returns, this method will be called and you will need to reload your views and call NativoSDK.placeAdInView() at the location provided.
  @param sectionUrl the section where ads are being injected.
  @param adData The Nativo ad data for this location
- @param identifier The location identifier associated with the ad.
+ @param location The location identifier associated with the ad.
  @param container The root container in which the ad belongs
  
  */
-- (void)section:(NSString *)sectionUrl didAssignAd:(NtvAdData *)adData toLocation:(id)identifier container:(UIView *)container;
+- (void)section:(NSString *)sectionUrl didAssignAd:(NtvAdData *)adData toLocation:(id)location container:(UIView *)container;
 
 /**
  @abstract Notifies when an ad, or ad request fails. If `atLocation` is provided it is your responsibility to remove the ad view at the given location.
  @discussion When an ad request fails, or ad content is not available, you may be left with a blank ad unit. This method will be called in these scenarios so that you can remove the ad view and refresh your content.
  @param sectionUrl the section where the ad failed.
- @param identifier The location identifier associated with the ad. Nil if ad not assigned to location yet.
+ @param location The location identifier associated with the ad. Nil if ad not assigned to location yet.
  @param view The UIView that the ad is placed in. Nil if ad not placed in view yet.
  @param errMsg The error message if any.
  @param container The root container in which the ad belongs
  @note If using the example implementation from the guide, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
 
  */
-- (void)section:(NSString *)sectionUrl didFailAdAtLocation:(nullable id)identifier inView:(nullable UIView *)view withError:(nullable NSString *)errMsg container:(nullable UIView *)container;
+- (void)section:(NSString *)sectionUrl didFailAdAtLocation:(nullable id)location inView:(nullable UIView *)view withError:(nullable NSString *)errMsg container:(nullable UIView *)container;
 
 
 @optional
@@ -65,11 +65,11 @@ NS_ASSUME_NONNULL_BEGIN
  @param sectionUrl the section where ads are being injected.
  @param adData The Nativo ad data for this location.
  @param view The UIView that the ad is placed in.
- @param identifier The location identifier associated with the ad.
+ @param location The location identifier associated with the ad.
  @param container The root container in which the ad belongs
  
  */
-- (void)section:(NSString *)sectionUrl didPlaceAd:(NtvAdData *)adData inView:(UIView *)view atLocation:(id)identifier  container:(UIView *)container;
+- (void)section:(NSString *)sectionUrl didPlaceAd:(NtvAdData *)adData inView:(UIView *)view atLocation:(id)location  container:(UIView *)container;
 
 
 /// @name Ad Placement Click Events
@@ -135,16 +135,6 @@ NS_ASSUME_NONNULL_BEGIN
  
  */
 - (UIViewController *)viewControllerForFullScreenInSection:(NSString *)sectionUrl;
-
-
-/**
- @abstract Return the view where you want the full screen video and story ad player to be injected.
- @discussion Deprecated. Please use `viewControllerForFullScreenInSection` instead. By default will inject into root window.
- @return The view where the full screen video and story ad player will be injected.
- 
- */
-- (UIView *)getContainerForFullScreenVideoInSection:(NSString *)sectionUrl __deprecated;
-
 
 /**
 @abstract When the user clicks the share button on a video they will be presented with a UIActivityController. By default will be presented using the window's root view controller.

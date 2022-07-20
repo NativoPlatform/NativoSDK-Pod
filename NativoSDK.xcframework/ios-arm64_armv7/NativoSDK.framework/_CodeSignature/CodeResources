@@ -22,7 +22,7 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/NtvCore</key>
 		<data>
-		dberfZJho6uwC9kcqxzmPOffg4Y=
+		s7mhB3+xXKWAzp8gK+BAV/MSQbs=
 		</data>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
-		UYIpTojSCIpiGYaA94M8eHrEmP8=
+		VlYRQglF5y/D5g3fEkgp4IQuVBk=
 		</data>
 		<key>Headers/NtvAdData.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/NtvSectionDelegate.h</key>
 		<data>
-		XVNUcZxkyEis09cuXmWtJy3VpG0=
+		bFYdC9lxap0V1CKfvSnVNYoQpjg=
 		</data>
 		<key>Headers/NtvStandardDisplayAdInterface.h</key>
 		<data>
@@ -327,11 +327,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dberfZJho6uwC9kcqxzmPOffg4Y=
+			s7mhB3+xXKWAzp8gK+BAV/MSQbs=
 			</data>
 			<key>hash2</key>
 			<data>
-			kVHyoLGVWVCBdDQAGxU8ChuT6ww0yhzyLcEECDP8tlI=
+			sSaLMCPXCvoOYw/sUOqEbPzXKjNfKBjdWDkbPzl73GM=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
@@ -349,11 +349,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UYIpTojSCIpiGYaA94M8eHrEmP8=
+			VlYRQglF5y/D5g3fEkgp4IQuVBk=
 			</data>
 			<key>hash2</key>
 			<data>
-			smaGvjye/RM1rKI82ngufSZETTbjEoGUo4likvaA7eo=
+			EO+LgrQMF+ArIqC0yS4CNdFviTE0xUMTkaVCTloasDM=
 			</data>
 		</dict>
 		<key>Headers/NtvAdData.h</key>
@@ -426,11 +426,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XVNUcZxkyEis09cuXmWtJy3VpG0=
+			bFYdC9lxap0V1CKfvSnVNYoQpjg=
 			</data>
 			<key>hash2</key>
 			<data>
-			o2mZXvINMkWwFub/yrYOMb5AbNgCawI97Dl/M7QnxCI=
+			mz5om00EWf3Nd+teZyRxM3cbZwg8Id2QYv97EBfJpyE=
 			</data>
 		</dict>
 		<key>Headers/NtvStandardDisplayAdInterface.h</key>

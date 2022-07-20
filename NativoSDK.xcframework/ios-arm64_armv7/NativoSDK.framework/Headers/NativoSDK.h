@@ -94,14 +94,14 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract View ad injection API. Attempts to place an ad in the view provided.
  @discussion Calling this method the first time without a previous prefetch call will return false and will make an async request for a new ad. When the new ad returns, NtvSectionDelegate method `section:needsPlaceAdInViewAtLocation:` will be called and you will need to reload your datasource and call this method again. Alternatively, if you have called the prefetch method earlier, this method will return true and will immediatly place the ad in the view provided.
  @param view UIView where ad will be injected.
- @param identifier The location identifier with which the ad will be associated.
+ @param location The location identifier with which the ad will be associated.
  @param container The view that contains the ad placement. Used for tracking purposes.
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
  @return Will return true if Nativo ad returned with fill and was successfully injected into the view
  
  */
-+ (BOOL)placeAdInView:(UIView *)view atLocationIdentifier:(id)identifier inContainer:(UIView *)container forSection:(NSString *)sectionUrl options:(nullable NSDictionary<NSString *, NSString *> *)options;
++ (BOOL)placeAdInView:(UIView *)view atLocationIdentifier:(id)location inContainer:(UIView *)container forSection:(NSString *)sectionUrl options:(nullable NSDictionary<NSString *, NSString *> *)options;
 
 
 
@@ -120,11 +120,11 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract Optional. Prefetches an ad for given section at specific location. Useful to avoid loading views.
  @discussion The same as `prefetchAdForSection()` however this only loads an ad for a specific location. https://sdk.nativo.com/docs/optimization_ios
  @param sectionUrl The section identifier used to request ads from Nativo.
- @param identifier The location identifier for the ad.
+ @param location The location identifier for the ad.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
 
 */
-+ (void)prefetchAdForSection:(NSString *)sectionUrl atLocationIdentifier:(nullable id)identifier inContainer:(nullable UIView *)container options:(nullable NSDictionary *)options;
++ (void)prefetchAdForSection:(NSString *)sectionUrl atLocationIdentifier:(nullable id)location inContainer:(nullable UIView *)container options:(nullable NSDictionary *)options;
 
 
 
@@ -186,12 +186,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @abstract Get ad at given indexPath.
  @discussion Use this method when you need to check an ads [NtvAdData adType] or get its [NtvAdData sponsoredArticleURL]. This method will not make a request to get the ad, it simply checks if an ad exists in cache. Requests are made as needed when calling TableView/CollectionView API, View API, or Prefetch API methods.
- @param identifier The location identifier or indexPath with which the ad is associated.
+ @param location The location identifier or indexPath with which the ad is associated.
  @param sectionUrl The section identifier used to request ads from Nativo.
  @return NtvAdData Ad data if available at location identifier.
  
  */
-+ (nullable NtvAdData *)getCachedAdAtLocationIdentifier:(id)identifier forSection:(NSString *)sectionUrl container:(UIView *)container;
++ (nullable NtvAdData *)getCachedAdAtLocationIdentifier:(id)location forSection:(NSString *)sectionUrl container:(UIView *)container;
 + (nullable NtvAdData *)getCachedAdAtIndex:(NSIndexPath *)indexPath forSection:(NSString *)sectionUrl container:(UIView *)container; // Convenience for use with table or collection views
 
 
@@ -203,11 +203,11 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion This method allows you to have control over how the landing page view controller is instantiated. Only use this method if you are *not* registering a nib file that contains your sponsored landing page with [NativoSDK registerNib:forAdTemplateType:] and *not* implementing the section delegate methods [NtvSectionDelegate section:needsDisplayLandingPage:] and [NtvSectionDelegate section:needsDisplayClickoutURL:].  If you are registering a nib for your sponsored landing page then the NativoSDK will handle the ad unit click for you.
  @param viewController The view controller used to display sponsored articles.
  @param sectionUrl The section identifier used to request ads from Nativo.
- @param identifier The location identifier with which the ad is associated.
+ @param location The location identifier with which the ad is associated.
  @param container The root container the ad belongs to
  
  */
-+ (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl withAdAtLocationIdentifier:(id)identifier fromAdContainer:(UIView *)container;
++ (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl withAdAtLocationIdentifier:(id)location fromAdContainer:(UIView *)container;
 + (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl withAdAtIndexPath:(NSIndexPath *)indexPath fromAdContainer:(UIView *)container; // Convenience for use with table or collection views
 
 
@@ -224,12 +224,12 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract Use GAM as a way to flight and track your campaigns with Nativo.
  @param bannerView The banner view from GAM SDK.
  @param sectionUrl The section identifier used to request ads from Nativo.
- @param identifier The location identifier with which the ad will be associated.
+ @param location The location identifier with which the ad will be associated.
  @discussion You should make the request for a GAM banner first before calling this method. After calling this method, a Nativo ad will be requested
  and your next call to placeAdInView() will place the GAM ad if filled.
  
  */
-+ (void)makeGAMRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atLocationIdentifier:(id)identifier inContainer:(UIView *)container;
++ (void)makeGAMRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atLocationIdentifier:(id)location inContainer:(UIView *)container;
 + (void)makeGAMRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atIndexPath:(NSIndexPath *)indexPath inContainer:(UIView *)container; // Convenience for use with table or collection views
 
 
