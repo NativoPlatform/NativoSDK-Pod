@@ -425,7 +425,7 @@ __attribute__((swift_name("CoreCompositeError.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CoreConfig")))
 @interface NtvCoreConfig : NtvBase
-- (instancetype)initWithGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("init(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking enableOMTesting:(BOOL)enableOMTesting shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("init(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:enableOMTesting:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) NtvCoreConfigCompanion *companion __attribute__((swift_name("companion")));
 - (NtvGAMParameters *)component1 __attribute__((swift_name("component1()")));
 - (BOOL)component10 __attribute__((swift_name("component10()")));
@@ -434,13 +434,14 @@ __attribute__((swift_name("CoreConfig")))
 - (BOOL)component13 __attribute__((swift_name("component13()")));
 - (BOOL)component14 __attribute__((swift_name("component14()")));
 - (BOOL)component15 __attribute__((swift_name("component15()")));
-- (NSString *)component16 __attribute__((swift_name("component16()")));
+- (BOOL)component16 __attribute__((swift_name("component16()")));
 - (NSString *)component17 __attribute__((swift_name("component17()")));
 - (NSString *)component18 __attribute__((swift_name("component18()")));
 - (NSString *)component19 __attribute__((swift_name("component19()")));
 - (NtvGAMTest *)component2 __attribute__((swift_name("component2()")));
 - (NSString *)component20 __attribute__((swift_name("component20()")));
-- (int32_t)component21 __attribute__((swift_name("component21()")));
+- (NSString *)component21 __attribute__((swift_name("component21()")));
+- (int32_t)component22 __attribute__((swift_name("component22()")));
 - (NtvUrlConfiguration *)component3 __attribute__((swift_name("component3()")));
 - (NtvTestAdConfiguration *)component4 __attribute__((swift_name("component4()")));
 - (int32_t)component5 __attribute__((swift_name("component5()")));
@@ -448,7 +449,7 @@ __attribute__((swift_name("CoreConfig")))
 - (int32_t)component7 __attribute__((swift_name("component7()")));
 - (BOOL)component8 __attribute__((swift_name("component8()")));
 - (BOOL)component9 __attribute__((swift_name("component9()")));
-- (NtvCoreConfig *)doCopyGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("doCopy(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)")));
+- (NtvCoreConfig *)doCopyGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking enableOMTesting:(BOOL)enableOMTesting shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("doCopy(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:enableOMTesting:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -456,6 +457,7 @@ __attribute__((swift_name("CoreConfig")))
 @property (readonly) NSString *dateFormat __attribute__((swift_name("dateFormat")));
 @property (readonly) BOOL delayRemovePixel __attribute__((swift_name("delayRemovePixel")));
 @property (readonly) BOOL enableErrorReporting __attribute__((swift_name("enableErrorReporting")));
+@property (readonly) BOOL enableOMTesting __attribute__((swift_name("enableOMTesting")));
 @property (readonly) BOOL enableOMTracking __attribute__((swift_name("enableOMTracking")));
 @property (readonly) BOOL enableVAST __attribute__((swift_name("enableVAST")));
 @property (readonly) NtvGAMParameters *gamParams __attribute__((swift_name("gamParams")));
@@ -872,7 +874,6 @@ __attribute__((swift_name("CoreSettings")))
 - (void)enableTestAdvertisementsWithType:(NtvCoreTestAdType *)type __attribute__((swift_name("enableTestAdvertisementsWith(type:)")));
 @property BOOL autoPrefetchEnabled __attribute__((swift_name("autoPrefetchEnabled")));
 @property BOOL devLogsEnabled __attribute__((swift_name("devLogsEnabled")));
-@property BOOL enableOMTrackingTests __attribute__((swift_name("enableOMTrackingTests")));
 @property BOOL enableTestAds __attribute__((swift_name("enableTestAds")));
 @property BOOL errorReportingEnabled __attribute__((swift_name("errorReportingEnabled")));
 @property NSString * _Nullable gamVersion __attribute__((swift_name("gamVersion")));

@@ -10,7 +10,7 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
 		<data>
-		inGbT1ruRP+sJWFZgIbqc+hEQM4=
+		BZsW4fY1Wdz2EtfkJORuE0034hY=
 		</data>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/NtvCore</key>
 		<data>
-		s7mhB3+xXKWAzp8gK+BAV/MSQbs=
+		VuzH2kcyTiVNOXVrnzLgXohWpqM=
 		</data>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		2L5qQZsiNXI0qWeOwwsMhx+c8QE=
+		N9m0feW3QRg/dtT61YwtQ3TlhW0=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
@@ -270,7 +270,7 @@
 		</data>
 		<key>NtvVideoControlsView.nib</key>
 		<data>
-		kK+ovRkTPAqNDucOae1i1r/Ww9Q=
+		MlvLuGub9oKRj6cJ9apBipIx544=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -294,11 +294,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			inGbT1ruRP+sJWFZgIbqc+hEQM4=
+			BZsW4fY1Wdz2EtfkJORuE0034hY=
 			</data>
 			<key>hash2</key>
 			<data>
-			oQUH5CyDq1tzguWUgrXtVaRbEGt0xsCkdoPyBhBzjVA=
+			wQJ6/ZHTO8Lx3Svc7VE3ePqwejU90c/CGLYPy6MhOIs=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
@@ -327,22 +327,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			s7mhB3+xXKWAzp8gK+BAV/MSQbs=
+			VuzH2kcyTiVNOXVrnzLgXohWpqM=
 			</data>
 			<key>hash2</key>
 			<data>
-			sSaLMCPXCvoOYw/sUOqEbPzXKjNfKBjdWDkbPzl73GM=
+			dDF7b4UMoKzmeYLz/736rg1HsRPQgITMqJebo0fw2TE=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2L5qQZsiNXI0qWeOwwsMhx+c8QE=
+			N9m0feW3QRg/dtT61YwtQ3TlhW0=
 			</data>
 			<key>hash2</key>
 			<data>
-			wxjs61J/Z+HM9V4Qvyfo82EjfyVQoWLyxcl7dY1Iq9g=
+			0qTQm+V+jI4oTVtvLl7CKTSn0OYWGgElitEi4+87O+w=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
@@ -998,11 +998,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kK+ovRkTPAqNDucOae1i1r/Ww9Q=
+			MlvLuGub9oKRj6cJ9apBipIx544=
 			</data>
 			<key>hash2</key>
 			<data>
-			IRp5tuWDPymURq1kBoa6dRjCk1Xj9vd/gWWLC8zjjU0=
+			6w9Jv/W4QaiIhmmOtFe9DC2d5srxX2d2r/6UtHhlmGY=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
