@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract Notification of an ad response.
- @discussion Called when an ad request from [NativoSDK.prefetchAdForSection] or [NativoSDK.placeAdInView] returns. Use this to reload your views as needed.
+ @discussion Called when an ad request from [NativoSDK.prefetchAdForSection] or [NativoSDK.placeAdInView] returns.
  @param sectionUrl The section that requested an ad
  @param didGetFill True if ad returned with content. False if successful request was made but no ad was available.
  
@@ -33,8 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract Notifes when an ad has been assigned to a location.
- @discussion Use this to keep track of what rows contain Nativo ad data in order to update your datasource and inject new rows if needed.
- @note Calling NativoSDK.placeAdInView() the first time, without a previous prefetch call, will return false and will make an async request for a new ad. When the new ad returns, this method will be called and you will need to reload your views and call NativoSDK.placeAdInView() at the location provided.
+ @discussion Use this to keep track of what rows contain Nativo ad data in order to update your datasource and insert/reload new rows as needed.
+ @note Calling NativoSDK.placeAdInView() may return false if there is no ad available yet. Once the ad is received (request is made automatically), it will be assigned to the location provided and this method will be called. At that point, you can reload/insert into your table/collection view, where the next call to NativoSDK.placeAdInView() will succeed.
  @param sectionUrl the section where ads are being injected.
  @param adData The Nativo ad data for this location
  @param location The location identifier associated with the ad.
@@ -45,13 +45,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract Notifies when an ad, or ad request fails. If `atLocation` is provided it is your responsibility to remove the ad view at the given location.
- @discussion When an ad request fails, or ad content is not available, you may be left with a blank ad unit. This method will be called in these scenarios so that you can remove the ad view and refresh your content.
+ @discussion When an ad request fails, or ad content is not available, you may be left with a blank ad unit. This method will be called in these scenarios so that you can remove the ad view from your views.
  @param sectionUrl the section where the ad failed.
  @param location The location identifier associated with the ad. Nil if ad not assigned to location yet.
  @param view The UIView that the ad is placed in. Nil if ad not placed in view yet.
  @param errMsg The error message if any.
  @param container The root container in which the ad belongs
- @note If using the example implementation from the guide, calling `reloadData()` on your UITableView or UICollectionView should be all that is needed here.
 
  */
 - (void)section:(NSString *)sectionUrl didFailAdAtLocation:(nullable id)location inView:(nullable UIView *)view withError:(nullable NSString *)errMsg container:(nullable UIView *)container;
@@ -60,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 /**
- @abstract Notifies when an ad has been placed in view at location.
+ @abstract Notifies when an ad has been placed in view at location. This will be called after `didReceiveAd` and `didAssignAd`, once the is ad injected into the view heirarchy.
  @note May be called multiple times as a user scrolls up and down and views are recycled.
  @param sectionUrl the section where ads are being injected.
  @param adData The Nativo ad data for this location.

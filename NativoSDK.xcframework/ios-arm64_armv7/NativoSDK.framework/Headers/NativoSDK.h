@@ -144,7 +144,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** @name Manage Datasource */
 
 /**
- @abstract Modify an `NSIndexPath` from a table or collection view to adjust for any ads received.
+ @abstract Optional method used to offset an `NSIndexPath` from a table or collection view to adjust for any ads received.
  @discussion Used to get an adjusted an indexPath that has been modified to account for the number of ads that have been received. Used to prevent items in feed from being skipped/overridden by ads. For example, lets say there exists 5 articles in your datasource, and you have one ad at the third row. That makes 6 rows total (indexPaths.row 0-5). Lets say the user clicks on row 4. Now if even though it is the 4th row, you need to access the 3rd item in your datasource, since first row = datasource[0], second row = datasource[1], third row is nativo ad, then forth row = datasource[2]. If you had used the vanilla indexPath you would have accessed datasource[3] and an item in your feed would have been skipped. Using this method you can prevent items in your feed from getting skipped, or worse, array out of bounds errors.
  @param indexPath The indexPath provided by the `UITableView` or `UICollectionView` delegate methods.
  @param sectionUrl The Nativo section identifier used in the current section.

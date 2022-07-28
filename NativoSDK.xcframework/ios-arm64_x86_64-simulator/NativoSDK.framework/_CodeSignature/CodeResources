@@ -10,7 +10,7 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
 		<data>
-		BZsW4fY1Wdz2EtfkJORuE0034hY=
+		RD8tXU3WG2HpJJU6mysRIzqLYMo=
 		</data>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
 		<data>
@@ -22,15 +22,15 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/NtvCore</key>
 		<data>
-		ZpXLnJ+/SNMObfy+kJ8ioNaXudA=
+		W2xfSq7yacPyvC5GXTOH0Y07zG4=
 		</data>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		N9m0feW3QRg/dtT61YwtQ3TlhW0=
+		zq++07ZGMEax0ox+r5SdTfhj2hY=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
-		VlYRQglF5y/D5g3fEkgp4IQuVBk=
+		/EU4lbKl3HBgrhBKMrLVy6lVn2Y=
 		</data>
 		<key>Headers/NtvAdData.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/NtvSectionDelegate.h</key>
 		<data>
-		bFYdC9lxap0V1CKfvSnVNYoQpjg=
+		aabtHmFbg7UChasKfgMlGOhK1a0=
 		</data>
 		<key>Headers/NtvStandardDisplayAdInterface.h</key>
 		<data>
@@ -294,11 +294,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BZsW4fY1Wdz2EtfkJORuE0034hY=
+			RD8tXU3WG2HpJJU6mysRIzqLYMo=
 			</data>
 			<key>hash2</key>
 			<data>
-			wQJ6/ZHTO8Lx3Svc7VE3ePqwejU90c/CGLYPy6MhOIs=
+			AH+r4gMZYjUx0elSZpfzH5RZEEQYA4zbsnujoubFzJA=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
@@ -327,33 +327,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZpXLnJ+/SNMObfy+kJ8ioNaXudA=
+			W2xfSq7yacPyvC5GXTOH0Y07zG4=
 			</data>
 			<key>hash2</key>
 			<data>
-			eJ14xHMwIMId/w34o5Vp+qYFai4USo/2t9mDkuzQRdQ=
+			QIbo3HQInSWzDRU5wTkXE44noOYewe+XMCsR5skUbi4=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			N9m0feW3QRg/dtT61YwtQ3TlhW0=
+			zq++07ZGMEax0ox+r5SdTfhj2hY=
 			</data>
 			<key>hash2</key>
 			<data>
-			0qTQm+V+jI4oTVtvLl7CKTSn0OYWGgElitEi4+87O+w=
+			6Ro9xBRoKOOsH+TFqbuOmZl0HRBhnQZbKK2qt3pugwk=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VlYRQglF5y/D5g3fEkgp4IQuVBk=
+			/EU4lbKl3HBgrhBKMrLVy6lVn2Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			EO+LgrQMF+ArIqC0yS4CNdFviTE0xUMTkaVCTloasDM=
+			sgQYaQrGBe+ZTXV2fPvDK/XOv8nEQ3NA83DL1Ab7KY8=
 			</data>
 		</dict>
 		<key>Headers/NtvAdData.h</key>
@@ -426,11 +426,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bFYdC9lxap0V1CKfvSnVNYoQpjg=
+			aabtHmFbg7UChasKfgMlGOhK1a0=
 			</data>
 			<key>hash2</key>
 			<data>
-			mz5om00EWf3Nd+teZyRxM3cbZwg8Id2QYv97EBfJpyE=
+			IDHBuZumeciKQlP/vSmjuxOSlTU+NWDQWePbECzfSL0=
 			</data>
 		</dict>
 		<key>Headers/NtvStandardDisplayAdInterface.h</key>

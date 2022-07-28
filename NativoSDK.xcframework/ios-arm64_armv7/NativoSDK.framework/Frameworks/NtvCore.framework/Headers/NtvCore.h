@@ -196,6 +196,7 @@ __attribute__((swift_name("ConnectivityStatus")))
 __attribute__((swift_name("CoreAdData")))
 @interface NtvCoreAdData : NtvBase
 @property (class, readonly, getter=companion) NtvCoreAdDataCompanion *companion __attribute__((swift_name("companion")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) int32_t adCampaignID __attribute__((swift_name("adCampaignID")));
 @property (readonly) NSString * _Nullable adChoicesUrl __attribute__((swift_name("adChoicesUrl")));
 @property (readonly) NtvCoreAdFilterType *adFilterType __attribute__((swift_name("adFilterType")));
@@ -218,7 +219,6 @@ __attribute__((swift_name("CoreAdData")))
 @property (readonly) BOOL isLoading __attribute__((swift_name("isLoading")));
 @property BOOL isPlaceholder __attribute__((swift_name("isPlaceholder")));
 @property id _Nullable locationIdentifier __attribute__((swift_name("locationIdentifier")));
-@property (readonly) NSMutableArray<id> *obstructionViews __attribute__((swift_name("obstructionViews")));
 @property (readonly) NSArray<NtvOMSDKTrackingData *> * _Nullable omSDKTrackers __attribute__((swift_name("omSDKTrackers")));
 @property (readonly) NSString *percent70ImpressionPixelUrl __attribute__((swift_name("percent70ImpressionPixelUrl")));
 @property (readonly) NSString *permanentLink __attribute__((swift_name("permanentLink")));
@@ -371,6 +371,13 @@ __attribute__((swift_name("CoreCache")))
 - (void)clearAdsForSectionUrl:(NSString *)sectionUrl __attribute__((swift_name("clearAdsFor(sectionUrl:)")));
 
 /**
+ * Used to notify a section of a failure and invalidate the ad
+ * Only provides location and container if ad was previously
+ * assigned to location and is not a placeholder
+ */
+- (void)failAdInSectionUrl:(NSString *)sectionUrl atLocation:(id _Nullable)atLocation inView:(id _Nullable)inView container:(id _Nullable)container errMsg:(NSString * _Nullable)errMsg __attribute__((swift_name("failAdIn(sectionUrl:atLocation:inView:container:errMsg:)")));
+
+/**
  * Ad Data
  */
 - (id<NtvCoreAdDataWrapper> _Nullable)getAdDataForIdentifier:(id)identifier sectionUrl:(NSString *)sectionUrl container:(id)container __attribute__((swift_name("getAdDataFor(identifier:sectionUrl:container:)")));
@@ -380,7 +387,15 @@ __attribute__((swift_name("CoreCache")))
  */
 - (NSDictionary<NSString *, NSString *> *)getAdFiltersForSectionUrl:(NSString *)sectionUrl __attribute__((swift_name("getAdFiltersFor(sectionUrl:)")));
 - (id<NtvCoreAdDataWrapper> _Nullable)getAndDequeueAdDataForLocation:(id)location sectionUrl:(NSString *)sectionUrl container:(id)container __attribute__((swift_name("getAndDequeueAdDataFor(location:sectionUrl:container:)")));
+
+/**
+ * Used to help manage datasource
+ */
 - (int32_t)getNumberOfAdsInSectionUrl:(NSString *)sectionUrl container:(id)container __attribute__((swift_name("getNumberOfAdsIn(sectionUrl:container:)")));
+
+/**
+ * Used to help manage datasource offsets on iOS
+ */
 - (NSArray<id> * _Nullable)getPlacementKeysInSectionUrl:(NSString *)sectionUrl container:(id)container __attribute__((swift_name("getPlacementKeysIn(sectionUrl:container:)")));
 
 /**
@@ -425,23 +440,24 @@ __attribute__((swift_name("CoreCompositeError.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CoreConfig")))
 @interface NtvCoreConfig : NtvBase
-- (instancetype)initWithGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking enableOMTesting:(BOOL)enableOMTesting shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("init(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:enableOMTesting:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking omServiceUrl:(NSString *)omServiceUrl omVerificationUrl:(NSString *)omVerificationUrl shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("init(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:omServiceUrl:omVerificationUrl:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) NtvCoreConfigCompanion *companion __attribute__((swift_name("companion")));
 - (NtvGAMParameters *)component1 __attribute__((swift_name("component1()")));
 - (BOOL)component10 __attribute__((swift_name("component10()")));
 - (BOOL)component11 __attribute__((swift_name("component11()")));
 - (BOOL)component12 __attribute__((swift_name("component12()")));
 - (BOOL)component13 __attribute__((swift_name("component13()")));
-- (BOOL)component14 __attribute__((swift_name("component14()")));
-- (BOOL)component15 __attribute__((swift_name("component15()")));
+- (NSString *)component14 __attribute__((swift_name("component14()")));
+- (NSString *)component15 __attribute__((swift_name("component15()")));
 - (BOOL)component16 __attribute__((swift_name("component16()")));
-- (NSString *)component17 __attribute__((swift_name("component17()")));
+- (BOOL)component17 __attribute__((swift_name("component17()")));
 - (NSString *)component18 __attribute__((swift_name("component18()")));
 - (NSString *)component19 __attribute__((swift_name("component19()")));
 - (NtvGAMTest *)component2 __attribute__((swift_name("component2()")));
 - (NSString *)component20 __attribute__((swift_name("component20()")));
 - (NSString *)component21 __attribute__((swift_name("component21()")));
-- (int32_t)component22 __attribute__((swift_name("component22()")));
+- (NSString *)component22 __attribute__((swift_name("component22()")));
+- (int32_t)component23 __attribute__((swift_name("component23()")));
 - (NtvUrlConfiguration *)component3 __attribute__((swift_name("component3()")));
 - (NtvTestAdConfiguration *)component4 __attribute__((swift_name("component4()")));
 - (int32_t)component5 __attribute__((swift_name("component5()")));
@@ -449,7 +465,7 @@ __attribute__((swift_name("CoreConfig")))
 - (int32_t)component7 __attribute__((swift_name("component7()")));
 - (BOOL)component8 __attribute__((swift_name("component8()")));
 - (BOOL)component9 __attribute__((swift_name("component9()")));
-- (NtvCoreConfig *)doCopyGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking enableOMTesting:(BOOL)enableOMTesting shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("doCopy(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:enableOMTesting:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)")));
+- (NtvCoreConfig *)doCopyGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking omServiceUrl:(NSString *)omServiceUrl omVerificationUrl:(NSString *)omVerificationUrl shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("doCopy(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:omServiceUrl:omVerificationUrl:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -457,7 +473,6 @@ __attribute__((swift_name("CoreConfig")))
 @property (readonly) NSString *dateFormat __attribute__((swift_name("dateFormat")));
 @property (readonly) BOOL delayRemovePixel __attribute__((swift_name("delayRemovePixel")));
 @property (readonly) BOOL enableErrorReporting __attribute__((swift_name("enableErrorReporting")));
-@property (readonly) BOOL enableOMTesting __attribute__((swift_name("enableOMTesting")));
 @property (readonly) BOOL enableOMTracking __attribute__((swift_name("enableOMTracking")));
 @property (readonly) BOOL enableVAST __attribute__((swift_name("enableVAST")));
 @property (readonly) NtvGAMParameters *gamParams __attribute__((swift_name("gamParams")));
@@ -467,6 +482,8 @@ __attribute__((swift_name("CoreConfig")))
 @property (readonly) NSString *imageUrlBase __attribute__((swift_name("imageUrlBase")));
 @property (readonly) NSString *loadJSFormatString __attribute__((swift_name("loadJSFormatString")));
 @property (readonly) NSString *loadJSTrackingAttr __attribute__((swift_name("loadJSTrackingAttr")));
+@property (readonly) NSString *omServiceUrl __attribute__((swift_name("omServiceUrl")));
+@property (readonly) NSString *omVerificationUrl __attribute__((swift_name("omVerificationUrl")));
 @property (readonly) NSString *rtbImageUrlBase __attribute__((swift_name("rtbImageUrlBase")));
 @property (readonly) BOOL shouldApplyCCPA __attribute__((swift_name("shouldApplyCCPA")));
 @property (readonly) BOOL shouldApplyGDPR __attribute__((swift_name("shouldApplyGDPR")));
@@ -826,6 +843,7 @@ __attribute__((swift_name("CoreSectionWrapper")))
 @protocol NtvCoreSectionWrapper
 @required
 - (void)didAssignAdToLocationAdData:(id<NtvCoreAdDataWrapper>)adData location:(id)location container:(id)container __attribute__((swift_name("didAssignAdToLocation(adData:location:container:)")));
+- (void)didFailAdAtLocationLocation:(id _Nullable)location inView:(id _Nullable)inView container:(id _Nullable)container errMsg:(NSString * _Nullable)errMsg __attribute__((swift_name("didFailAdAtLocation(location:inView:container:errMsg:)")));
 - (void)triggerNextPrefetch __attribute__((swift_name("triggerNextPrefetch()")));
 @property NtvCoreSectionCache *coreSection __attribute__((swift_name("coreSection")));
 @end;
