@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class NtvVideoOutOfScreenAction, NtvVideoOnClickAction, NtvAutoplaySettingsCompanion, NtvAutoplaySettings, NtvConnectivityStatus, NtvKotlinThrowable, NtvCoreAdDataCompanion, NtvCoreAdFilterType, NtvCoreAdType, NtvOMSDKTrackingData, NtvCoreRateType, NtvCoreSystemConfig, NtvCoreSharePlatform, NtvKotlinArray<T>, NtvCoreAdData, NtvKotlinEnumCompanion, NtvKotlinEnum<E>, NtvCoreAdFilterTypeCompanion, NtvCoreAdTypeCompanion, NtvCoreCache, NtvCoreCompositeErrorCompanion, NtvGAMParameters, NtvGAMTest, NtvUrlConfiguration, NtvTestAdConfiguration, NtvCoreConfigCompanion, NtvCoreConfig, NtvCoreConfigService, NtvCoreErrorReporting, NtvKotlinUnit, NtvCoreCompositeError, NtvCoreResponse, NtvCoreNativeAdAbstractCompanion, NtvCoreNativeAdAbstract, NtvCoreNativeAdDataCompanion, NtvCoreNativeAdData, NtvCoreNativeVideoAdAbstractCompanion, NtvCoreVideoData, NtvCoreNativeVideoAdAbstract, NtvCoreNativeVideoAdDataCompanion, NtvCoreNativeVideoAdData, NtvKotlinx_serialization_jsonJsonElement, NtvCorePlacementCompanion, NtvCorePlacement, NtvCorePlacementsResponseCompanion, NtvCorePlacementsResponse, NtvCoreRateTypeCompanion, NtvCoreRequestService, NtvCoreSectionCache, NtvCoreSessionManager, NtvCoreSettings, NtvCoreTestAdType, NtvCoreStandardDisplayAdDataCompanion, NtvCoreStoryAdDataCompanion, NtvCoreStoryAdData, NtvCoreSystemConfigCompanion, NtvCoreTestAdTypeCompanion, NtvCoreUtil, NtvVideoTracking, NtvCoreVideoDataCompanion, NtvVastVideoType, NtvKotlinException, NtvGAMParametersCompanion, NtvGAMTestCompanion, NtvKotlinError, NtvLog, NtvOMSDKTrackingDataCompanion, NtvPlacementKey, NtvKotlinx_coroutines_coreCoroutineDispatcher, NtvTestAdConfigurationCompanion, NtvUrlConfigurationCompanion, NtvVastVideoTypeCompanion, NtvVideoOnClickActionCompanion, NtvVideoOutOfScreenActionCompanion, NtvVideoTrackingProperties, NtvVideoTrackingEventType, NtvVideoTrackingProgressType, NtvVideoTrackingCompanion, NtvVideoTrackingEvents, NtvVideoTrackingEventTypeCompanion, NtvVideoTrackingEventsCompanion, NtvVideoTrackingProgressKeysCompanion, NtvVideoTrackingProgressKeys, NtvVideoTrackingProgressTypeCompanion, NtvVideoTrackingPropertiesCompanion, NtvStately_concurrencyAtomicBoolean, NtvStately_concurrencyAtomicInt, NtvStately_concurrencyAtomicReference<V>, NtvKotlinRuntimeException, NtvKotlinIllegalStateException, NtvKotlinx_serialization_jsonJsonElementCompanion, NtvKotlinAbstractCoroutineContextElement, NtvKotlinx_coroutines_coreCoroutineDispatcherKey, NtvKotlinx_serialization_coreSerializersModule, NtvKotlinx_serialization_coreSerialKind, NtvKotlinNothing, NtvKotlinAbstractCoroutineContextKey<B, E>, NtvKotlinKTypeProjection, NtvKotlinKVariance, NtvKotlinKTypeProjectionCompanion;
+@class NtvVideoOutOfScreenAction, NtvVideoOnClickAction, NtvAutoplaySettingsCompanion, NtvAutoplaySettings, NtvCoreAdDataCompanion, NtvCoreAdFilterType, NtvCoreAdType, NtvOMSDKTrackingData, NtvCoreRateType, NtvCoreSystemConfig, NtvCoreSharePlatform, NtvKotlinArray<T>, NtvCoreAdData, NtvKotlinEnumCompanion, NtvKotlinEnum<E>, NtvCoreAdFilterTypeCompanion, NtvCoreAdTypeCompanion, NtvCoreCache, NtvCoreCompositeErrorCompanion, NtvGAMParameters, NtvGAMTest, NtvUrlConfiguration, NtvTestAdConfiguration, NtvCoreConfigCompanion, NtvCoreConfig, NtvCoreConfigService, NtvCoreErrorReporting, NtvKotlinUnit, NtvCoreCompositeError, NtvCoreResponse, NtvCoreNativeAdAbstractCompanion, NtvCoreNativeAdAbstract, NtvCoreNativeAdDataCompanion, NtvCoreNativeAdData, NtvCoreNativeVideoAdAbstractCompanion, NtvCoreVideoData, NtvCoreNativeVideoAdAbstract, NtvCoreNativeVideoAdDataCompanion, NtvCoreNativeVideoAdData, NtvKotlinx_serialization_jsonJsonElement, NtvCorePlacementCompanion, NtvCorePlacement, NtvCorePlacementsResponseCompanion, NtvCorePlacementsResponse, NtvCoreRateTypeCompanion, NtvCoreRequestService, NtvKotlinThrowable, NtvCoreSectionCache, NtvCoreSessionManager, NtvCoreSettings, NtvCoreTestAdType, NtvCoreStandardDisplayAdDataCompanion, NtvCoreStandardDisplayAdData, NtvCoreStoryAdDataCompanion, NtvCoreStoryAdData, NtvCoreSystemConfigCompanion, NtvCoreTestAdTypeCompanion, NtvCoreUtil, NtvVideoTracking, NtvCoreVideoDataCompanion, NtvVastVideoType, NtvKotlinException, NtvGAMParametersCompanion, NtvGAMTestCompanion, NtvKotlinError, NtvLog, NtvOMSDKTrackingDataCompanion, NtvPlacementKey, NtvKotlinx_coroutines_coreCoroutineDispatcher, NtvTestAdConfigurationCompanion, NtvUrlConfigurationCompanion, NtvVastVideoTypeCompanion, NtvVideoOnClickActionCompanion, NtvVideoOutOfScreenActionCompanion, NtvVideoTrackingProperties, NtvVideoTrackingEventType, NtvVideoTrackingProgressType, NtvVideoTrackingCompanion, NtvVideoTrackingEvents, NtvVideoTrackingEventTypeCompanion, NtvVideoTrackingEventsCompanion, NtvVideoTrackingProgressKeysCompanion, NtvVideoTrackingProgressKeys, NtvVideoTrackingProgressTypeCompanion, NtvVideoTrackingPropertiesCompanion, NtvKotlinRuntimeException, NtvKotlinIllegalStateException, NtvKotlinx_serialization_jsonJsonElementCompanion, NtvKotlinAbstractCoroutineContextElement, NtvKotlinx_coroutines_coreCoroutineDispatcherKey, NtvKotlinx_serialization_coreSerializersModule, NtvKotlinx_serialization_coreSerialKind, NtvKotlinNothing, NtvKotlinAbstractCoroutineContextKey<B, E>;
 
-@protocol NtvKotlinx_serialization_coreKSerializer, NtvKotlinx_coroutines_coreMutableStateFlow, NtvKotlinComparable, NtvCoreAdDataWrapper, NtvCoreSectionWrapper, NtvCoreSessionDelegate, NtvKotlinKProperty, NtvKotlinx_serialization_coreEncoder, NtvKotlinx_serialization_coreSerialDescriptor, NtvKotlinx_serialization_coreSerializationStrategy, NtvKotlinx_serialization_coreDecoder, NtvKotlinx_serialization_coreDeserializationStrategy, NtvKotlinx_coroutines_coreFlowCollector, NtvKotlinx_coroutines_coreFlow, NtvKotlinx_coroutines_coreSharedFlow, NtvKotlinx_coroutines_coreStateFlow, NtvKotlinx_coroutines_coreMutableSharedFlow, NtvKotlinIterator, NtvKotlinCoroutineContextKey, NtvKotlinCoroutineContextElement, NtvKotlinCoroutineContext, NtvKotlinContinuation, NtvKotlinContinuationInterceptor, NtvKotlinx_coroutines_coreRunnable, NtvKotlinKType, NtvKotlinKAnnotatedElement, NtvKotlinKCallable, NtvKotlinx_serialization_coreCompositeEncoder, NtvKotlinAnnotation, NtvKotlinx_serialization_coreCompositeDecoder, NtvKotlinKClassifier, NtvKotlinx_serialization_coreSerializersModuleCollector, NtvKotlinKClass, NtvKotlinKDeclarationContainer;
+@protocol NtvKotlinx_serialization_coreKSerializer, NtvKotlinComparable, NtvCoreAdDataWrapper, NtvCoreSectionWrapper, NtvCoreSessionDelegate, NtvKotlinx_serialization_coreEncoder, NtvKotlinx_serialization_coreSerialDescriptor, NtvKotlinx_serialization_coreSerializationStrategy, NtvKotlinx_serialization_coreDecoder, NtvKotlinx_serialization_coreDeserializationStrategy, NtvKotlinIterator, NtvKotlinCoroutineContextKey, NtvKotlinCoroutineContextElement, NtvKotlinCoroutineContext, NtvKotlinContinuation, NtvKotlinContinuationInterceptor, NtvKotlinx_coroutines_coreRunnable, NtvKotlinx_serialization_coreCompositeEncoder, NtvKotlinAnnotation, NtvKotlinx_serialization_coreCompositeDecoder, NtvKotlinx_serialization_coreSerializersModuleCollector, NtvKotlinKClass, NtvKotlinKDeclarationContainer, NtvKotlinKAnnotatedElement, NtvKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -179,18 +179,6 @@ __attribute__((swift_name("AutoplaySettings.Companion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) NtvAutoplaySettingsCompanion *shared __attribute__((swift_name("shared")));
 - (id<NtvKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("ConnectivityStatus")))
-@interface NtvConnectivityStatus : NtvBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)connectivityStatus __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) NtvConnectivityStatus *shared __attribute__((swift_name("shared")));
-- (BOOL)isConnectionErrorError:(NtvKotlinThrowable *)error __attribute__((swift_name("isConnectionError(error:)")));
-- (void)start __attribute__((swift_name("start()")));
-@property (readonly) id<NtvKotlinx_coroutines_coreMutableStateFlow> isNetworkConnected __attribute__((swift_name("isNetworkConnected")));
 @end;
 
 __attribute__((swift_name("CoreAdData")))
@@ -368,24 +356,19 @@ __attribute__((swift_name("CoreCache")))
 /**
  * Clear cache
  */
-- (void)clearAdsForSectionUrl:(NSString *)sectionUrl __attribute__((swift_name("clearAdsFor(sectionUrl:)")));
+- (void)clearAdsInSectionUrl:(NSString *)inSectionUrl container:(id _Nullable)container __attribute__((swift_name("clearAds(inSectionUrl:container:)")));
 
 /**
- * Used to notify a section of a failure and invalidate the ad
+ * Used to notify a section of a failure and invalidate the ad.
  * Only provides location and container if ad was previously
  * assigned to location and is not a placeholder
  */
-- (void)failAdInSectionUrl:(NSString *)sectionUrl atLocation:(id _Nullable)atLocation inView:(id _Nullable)inView container:(id _Nullable)container errMsg:(NSString * _Nullable)errMsg __attribute__((swift_name("failAdIn(sectionUrl:atLocation:inView:container:errMsg:)")));
+- (void)failAdInSectionUrl:(NSString *)sectionUrl atLocation:(id _Nullable)atLocation inView:(id _Nullable)inView container:(id _Nullable)container error:(id _Nullable)error __attribute__((swift_name("failAdIn(sectionUrl:atLocation:inView:container:error:)")));
 
 /**
  * Ad Data
  */
 - (id<NtvCoreAdDataWrapper> _Nullable)getAdDataForIdentifier:(id)identifier sectionUrl:(NSString *)sectionUrl container:(id)container __attribute__((swift_name("getAdDataFor(identifier:sectionUrl:container:)")));
-
-/**
- * Ad filters
- */
-- (NSDictionary<NSString *, NSString *> *)getAdFiltersForSectionUrl:(NSString *)sectionUrl __attribute__((swift_name("getAdFiltersFor(sectionUrl:)")));
 - (id<NtvCoreAdDataWrapper> _Nullable)getAndDequeueAdDataForLocation:(id)location sectionUrl:(NSString *)sectionUrl container:(id)container __attribute__((swift_name("getAndDequeueAdDataFor(location:sectionUrl:container:)")));
 
 /**
@@ -403,9 +386,9 @@ __attribute__((swift_name("CoreCache")))
  */
 - (int32_t)getPrefetchedAdsCountSectionUrl:(NSString *)sectionUrl __attribute__((swift_name("getPrefetchedAdsCount(sectionUrl:)")));
 - (id<NtvCoreSectionWrapper> _Nullable)getSectionForSectionUrl:(NSString * _Nullable)sectionUrl __attribute__((swift_name("getSectionFor(sectionUrl:)")));
-- (void)saveAdFiltersForAdData:(NtvCoreAdData *)adData sectionUrl:(NSString *)sectionUrl __attribute__((swift_name("saveAdFiltersFor(adData:sectionUrl:)")));
+- (void)removeSectionWithSectionUrl:(NSString *)withSectionUrl __attribute__((swift_name("removeSection(withSectionUrl:)")));
 - (void)setAdForAdData:(id<NtvCoreAdDataWrapper>)adData sectionUrl:(NSString *)sectionUrl location:(id)location container:(id)container __attribute__((swift_name("setAdFor(adData:sectionUrl:location:container:)")));
-- (void)setAdUnfilledForSectionUrl:(NSString *)sectionUrl location:(id)location container:(id)container __attribute__((swift_name("setAdUnfilledFor(sectionUrl:location:container:)")));
+- (void)setAdPlaceholderForSectionUrl:(NSString *)sectionUrl location:(id)location container:(id)container __attribute__((swift_name("setAdPlaceholderFor(sectionUrl:location:container:)")));
 - (void)setPrefetchedAdData:(id<NtvCoreAdDataWrapper>)adData __attribute__((swift_name("setPrefetched(adData:)")));
 
 /**
@@ -539,6 +522,8 @@ __attribute__((swift_name("CoreErrorReporting")))
 
 __attribute__((swift_name("CoreNativeAdAbstract")))
 @interface NtvCoreNativeAdAbstract : NtvCoreAdData
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 @property (class, readonly, getter=companion) NtvCoreNativeAdAbstractCompanion *companion __attribute__((swift_name("companion")));
 @property (readonly) NSString *articleUrl __attribute__((swift_name("articleUrl")));
 @property (readonly) NSString *author __attribute__((swift_name("author")));
@@ -564,6 +549,8 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CoreNativeAdData")))
 @interface NtvCoreNativeAdData : NtvCoreNativeAdAbstract
 - (instancetype)initWithTitle:(NSString *)title articleUrl:(NSString *)articleUrl previewText:(NSString *)previewText author:(NSString *)author authorUrl:(NSString *)authorUrl authorImageURL:(NSString *)authorImageURL previewImageURL:(NSString *)previewImageURL dateTime:(NSString *)dateTime permanentLink:(NSString *)permanentLink trackShareLink:(NSString *)trackShareLink ctaURL:(NSString *)ctaURL cpmImpressionPixelUrl:(NSString *)cpmImpressionPixelUrl vCPMImpressionPixelUrl:(NSString *)vCPMImpressionPixelUrl percent70ImpressionPixelUrl:(NSString *)percent70ImpressionPixelUrl advertiserID:(NtvInt * _Nullable)advertiserID adID:(int32_t)adID adCampaignID:(int32_t)adCampaignID filteringLevel:(int32_t)filteringLevel rateTypeVal:(int32_t)rateTypeVal customData:(NtvMutableDictionary<NSString *, NSString *> * _Nullable)customData omSDKTrackers:(NSArray<NtvOMSDKTrackingData *> * _Nullable)omSDKTrackers adChoicesUrl:(NSString * _Nullable)adChoicesUrl thirdPartyCpmTrackers:(NSString * _Nullable)thirdPartyCpmTrackers thirdPartyVcpmTrackers:(NSString * _Nullable)thirdPartyVcpmTrackers clickThirdPartyTrackingUrls:(NSArray<NSString *> * _Nullable)clickThirdPartyTrackingUrls pixelThirdPartyTrackingUrl:(NSString * _Nullable)pixelThirdPartyTrackingUrl __attribute__((swift_name("init(title:articleUrl:previewText:author:authorUrl:authorImageURL:previewImageURL:dateTime:permanentLink:trackShareLink:ctaURL:cpmImpressionPixelUrl:vCPMImpressionPixelUrl:percent70ImpressionPixelUrl:advertiserID:adID:adCampaignID:filteringLevel:rateTypeVal:customData:omSDKTrackers:adChoicesUrl:thirdPartyCpmTrackers:thirdPartyVcpmTrackers:clickThirdPartyTrackingUrls:pixelThirdPartyTrackingUrl:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
 @property (class, readonly, getter=companion) NtvCoreNativeAdDataCompanion *companion __attribute__((swift_name("companion")));
 - (NSString *)component1 __attribute__((swift_name("component1()")));
 - (NSString *)component10 __attribute__((swift_name("component10()")));
@@ -635,6 +622,8 @@ __attribute__((swift_name("CoreNativeAdData.Companion")))
 
 __attribute__((swift_name("CoreNativeVideoAdAbstract")))
 @interface NtvCoreNativeVideoAdAbstract : NtvCoreNativeAdAbstract
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 @property (class, readonly, getter=companion) NtvCoreNativeVideoAdAbstractCompanion *companion __attribute__((swift_name("companion")));
 @property (readonly) NtvCoreVideoData *video __attribute__((swift_name("video")));
 @end;
@@ -654,6 +643,8 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CoreNativeVideoAdData")))
 @interface NtvCoreNativeVideoAdData : NtvCoreNativeVideoAdAbstract
 - (instancetype)initWithVideo:(NtvCoreVideoData *)video dateTime:(NSString *)dateTime permanentLink:(NSString *)permanentLink trackShareLink:(NSString *)trackShareLink ctaURL:(NSString *)ctaURL cpmImpressionPixelUrl:(NSString *)cpmImpressionPixelUrl vCPMImpressionPixelUrl:(NSString *)vCPMImpressionPixelUrl percent70ImpressionPixelUrl:(NSString *)percent70ImpressionPixelUrl advertiserID:(NtvInt * _Nullable)advertiserID adID:(int32_t)adID adCampaignID:(int32_t)adCampaignID filteringLevel:(int32_t)filteringLevel rateTypeVal:(int32_t)rateTypeVal customData:(NtvMutableDictionary<NSString *, NSString *> * _Nullable)customData omSDKTrackers:(NSArray<NtvOMSDKTrackingData *> * _Nullable)omSDKTrackers adChoicesUrl:(NSString * _Nullable)adChoicesUrl thirdPartyCpmTrackers:(NSString * _Nullable)thirdPartyCpmTrackers thirdPartyVcpmTrackers:(NSString * _Nullable)thirdPartyVcpmTrackers title:(NSString *)title articleUrl:(NSString *)articleUrl previewText:(NSString *)previewText author:(NSString *)author authorUrl:(NSString *)authorUrl authorImageURL:(NSString *)authorImageURL previewImageURL:(NSString *)previewImageURL clickThirdPartyTrackingUrls:(NSArray<NSString *> * _Nullable)clickThirdPartyTrackingUrls pixelThirdPartyTrackingUrl:(NSString * _Nullable)pixelThirdPartyTrackingUrl __attribute__((swift_name("init(video:dateTime:permanentLink:trackShareLink:ctaURL:cpmImpressionPixelUrl:vCPMImpressionPixelUrl:percent70ImpressionPixelUrl:advertiserID:adID:adCampaignID:filteringLevel:rateTypeVal:customData:omSDKTrackers:adChoicesUrl:thirdPartyCpmTrackers:thirdPartyVcpmTrackers:title:articleUrl:previewText:author:authorUrl:authorImageURL:previewImageURL:clickThirdPartyTrackingUrls:pixelThirdPartyTrackingUrl:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
 @property (class, readonly, getter=companion) NtvCoreNativeVideoAdDataCompanion *companion __attribute__((swift_name("companion")));
 - (NtvCoreVideoData *)component1 __attribute__((swift_name("component1()")));
 - (int32_t)component10 __attribute__((swift_name("component10()")));
@@ -811,9 +802,9 @@ __attribute__((swift_name("CoreRequestService")))
 + (instancetype)coreRequestService __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) NtvCoreRequestService *shared __attribute__((swift_name("shared")));
 - (void)blockRequestQueue __attribute__((swift_name("blockRequestQueue()")));
-- (void)prefetchAdWithSectionUrl:(NSString *)sectionUrl location:(id _Nullable)location container:(id _Nullable)container options:(NSDictionary<NSString *, id> * _Nullable)options onSuccess:(void (^)(NtvCoreAdData * _Nullable))onSuccess onFail:(void (^)(NtvKotlinThrowable *))onFail __attribute__((swift_name("prefetchAdWith(sectionUrl:location:container:options:onSuccess:onFail:)")));
+- (void)prefetchAdWithSectionUrl:(NSString *)sectionUrl location:(id _Nullable)location container:(id _Nullable)container options:(NSDictionary<NSString *, id> * _Nullable)options onSuccess:(void (^)(NtvCoreAdData *))onSuccess onFail:(void (^)(NtvKotlinThrowable *))onFail __attribute__((swift_name("prefetchAdWith(sectionUrl:location:container:options:onSuccess:onFail:)")));
 - (void)requestUrl:(NSString *)url parameters:(NSDictionary<NSString *, NSString *> * _Nullable)parameters onResponse:(void (^)(NtvCoreResponse *))onResponse __attribute__((swift_name("request(url:parameters:onResponse:)")));
-- (void)requestAdSectionUrl:(NSString *)sectionUrl location:(id _Nullable)location container:(id _Nullable)container options:(NSDictionary<NSString *, id> * _Nullable)options onSuccess:(void (^)(NtvCoreAdData * _Nullable))onSuccess onFail:(void (^)(NtvKotlinThrowable *))onFail __attribute__((swift_name("requestAd(sectionUrl:location:container:options:onSuccess:onFail:)")));
+- (void)requestAdSectionUrl:(NSString *)sectionUrl location:(id _Nullable)location container:(id _Nullable)container options:(NSDictionary<NSString *, id> * _Nullable)options onSuccess:(void (^)(NtvCoreAdData *))onSuccess onFail:(void (^)(NtvKotlinThrowable *))onFail __attribute__((swift_name("requestAd(sectionUrl:location:container:options:onSuccess:onFail:)")));
 - (void)requestWithWebViewForHtml:(NSString *)html __attribute__((swift_name("requestWithWebViewFor(html:)")));
 - (void)unblockRequestQueue __attribute__((swift_name("unblockRequestQueue()")));
 @end;
@@ -843,7 +834,8 @@ __attribute__((swift_name("CoreSectionWrapper")))
 @protocol NtvCoreSectionWrapper
 @required
 - (void)didAssignAdToLocationAdData:(id<NtvCoreAdDataWrapper>)adData location:(id)location container:(id)container __attribute__((swift_name("didAssignAdToLocation(adData:location:container:)")));
-- (void)didFailAdAtLocationLocation:(id _Nullable)location inView:(id _Nullable)inView container:(id _Nullable)container errMsg:(NSString * _Nullable)errMsg __attribute__((swift_name("didFailAdAtLocation(location:inView:container:errMsg:)")));
+- (void)didFailAdAtLocationLocation:(id _Nullable)location inView:(id _Nullable)inView container:(id _Nullable)container error:(id _Nullable)error __attribute__((swift_name("didFailAdAtLocation(location:inView:container:error:)")));
+- (void)didReceiveAdDidGetFill:(BOOL)didGetFill __attribute__((swift_name("didReceiveAd(didGetFill:)")));
 - (void)triggerNextPrefetch __attribute__((swift_name("triggerNextPrefetch()")));
 @property NtvCoreSectionCache *coreSection __attribute__((swift_name("coreSection")));
 @end;
@@ -921,6 +913,32 @@ __attribute__((swift_name("CoreStandardDisplayAdData")))
 @interface NtvCoreStandardDisplayAdData : NtvCoreAdData
 - (instancetype)initWithStandardDisplayHtml:(NSString *)standardDisplayHtml standardDisplayWidth:(int32_t)standardDisplayWidth standardDisplayHeight:(int32_t)standardDisplayHeight dateTime:(NSString *)dateTime permanentLink:(NSString *)permanentLink trackShareLink:(NSString *)trackShareLink ctaURL:(NSString *)ctaURL cpmImpressionPixelUrl:(NSString *)cpmImpressionPixelUrl vCPMImpressionPixelUrl:(NSString *)vCPMImpressionPixelUrl percent70ImpressionPixelUrl:(NSString *)percent70ImpressionPixelUrl thirdPartyCpmTrackers:(NSString * _Nullable)thirdPartyCpmTrackers thirdPartyVcpmTrackers:(NSString * _Nullable)thirdPartyVcpmTrackers advertiserID:(NtvInt * _Nullable)advertiserID adID:(int32_t)adID adCampaignID:(int32_t)adCampaignID customData:(NtvMutableDictionary<NSString *, NSString *> * _Nullable)customData filteringLevel:(int32_t)filteringLevel rateTypeVal:(int32_t)rateTypeVal omSDKTrackers:(NSArray<NtvOMSDKTrackingData *> * _Nullable)omSDKTrackers adChoicesUrl:(NSString * _Nullable)adChoicesUrl clickThirdPartyTrackingUrls:(NSArray<NSString *> * _Nullable)clickThirdPartyTrackingUrls pixelThirdPartyTrackingUrl:(NSString * _Nullable)pixelThirdPartyTrackingUrl __attribute__((swift_name("init(standardDisplayHtml:standardDisplayWidth:standardDisplayHeight:dateTime:permanentLink:trackShareLink:ctaURL:cpmImpressionPixelUrl:vCPMImpressionPixelUrl:percent70ImpressionPixelUrl:thirdPartyCpmTrackers:thirdPartyVcpmTrackers:advertiserID:adID:adCampaignID:customData:filteringLevel:rateTypeVal:omSDKTrackers:adChoicesUrl:clickThirdPartyTrackingUrls:pixelThirdPartyTrackingUrl:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) NtvCoreStandardDisplayAdDataCompanion *companion __attribute__((swift_name("companion")));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component10 __attribute__((swift_name("component10()")));
+- (NSString * _Nullable)component11 __attribute__((swift_name("component11()")));
+- (NSString * _Nullable)component12 __attribute__((swift_name("component12()")));
+- (NtvInt * _Nullable)component13 __attribute__((swift_name("component13()")));
+- (int32_t)component14 __attribute__((swift_name("component14()")));
+- (int32_t)component15 __attribute__((swift_name("component15()")));
+- (NtvMutableDictionary<NSString *, NSString *> * _Nullable)component16 __attribute__((swift_name("component16()")));
+- (int32_t)component17 __attribute__((swift_name("component17()")));
+- (int32_t)component18 __attribute__((swift_name("component18()")));
+- (NSArray<NtvOMSDKTrackingData *> * _Nullable)component19 __attribute__((swift_name("component19()")));
+- (int32_t)component2 __attribute__((swift_name("component2()")));
+- (NSString * _Nullable)component20 __attribute__((swift_name("component20()")));
+- (NSArray<NSString *> * _Nullable)component21 __attribute__((swift_name("component21()")));
+- (NSString * _Nullable)component22 __attribute__((swift_name("component22()")));
+- (int32_t)component3 __attribute__((swift_name("component3()")));
+- (NSString *)component4 __attribute__((swift_name("component4()")));
+- (NSString *)component5 __attribute__((swift_name("component5()")));
+- (NSString *)component6 __attribute__((swift_name("component6()")));
+- (NSString *)component7 __attribute__((swift_name("component7()")));
+- (NSString *)component8 __attribute__((swift_name("component8()")));
+- (NSString *)component9 __attribute__((swift_name("component9()")));
+- (NtvCoreStandardDisplayAdData *)doCopyStandardDisplayHtml:(NSString *)standardDisplayHtml standardDisplayWidth:(int32_t)standardDisplayWidth standardDisplayHeight:(int32_t)standardDisplayHeight dateTime:(NSString *)dateTime permanentLink:(NSString *)permanentLink trackShareLink:(NSString *)trackShareLink ctaURL:(NSString *)ctaURL cpmImpressionPixelUrl:(NSString *)cpmImpressionPixelUrl vCPMImpressionPixelUrl:(NSString *)vCPMImpressionPixelUrl percent70ImpressionPixelUrl:(NSString *)percent70ImpressionPixelUrl thirdPartyCpmTrackers:(NSString * _Nullable)thirdPartyCpmTrackers thirdPartyVcpmTrackers:(NSString * _Nullable)thirdPartyVcpmTrackers advertiserID:(NtvInt * _Nullable)advertiserID adID:(int32_t)adID adCampaignID:(int32_t)adCampaignID customData:(NtvMutableDictionary<NSString *, NSString *> * _Nullable)customData filteringLevel:(int32_t)filteringLevel rateTypeVal:(int32_t)rateTypeVal omSDKTrackers:(NSArray<NtvOMSDKTrackingData *> * _Nullable)omSDKTrackers adChoicesUrl:(NSString * _Nullable)adChoicesUrl clickThirdPartyTrackingUrls:(NSArray<NSString *> * _Nullable)clickThirdPartyTrackingUrls pixelThirdPartyTrackingUrl:(NSString * _Nullable)pixelThirdPartyTrackingUrl __attribute__((swift_name("doCopy(standardDisplayHtml:standardDisplayWidth:standardDisplayHeight:dateTime:permanentLink:trackShareLink:ctaURL:cpmImpressionPixelUrl:vCPMImpressionPixelUrl:percent70ImpressionPixelUrl:thirdPartyCpmTrackers:thirdPartyVcpmTrackers:advertiserID:adID:adCampaignID:customData:filteringLevel:rateTypeVal:omSDKTrackers:adChoicesUrl:clickThirdPartyTrackingUrls:pixelThirdPartyTrackingUrl:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) int32_t adCampaignID __attribute__((swift_name("adCampaignID")));
 @property (readonly) NSString * _Nullable adChoicesUrl __attribute__((swift_name("adChoicesUrl")));
 @property (readonly) int32_t adID __attribute__((swift_name("adID")));
@@ -959,6 +977,8 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CoreStoryAdData")))
 @interface NtvCoreStoryAdData : NtvCoreNativeAdAbstract
 - (instancetype)initWithHtmlContent:(NSString *)htmlContent title:(NSString *)title articleUrl:(NSString *)articleUrl ctaURL:(NSString *)ctaURL dateTime:(NSString *)dateTime previewText:(NSString *)previewText previewImageURL:(NSString *)previewImageURL author:(NSString *)author authorUrl:(NSString *)authorUrl authorImageURL:(NSString *)authorImageURL adChoicesUrl:(NSString * _Nullable)adChoicesUrl permanentLink:(NSString *)permanentLink customData:(NtvMutableDictionary<NSString *, NSString *> * _Nullable)customData trackShareLink:(NSString *)trackShareLink cpmImpressionPixelUrl:(NSString *)cpmImpressionPixelUrl vCPMImpressionPixelUrl:(NSString *)vCPMImpressionPixelUrl percent70ImpressionPixelUrl:(NSString *)percent70ImpressionPixelUrl thirdPartyCpmTrackers:(NSString * _Nullable)thirdPartyCpmTrackers thirdPartyVcpmTrackers:(NSString * _Nullable)thirdPartyVcpmTrackers advertiserID:(NtvInt * _Nullable)advertiserID adID:(int32_t)adID adCampaignID:(int32_t)adCampaignID filteringLevel:(int32_t)filteringLevel rateTypeVal:(int32_t)rateTypeVal omSDKTrackers:(NSArray<NtvOMSDKTrackingData *> * _Nullable)omSDKTrackers clickThirdPartyTrackingUrls:(NSArray<NSString *> * _Nullable)clickThirdPartyTrackingUrls pixelThirdPartyTrackingUrl:(NSString * _Nullable)pixelThirdPartyTrackingUrl __attribute__((swift_name("init(htmlContent:title:articleUrl:ctaURL:dateTime:previewText:previewImageURL:author:authorUrl:authorImageURL:adChoicesUrl:permanentLink:customData:trackShareLink:cpmImpressionPixelUrl:vCPMImpressionPixelUrl:percent70ImpressionPixelUrl:thirdPartyCpmTrackers:thirdPartyVcpmTrackers:advertiserID:adID:adCampaignID:filteringLevel:rateTypeVal:omSDKTrackers:clickThirdPartyTrackingUrls:pixelThirdPartyTrackingUrl:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
 @property (class, readonly, getter=companion) NtvCoreStoryAdDataCompanion *companion __attribute__((swift_name("companion")));
 - (NSString *)component1 __attribute__((swift_name("component1()")));
 - (NSString *)component10 __attribute__((swift_name("component10()")));
@@ -1264,6 +1284,20 @@ __attribute__((swift_name("NetworkConnectionError")))
 - (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (instancetype)initWithMessage:(NSString * _Nullable)message cause:(NtvKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (instancetype)initWithCause:(NtvKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (readonly) NSString *message __attribute__((swift_name("message")));
+@property (readonly) NSString *sectionUrl __attribute__((swift_name("sectionUrl")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NoFillError")))
+@interface NtvNoFillError : NtvKotlinError
+- (instancetype)initWithSectionUrl:(NSString *)sectionUrl location:(id)location __attribute__((swift_name("init(sectionUrl:location:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(NtvKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithCause:(NtvKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (readonly) id location __attribute__((swift_name("location")));
 @property (readonly) NSString *message __attribute__((swift_name("message")));
 @property (readonly) NSString *sectionUrl __attribute__((swift_name("sectionUrl")));
 @end;
@@ -1653,56 +1687,6 @@ __attribute__((swift_name("VideoTrackingProperties.Companion")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Stately_concurrencyAtomicBoolean")))
-@interface NtvStately_concurrencyAtomicBoolean : NtvBase
-- (instancetype)initWithValue_:(BOOL)value_ __attribute__((swift_name("init(value_:)"))) __attribute__((objc_designated_initializer));
-- (BOOL)compareAndSetExpected:(BOOL)expected new:(BOOL)new_ __attribute__((swift_name("compareAndSet(expected:new:)")));
-@property BOOL value __attribute__((swift_name("value")));
-@end;
-
-@interface NtvStately_concurrencyAtomicBoolean (Extensions)
-- (BOOL)getValueThisObj:(id _Nullable)thisObj property:(id<NtvKotlinKProperty>)property __attribute__((swift_name("getValue(thisObj:property:)")));
-- (void)setValueThisObj:(id _Nullable)thisObj property:(id<NtvKotlinKProperty>)property value:(BOOL)value __attribute__((swift_name("setValue(thisObj:property:value:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Stately_concurrencyAtomicInt")))
-@interface NtvStately_concurrencyAtomicInt : NtvBase
-- (instancetype)initWithInitialValue:(int32_t)initialValue __attribute__((swift_name("init(initialValue:)"))) __attribute__((objc_designated_initializer));
-- (int32_t)addAndGetDelta:(int32_t)delta __attribute__((swift_name("addAndGet(delta:)")));
-- (BOOL)compareAndSetExpected:(int32_t)expected new:(int32_t)new_ __attribute__((swift_name("compareAndSet(expected:new:)")));
-- (int32_t)decrementAndGet __attribute__((swift_name("decrementAndGet()")));
-- (int32_t)get __attribute__((swift_name("get()")));
-- (int32_t)incrementAndGet __attribute__((swift_name("incrementAndGet()")));
-- (void)setNewValue:(int32_t)newValue __attribute__((swift_name("set(newValue:)")));
-@end;
-
-@interface NtvStately_concurrencyAtomicInt (Extensions)
-- (int32_t)getValueThisObj:(id _Nullable)thisObj property:(id<NtvKotlinKProperty>)property __attribute__((swift_name("getValue(thisObj:property:)")));
-- (void)setValueThisObj:(id _Nullable)thisObj property:(id<NtvKotlinKProperty>)property value:(int32_t)value __attribute__((swift_name("setValue(thisObj:property:value:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Stately_concurrencyAtomicReference")))
-@interface NtvStately_concurrencyAtomicReference<V> : NtvBase
-- (instancetype)initWithInitialValue:(V _Nullable)initialValue __attribute__((swift_name("init(initialValue:)"))) __attribute__((objc_designated_initializer));
-- (BOOL)compareAndSetExpected:(V _Nullable)expected new:(V _Nullable)new_ __attribute__((swift_name("compareAndSet(expected:new:)")));
-- (V _Nullable)get __attribute__((swift_name("get()")));
-- (void)setValue_:(V _Nullable)value_ __attribute__((swift_name("set(value_:)")));
-@end;
-
-@interface NtvStately_concurrencyAtomicReference (Extensions)
-
-/**
- * Delegate properties for Stately types
- * Temporary until new memory management / concurrency feature released
- * https://blog.jetbrains.com/kotlin/2021/08/try-the-new-kotlin-native-memory-manager-development-preview/#benefits-of-the-new-approach
- */
-- (id _Nullable)getValueThisObj:(id _Nullable)thisObj property:(id<NtvKotlinKProperty>)property __attribute__((swift_name("getValue(thisObj:property:)")));
-- (void)setValueThisObj:(id _Nullable)thisObj property:(id<NtvKotlinKProperty>)property value:(id _Nullable)value __attribute__((swift_name("setValue(thisObj:property:value:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CoreAdDataFactoryKt")))
 @interface NtvCoreAdDataFactoryKt : NtvBase
 + (id _Nullable)decode:(NSDictionary<NSString *, NtvKotlinx_serialization_jsonJsonElement *> *)receiver key:(NSString *)key __attribute__((swift_name("decode(_:key:)")));
@@ -1732,55 +1716,6 @@ __attribute__((swift_name("Kotlinx_serialization_coreDeserializationStrategy")))
 __attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
 @protocol NtvKotlinx_serialization_coreKSerializer <NtvKotlinx_serialization_coreSerializationStrategy, NtvKotlinx_serialization_coreDeserializationStrategy>
 @required
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreFlow")))
-@protocol NtvKotlinx_coroutines_coreFlow
-@required
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)collectCollector:(id<NtvKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NtvKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSharedFlow")))
-@protocol NtvKotlinx_coroutines_coreSharedFlow <NtvKotlinx_coroutines_coreFlow>
-@required
-@property (readonly) NSArray<id> *replayCache __attribute__((swift_name("replayCache")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreStateFlow")))
-@protocol NtvKotlinx_coroutines_coreStateFlow <NtvKotlinx_coroutines_coreSharedFlow>
-@required
-@property (readonly) id _Nullable value_ __attribute__((swift_name("value_")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
-@protocol NtvKotlinx_coroutines_coreFlowCollector
-@required
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)emitValue:(id _Nullable)value completionHandler:(void (^)(NtvKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreMutableSharedFlow")))
-@protocol NtvKotlinx_coroutines_coreMutableSharedFlow <NtvKotlinx_coroutines_coreSharedFlow, NtvKotlinx_coroutines_coreFlowCollector>
-@required
-- (void)resetReplayCache __attribute__((swift_name("resetReplayCache()")));
-- (BOOL)tryEmitValue:(id _Nullable)value __attribute__((swift_name("tryEmit(value:)")));
-@property (readonly) id<NtvKotlinx_coroutines_coreStateFlow> subscriptionCount __attribute__((swift_name("subscriptionCount")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreMutableStateFlow")))
-@protocol NtvKotlinx_coroutines_coreMutableStateFlow <NtvKotlinx_coroutines_coreStateFlow, NtvKotlinx_coroutines_coreMutableSharedFlow>
-@required
-- (BOOL)compareAndSetExpect:(id _Nullable)expect update:(id _Nullable)update __attribute__((swift_name("compareAndSet(expect:update:)")));
-- (void)setValue:(id _Nullable)value __attribute__((swift_name("setValue(_:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1888,23 +1823,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreCoroutineDispatcher")))
 - (NtvKotlinx_coroutines_coreCoroutineDispatcher *)plusOther:(NtvKotlinx_coroutines_coreCoroutineDispatcher *)other __attribute__((swift_name("plus(other:)"))) __attribute__((unavailable("Operator '+' on two CoroutineDispatcher objects is meaningless. CoroutineDispatcher is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The dispatcher to the right of `+` just replaces the dispatcher to the left.")));
 - (void)releaseInterceptedContinuationContinuation:(id<NtvKotlinContinuation>)continuation __attribute__((swift_name("releaseInterceptedContinuation(continuation:)")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@end;
-
-__attribute__((swift_name("KotlinKAnnotatedElement")))
-@protocol NtvKotlinKAnnotatedElement
-@required
-@end;
-
-__attribute__((swift_name("KotlinKCallable")))
-@protocol NtvKotlinKCallable <NtvKotlinKAnnotatedElement>
-@required
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) id<NtvKotlinKType> returnType __attribute__((swift_name("returnType")));
-@end;
-
-__attribute__((swift_name("KotlinKProperty")))
-@protocol NtvKotlinKProperty <NtvKotlinKCallable>
-@required
 @end;
 
 __attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
@@ -2018,14 +1936,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreRunnable")))
 - (void)run __attribute__((swift_name("run()")));
 @end;
 
-__attribute__((swift_name("KotlinKType")))
-@protocol NtvKotlinKType
-@required
-@property (readonly) NSArray<NtvKotlinKTypeProjection *> *arguments __attribute__((swift_name("arguments")));
-@property (readonly) id<NtvKotlinKClassifier> _Nullable classifier __attribute__((swift_name("classifier")));
-@property (readonly) BOOL isMarkedNullable __attribute__((swift_name("isMarkedNullable")));
-@end;
-
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
 @protocol NtvKotlinx_serialization_coreCompositeEncoder
 @required
@@ -2092,26 +2002,6 @@ __attribute__((swift_name("KotlinNothing")))
 @interface NtvKotlinNothing : NtvBase
 @end;
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinKTypeProjection")))
-@interface NtvKotlinKTypeProjection : NtvBase
-- (instancetype)initWithVariance:(NtvKotlinKVariance * _Nullable)variance type:(id<NtvKotlinKType> _Nullable)type __attribute__((swift_name("init(variance:type:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) NtvKotlinKTypeProjectionCompanion *companion __attribute__((swift_name("companion")));
-- (NtvKotlinKVariance * _Nullable)component1 __attribute__((swift_name("component1()")));
-- (id<NtvKotlinKType> _Nullable)component2 __attribute__((swift_name("component2()")));
-- (NtvKotlinKTypeProjection *)doCopyVariance:(NtvKotlinKVariance * _Nullable)variance type:(id<NtvKotlinKType> _Nullable)type __attribute__((swift_name("doCopy(variance:type:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) id<NtvKotlinKType> _Nullable type __attribute__((swift_name("type")));
-@property (readonly) NtvKotlinKVariance * _Nullable variance __attribute__((swift_name("variance")));
-@end;
-
-__attribute__((swift_name("KotlinKClassifier")))
-@protocol NtvKotlinKClassifier
-@required
-@end;
-
 __attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector")))
 @protocol NtvKotlinx_serialization_coreSerializersModuleCollector
 @required
@@ -2128,37 +2018,22 @@ __attribute__((swift_name("KotlinKDeclarationContainer")))
 @required
 @end;
 
+__attribute__((swift_name("KotlinKAnnotatedElement")))
+@protocol NtvKotlinKAnnotatedElement
+@required
+@end;
+
+__attribute__((swift_name("KotlinKClassifier")))
+@protocol NtvKotlinKClassifier
+@required
+@end;
+
 __attribute__((swift_name("KotlinKClass")))
 @protocol NtvKotlinKClass <NtvKotlinKDeclarationContainer, NtvKotlinKAnnotatedElement, NtvKotlinKClassifier>
 @required
 - (BOOL)isInstanceValue:(id _Nullable)value __attribute__((swift_name("isInstance(value:)")));
 @property (readonly) NSString * _Nullable qualifiedName __attribute__((swift_name("qualifiedName")));
 @property (readonly) NSString * _Nullable simpleName __attribute__((swift_name("simpleName")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinKVariance")))
-@interface NtvKotlinKVariance : NtvKotlinEnum<NtvKotlinKVariance *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly) NtvKotlinKVariance *invariant __attribute__((swift_name("invariant")));
-@property (class, readonly) NtvKotlinKVariance *in __attribute__((swift_name("in")));
-@property (class, readonly) NtvKotlinKVariance *out __attribute__((swift_name("out")));
-+ (NtvKotlinArray<NtvKotlinKVariance *> *)values __attribute__((swift_name("values()")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinKTypeProjection.Companion")))
-@interface NtvKotlinKTypeProjectionCompanion : NtvBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) NtvKotlinKTypeProjectionCompanion *shared __attribute__((swift_name("shared")));
-- (NtvKotlinKTypeProjection *)contravariantType:(id<NtvKotlinKType>)type __attribute__((swift_name("contravariant(type:)")));
-- (NtvKotlinKTypeProjection *)covariantType:(id<NtvKotlinKType>)type __attribute__((swift_name("covariant(type:)")));
-- (NtvKotlinKTypeProjection *)invariantType:(id<NtvKotlinKType>)type __attribute__((swift_name("invariant(type:)")));
-@property (readonly) NtvKotlinKTypeProjection *STAR __attribute__((swift_name("STAR")));
 @end;
 
 #pragma pop_macro("_Nullable_result")

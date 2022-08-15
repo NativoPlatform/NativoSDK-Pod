@@ -27,6 +27,7 @@ extern const unsigned char NativoSDKVersionString[];
 
 
 /**
+ The entry point to access and interact with Nativo ads.
  Refer to https://sdk.nativo.com for guides and documentation.
   
  */
@@ -165,12 +166,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSInteger)getNumberOfAdsInSection:(NSString *)sectionUrl inTableOrCollectionSection:(NSInteger)section forNumberOfItemsInDatasource:(NSInteger)itemsCount inContainer:(UIView *)container;
 
 /**
- @abstract Reset the list of ads that have been received in a section.
- @discussion This will force the Nativo server to return ads to your app that may already have been received.
+ @abstract Reset the map of ads that have been received in a section.
  @param sectionURL The section identifier used to request ads from Nativo.
+ @param container The container where the ads are located, or nil if should remove all ads in section.
  
  */
-+ (void)clearAdsInSection:(NSString *)sectionURL;
++ (void)clearAdsInSection:(NSString *)sectionURL inContainer:(nullable UIView *)container;
 
 /**
  @abstract Frees all memories associated with the section, along with any ads
