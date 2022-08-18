@@ -1198,10 +1198,13 @@ __attribute__((swift_name("DuplicateRequestException")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GAMParameters")))
 @interface NtvGAMParameters : NtvBase
-- (instancetype)initWithNativoTagRegex:(NSString *)nativoTagRegex versionPlacement:(NSString *)versionPlacement integrationMode:(NSString *)integrationMode adUnitSize:(NSString *)adUnitSize campaignID:(NSString *)campaignID __attribute__((swift_name("init(nativoTagRegex:versionPlacement:integrationMode:adUnitSize:campaignID:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithNativoTagRegex:(NSString *)nativoTagRegex versionPlacement:(NSString *)versionPlacement integrationMode:(NSString *)integrationMode adUnitSize:(NSString *)adUnitSize campaignID:(NSString *)campaignID budgetID:(NSString *)budgetID adUnitID:(NSString *)adUnitID clickTrk:(NSString *)clickTrk __attribute__((swift_name("init(nativoTagRegex:versionPlacement:integrationMode:adUnitSize:campaignID:budgetID:adUnitID:clickTrk:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) NtvGAMParametersCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *adUnitID __attribute__((swift_name("adUnitID")));
 @property (readonly) NSString *adUnitSize __attribute__((swift_name("adUnitSize")));
+@property (readonly) NSString *budgetID __attribute__((swift_name("budgetID")));
 @property (readonly) NSString *campaignID __attribute__((swift_name("campaignID")));
+@property (readonly) NSString *clickTrk __attribute__((swift_name("clickTrk")));
 @property (readonly) NSString *integrationMode __attribute__((swift_name("integrationMode")));
 @property (readonly) NSString *nativoTagRegex __attribute__((swift_name("nativoTagRegex")));
 @property (readonly) NSString *versionPlacement __attribute__((swift_name("versionPlacement")));

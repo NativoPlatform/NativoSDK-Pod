@@ -223,16 +223,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract Use GAM as a way to flight and track your campaigns with Nativo.
+ @discussion Make the request for a GAM banner first. Once you've detected that the ad contains a Nativo campaign call this method using the bannerView. A Nativo ad will be requested
+ and your next call to placeAdInView() will place the ad in a view.
  @param bannerView The banner view from GAM SDK.
  @param sectionUrl The section identifier used to request ads from Nativo.
- @param location The location identifier with which the ad will be associated.
- @discussion You should make the request for a GAM banner first before calling this method. After calling this method, a Nativo ad will be requested
- and your next call to placeAdInView() will place the GAM ad if filled.
- 
- */
-+ (void)makeGAMRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atLocationIdentifier:(id)location inContainer:(UIView *)container;
-+ (void)makeGAMRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl atIndexPath:(NSIndexPath *)indexPath inContainer:(UIView *)container; // Convenience for use with table or collection views
 
+ */
++ (void)makeGAMRequestWithBannerView:(UIView *)bannerView forSection:(NSString *)sectionUrl;
 
 
 /** @name Custom Video Controls */

@@ -10,7 +10,7 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
 		<data>
-		AwutC0eZcJIkR2Ra/Cl/onH2W+A=
+		F98P7xyNvqHhs/+CZg9TkgLRc/A=
 		</data>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
 		<data>
@@ -22,15 +22,15 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/NtvCore</key>
 		<data>
-		DNEMWzPtNLuT5KxjgFaZofP0iIc=
+		RflTKefwI+Yw4PhY5M7LJumj1NA=
 		</data>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		y1ZK5i9fULgfevprw1O1QDtNIp4=
+		VZx9htgKPc9zJp2q6Izh0qWC2n4=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
-		NZ/6GYJCiLMuXDeOyAylJT3JdEU=
+		17FL5WdmgowMsATJ6aKDmSQgQis=
 		</data>
 		<key>Headers/NtvAdData.h</key>
 		<data>
@@ -270,7 +270,7 @@
 		</data>
 		<key>NtvVideoControlsView.nib</key>
 		<data>
-		MlvLuGub9oKRj6cJ9apBipIx544=
+		kK+ovRkTPAqNDucOae1i1r/Ww9Q=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -294,11 +294,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AwutC0eZcJIkR2Ra/Cl/onH2W+A=
+			F98P7xyNvqHhs/+CZg9TkgLRc/A=
 			</data>
 			<key>hash2</key>
 			<data>
-			j35igNSz2zlKNrA28kYCcukNLrmuz7Cwvk5PntUcHUM=
+			5OVnz+KkuF3WAsDKzoZrmG5f3sYDW7Q2glJ0aMLuOAU=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
@@ -327,33 +327,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DNEMWzPtNLuT5KxjgFaZofP0iIc=
+			RflTKefwI+Yw4PhY5M7LJumj1NA=
 			</data>
 			<key>hash2</key>
 			<data>
-			5Dlv9/xG3NRu+c39XUvne0u5ZFVbO6NHLO2dSaSbWjg=
+			O2MudwTm2h7oTc+fMh0q1VdE5QyftrcyIc1gH9YUKss=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			y1ZK5i9fULgfevprw1O1QDtNIp4=
+			VZx9htgKPc9zJp2q6Izh0qWC2n4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Dw7ktieKfpdu82GyhnnQ/LnNYJYCUvVQblTfYyRxw34=
+			fHDusaujbtpTyXX4Pzjiib+fUSZGZBOtmgnyoF741Ss=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NZ/6GYJCiLMuXDeOyAylJT3JdEU=
+			17FL5WdmgowMsATJ6aKDmSQgQis=
 			</data>
 			<key>hash2</key>
 			<data>
-			Rvkhwru+o/YSCL1cgcOisyn4rWplK1kmJ/Ohxmdc/q0=
+			wRuzFZcBBZ4AAEHvvuBuoVKwHB7AvZ48AoGFZmHhPAY=
 			</data>
 		</dict>
 		<key>Headers/NtvAdData.h</key>
@@ -998,11 +998,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MlvLuGub9oKRj6cJ9apBipIx544=
+			kK+ovRkTPAqNDucOae1i1r/Ww9Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			6w9Jv/W4QaiIhmmOtFe9DC2d5srxX2d2r/6UtHhlmGY=
+			IRp5tuWDPymURq1kBoa6dRjCk1Xj9vd/gWWLC8zjjU0=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
