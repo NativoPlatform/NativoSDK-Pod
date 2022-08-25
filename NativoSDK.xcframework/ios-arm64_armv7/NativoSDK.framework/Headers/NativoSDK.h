@@ -216,7 +216,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** @name Requesting ads with GAM */
 
 /**
- @abstract Sets the app up for use with GAM. Must be called before prefetching or placing ad in view.
+ @abstract Sets the app up for use with GAM. Must be called first before any other Nativo SDK method.
  
  */
 + (void)enableGAMRequestsWithVersion:(NSString *)versionStr;

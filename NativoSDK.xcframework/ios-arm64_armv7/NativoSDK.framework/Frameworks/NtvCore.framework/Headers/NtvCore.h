@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class NtvVideoOutOfScreenAction, NtvVideoOnClickAction, NtvAutoplaySettingsCompanion, NtvAutoplaySettings, NtvCoreAdDataCompanion, NtvCoreAdFilterType, NtvCoreAdType, NtvOMSDKTrackingData, NtvCoreRateType, NtvCoreSystemConfig, NtvCoreSharePlatform, NtvKotlinArray<T>, NtvCoreAdData, NtvKotlinEnumCompanion, NtvKotlinEnum<E>, NtvCoreAdFilterTypeCompanion, NtvCoreAdTypeCompanion, NtvCoreCache, NtvCoreCompositeErrorCompanion, NtvGAMParameters, NtvGAMTest, NtvUrlConfiguration, NtvTestAdConfiguration, NtvCoreConfigCompanion, NtvCoreConfig, NtvCoreConfigService, NtvCoreErrorReporting, NtvKotlinUnit, NtvCoreCompositeError, NtvCoreResponse, NtvCoreNativeAdAbstractCompanion, NtvCoreNativeAdAbstract, NtvCoreNativeAdDataCompanion, NtvCoreNativeAdData, NtvCoreNativeVideoAdAbstractCompanion, NtvCoreVideoData, NtvCoreNativeVideoAdAbstract, NtvCoreNativeVideoAdDataCompanion, NtvCoreNativeVideoAdData, NtvKotlinx_serialization_jsonJsonElement, NtvCorePlacementCompanion, NtvCorePlacement, NtvCorePlacementsResponseCompanion, NtvCorePlacementsResponse, NtvCoreRateTypeCompanion, NtvCoreRequestService, NtvKotlinThrowable, NtvCoreSectionCache, NtvCoreSessionManager, NtvCoreSettings, NtvCoreTestAdType, NtvCoreStandardDisplayAdDataCompanion, NtvCoreStandardDisplayAdData, NtvCoreStoryAdDataCompanion, NtvCoreStoryAdData, NtvCoreSystemConfigCompanion, NtvCoreTestAdTypeCompanion, NtvCoreUtil, NtvVideoTracking, NtvCoreVideoDataCompanion, NtvVastVideoType, NtvKotlinException, NtvGAMParametersCompanion, NtvGAMTestCompanion, NtvKotlinError, NtvLog, NtvOMSDKTrackingDataCompanion, NtvPlacementKey, NtvKotlinx_coroutines_coreCoroutineDispatcher, NtvTestAdConfigurationCompanion, NtvUrlConfigurationCompanion, NtvVastVideoTypeCompanion, NtvVideoOnClickActionCompanion, NtvVideoOutOfScreenActionCompanion, NtvVideoTrackingProperties, NtvVideoTrackingEventType, NtvVideoTrackingProgressType, NtvVideoTrackingCompanion, NtvVideoTrackingEvents, NtvVideoTrackingEventTypeCompanion, NtvVideoTrackingEventsCompanion, NtvVideoTrackingProgressKeysCompanion, NtvVideoTrackingProgressKeys, NtvVideoTrackingProgressTypeCompanion, NtvVideoTrackingPropertiesCompanion, NtvKotlinRuntimeException, NtvKotlinIllegalStateException, NtvKotlinx_serialization_jsonJsonElementCompanion, NtvKotlinAbstractCoroutineContextElement, NtvKotlinx_coroutines_coreCoroutineDispatcherKey, NtvKotlinx_serialization_coreSerializersModule, NtvKotlinx_serialization_coreSerialKind, NtvKotlinNothing, NtvKotlinAbstractCoroutineContextKey<B, E>;
+@class NtvVideoOutOfScreenAction, NtvVideoOnClickAction, NtvAutoplaySettingsCompanion, NtvAutoplaySettings, NtvCoreAdDataCompanion, NtvCoreAdFilterType, NtvCoreAdType, NtvOMSDKTrackingData, NtvCoreRateType, NtvCoreSystemConfig, NtvCoreSharePlatform, NtvKotlinArray<T>, NtvCoreAdData, NtvKotlinEnumCompanion, NtvKotlinEnum<E>, NtvCoreAdFilterTypeCompanion, NtvCoreAdTypeCompanion, NtvCoreCache, NtvCoreCompositeErrorCompanion, NtvGAMParameters, NtvGAMTest, NtvUrlConfiguration, NtvTestAdConfiguration, NtvCoreConfigCompanion, NtvCoreConfig, NtvCoreConfigService, NtvCoreErrorReporting, NtvKotlinUnit, NtvCoreCompositeError, NtvCoreResponse, NtvCoreNativeAdAbstractCompanion, NtvCoreNativeAdAbstract, NtvCoreNativeAdDataCompanion, NtvCoreNativeAdData, NtvCoreNativeVideoAdAbstractCompanion, NtvCoreVideoData, NtvCoreNativeVideoAdAbstract, NtvCoreNativeVideoAdDataCompanion, NtvCoreNativeVideoAdData, NtvKotlinx_serialization_jsonJsonElement, NtvCorePlacementCompanion, NtvCorePlacement, NtvCorePlacementsResponseCompanion, NtvCorePlacementsResponse, NtvCoreRateTypeCompanion, NtvCoreRequestService, NtvKotlinThrowable, NtvCoreSectionCache, NtvCoreSessionManager, NtvCoreSettings, NtvCoreTestAdType, NtvCoreStandardDisplayAdDataCompanion, NtvCoreStandardDisplayAdData, NtvCoreStoryAdDataCompanion, NtvCoreStoryAdData, NtvCoreSystemConfigCompanion, NtvCoreTestAdTypeCompanion, NtvCoreUtil, NtvVideoTracking, NtvCoreVideoDataCompanion, NtvVastVideoType, NtvKotlinException, NtvGAMParametersCompanion, NtvGAMTestCompanion, NtvKotlinError, NtvLog, NtvOMSDKTrackingDataCompanion, NtvPlacementKey, NtvTestAdConfigurationCompanion, NtvUrlConfigurationCompanion, NtvVastVideoTypeCompanion, NtvVideoOnClickActionCompanion, NtvVideoOutOfScreenActionCompanion, NtvVideoTrackingProperties, NtvVideoTrackingEventType, NtvVideoTrackingProgressType, NtvVideoTrackingCompanion, NtvVideoTrackingEvents, NtvVideoTrackingEventTypeCompanion, NtvVideoTrackingEventsCompanion, NtvVideoTrackingProgressKeysCompanion, NtvVideoTrackingProgressKeys, NtvVideoTrackingProgressTypeCompanion, NtvVideoTrackingPropertiesCompanion, NtvKotlinRuntimeException, NtvKotlinIllegalStateException, NtvKotlinx_serialization_jsonJsonElementCompanion, NtvKotlinx_serialization_coreSerializersModule, NtvKotlinx_serialization_coreSerialKind, NtvKotlinNothing;
 
-@protocol NtvKotlinx_serialization_coreKSerializer, NtvKotlinComparable, NtvCoreAdDataWrapper, NtvCoreSectionWrapper, NtvCoreSessionDelegate, NtvKotlinx_serialization_coreEncoder, NtvKotlinx_serialization_coreSerialDescriptor, NtvKotlinx_serialization_coreSerializationStrategy, NtvKotlinx_serialization_coreDecoder, NtvKotlinx_serialization_coreDeserializationStrategy, NtvKotlinIterator, NtvKotlinCoroutineContextKey, NtvKotlinCoroutineContextElement, NtvKotlinCoroutineContext, NtvKotlinContinuation, NtvKotlinContinuationInterceptor, NtvKotlinx_coroutines_coreRunnable, NtvKotlinx_serialization_coreCompositeEncoder, NtvKotlinAnnotation, NtvKotlinx_serialization_coreCompositeDecoder, NtvKotlinx_serialization_coreSerializersModuleCollector, NtvKotlinKClass, NtvKotlinKDeclarationContainer, NtvKotlinKAnnotatedElement, NtvKotlinKClassifier;
+@protocol NtvKotlinx_serialization_coreKSerializer, NtvKotlinComparable, NtvCoreAdDataWrapper, NtvCoreSectionWrapper, NtvCoreSessionDelegate, NtvKotlinx_serialization_coreEncoder, NtvKotlinx_serialization_coreSerialDescriptor, NtvKotlinx_serialization_coreSerializationStrategy, NtvKotlinx_serialization_coreDecoder, NtvKotlinx_serialization_coreDeserializationStrategy, NtvKotlinIterator, NtvKotlinx_serialization_coreCompositeEncoder, NtvKotlinAnnotation, NtvKotlinx_serialization_coreCompositeDecoder, NtvKotlinx_serialization_coreSerializersModuleCollector, NtvKotlinKClass, NtvKotlinKDeclarationContainer, NtvKotlinKAnnotatedElement, NtvKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -387,9 +387,8 @@ __attribute__((swift_name("CoreCache")))
 - (int32_t)getPrefetchedAdsCountSectionUrl:(NSString *)sectionUrl __attribute__((swift_name("getPrefetchedAdsCount(sectionUrl:)")));
 - (id<NtvCoreSectionWrapper> _Nullable)getSectionForSectionUrl:(NSString * _Nullable)sectionUrl __attribute__((swift_name("getSectionFor(sectionUrl:)")));
 - (void)removeSectionWithSectionUrl:(NSString *)withSectionUrl __attribute__((swift_name("removeSection(withSectionUrl:)")));
-- (void)setAdForAdData:(id<NtvCoreAdDataWrapper>)adData sectionUrl:(NSString *)sectionUrl location:(id)location container:(id)container __attribute__((swift_name("setAdFor(adData:sectionUrl:location:container:)")));
+- (void)setAdForAdData:(id<NtvCoreAdDataWrapper>)adData sectionUrl:(NSString *)sectionUrl location:(id _Nullable)location container:(id _Nullable)container __attribute__((swift_name("setAdFor(adData:sectionUrl:location:container:)")));
 - (void)setAdPlaceholderForSectionUrl:(NSString *)sectionUrl location:(id)location container:(id)container __attribute__((swift_name("setAdPlaceholderFor(sectionUrl:location:container:)")));
-- (void)setPrefetchedAdData:(id<NtvCoreAdDataWrapper>)adData __attribute__((swift_name("setPrefetched(adData:)")));
 
 /**
  * Section
@@ -423,24 +422,25 @@ __attribute__((swift_name("CoreCompositeError.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CoreConfig")))
 @interface NtvCoreConfig : NtvBase
-- (instancetype)initWithGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking omServiceUrl:(NSString *)omServiceUrl omVerificationUrl:(NSString *)omVerificationUrl shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("init(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:omServiceUrl:omVerificationUrl:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking enableOMTesting:(BOOL)enableOMTesting omServiceUrl:(NSString *)omServiceUrl omVerificationUrl:(NSString *)omVerificationUrl shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("init(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:enableOMTesting:omServiceUrl:omVerificationUrl:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) NtvCoreConfigCompanion *companion __attribute__((swift_name("companion")));
 - (NtvGAMParameters *)component1 __attribute__((swift_name("component1()")));
 - (BOOL)component10 __attribute__((swift_name("component10()")));
 - (BOOL)component11 __attribute__((swift_name("component11()")));
 - (BOOL)component12 __attribute__((swift_name("component12()")));
 - (BOOL)component13 __attribute__((swift_name("component13()")));
-- (NSString *)component14 __attribute__((swift_name("component14()")));
+- (BOOL)component14 __attribute__((swift_name("component14()")));
 - (NSString *)component15 __attribute__((swift_name("component15()")));
-- (BOOL)component16 __attribute__((swift_name("component16()")));
+- (NSString *)component16 __attribute__((swift_name("component16()")));
 - (BOOL)component17 __attribute__((swift_name("component17()")));
-- (NSString *)component18 __attribute__((swift_name("component18()")));
+- (BOOL)component18 __attribute__((swift_name("component18()")));
 - (NSString *)component19 __attribute__((swift_name("component19()")));
 - (NtvGAMTest *)component2 __attribute__((swift_name("component2()")));
 - (NSString *)component20 __attribute__((swift_name("component20()")));
 - (NSString *)component21 __attribute__((swift_name("component21()")));
 - (NSString *)component22 __attribute__((swift_name("component22()")));
-- (int32_t)component23 __attribute__((swift_name("component23()")));
+- (NSString *)component23 __attribute__((swift_name("component23()")));
+- (int32_t)component24 __attribute__((swift_name("component24()")));
 - (NtvUrlConfiguration *)component3 __attribute__((swift_name("component3()")));
 - (NtvTestAdConfiguration *)component4 __attribute__((swift_name("component4()")));
 - (int32_t)component5 __attribute__((swift_name("component5()")));
@@ -448,7 +448,7 @@ __attribute__((swift_name("CoreConfig")))
 - (int32_t)component7 __attribute__((swift_name("component7()")));
 - (BOOL)component8 __attribute__((swift_name("component8()")));
 - (BOOL)component9 __attribute__((swift_name("component9()")));
-- (NtvCoreConfig *)doCopyGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking omServiceUrl:(NSString *)omServiceUrl omVerificationUrl:(NSString *)omVerificationUrl shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("doCopy(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:omServiceUrl:omVerificationUrl:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)")));
+- (NtvCoreConfig *)doCopyGamParams:(NtvGAMParameters *)gamParams gamTestValues:(NtvGAMTest *)gamTestValues url:(NtvUrlConfiguration *)url testAds:(NtvTestAdConfiguration *)testAds timeOnContentActionType:(int32_t)timeOnContentActionType userEngagementActionType:(int32_t)userEngagementActionType userEngagementTimeDelayMS:(int32_t)userEngagementTimeDelayMS shouldApplyGDPR:(BOOL)shouldApplyGDPR shouldApplyCCPA:(BOOL)shouldApplyCCPA hasGDPRConsentForNativo:(BOOL)hasGDPRConsentForNativo hasCCPAConsentForNativo:(BOOL)hasCCPAConsentForNativo enableErrorReporting:(BOOL)enableErrorReporting enableOMTracking:(BOOL)enableOMTracking enableOMTesting:(BOOL)enableOMTesting omServiceUrl:(NSString *)omServiceUrl omVerificationUrl:(NSString *)omVerificationUrl shouldTrackSDKError:(BOOL)shouldTrackSDKError enableVAST:(BOOL)enableVAST loadJSFormatString:(NSString *)loadJSFormatString loadJSTrackingAttr:(NSString *)loadJSTrackingAttr dateFormat:(NSString *)dateFormat imageUrlBase:(NSString *)imageUrlBase rtbImageUrlBase:(NSString *)rtbImageUrlBase adCacheLimit:(int32_t)adCacheLimit __attribute__((swift_name("doCopy(gamParams:gamTestValues:url:testAds:timeOnContentActionType:userEngagementActionType:userEngagementTimeDelayMS:shouldApplyGDPR:shouldApplyCCPA:hasGDPRConsentForNativo:hasCCPAConsentForNativo:enableErrorReporting:enableOMTracking:enableOMTesting:omServiceUrl:omVerificationUrl:shouldTrackSDKError:enableVAST:loadJSFormatString:loadJSTrackingAttr:dateFormat:imageUrlBase:rtbImageUrlBase:adCacheLimit:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -456,6 +456,7 @@ __attribute__((swift_name("CoreConfig")))
 @property (readonly) NSString *dateFormat __attribute__((swift_name("dateFormat")));
 @property (readonly) BOOL delayRemovePixel __attribute__((swift_name("delayRemovePixel")));
 @property (readonly) BOOL enableErrorReporting __attribute__((swift_name("enableErrorReporting")));
+@property (readonly) BOOL enableOMTesting __attribute__((swift_name("enableOMTesting")));
 @property (readonly) BOOL enableOMTracking __attribute__((swift_name("enableOMTracking")));
 @property (readonly) BOOL enableVAST __attribute__((swift_name("enableVAST")));
 @property (readonly) NtvGAMParameters *gamParams __attribute__((swift_name("gamParams")));
@@ -1347,14 +1348,6 @@ __attribute__((swift_name("PlacementKey")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("PlatformDispatcher")))
-@interface NtvPlatformDispatcher : NtvBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (NtvKotlinx_coroutines_coreCoroutineDispatcher *)getDispatcher __attribute__((swift_name("getDispatcher()")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PrefectchLimitHitError")))
 @interface NtvPrefectchLimitHitError : NtvKotlinError
 - (instancetype)initWithSectionUrl:(NSString *)sectionUrl __attribute__((swift_name("init(sectionUrl:)"))) __attribute__((objc_designated_initializer));
@@ -1692,7 +1685,6 @@ __attribute__((swift_name("VideoTrackingProperties.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CoreAdDataFactoryKt")))
 @interface NtvCoreAdDataFactoryKt : NtvBase
-+ (id _Nullable)decode:(NSDictionary<NSString *, NtvKotlinx_serialization_jsonJsonElement *> *)receiver key:(NSString *)key __attribute__((swift_name("decode(_:key:)")));
 @property (class, readonly) NSString *AD_TYPE __attribute__((swift_name("AD_TYPE")));
 @end;
 
@@ -1784,50 +1776,6 @@ __attribute__((swift_name("Kotlinx_serialization_jsonJsonElement")))
 @property (class, readonly, getter=companion) NtvKotlinx_serialization_jsonJsonElementCompanion *companion __attribute__((swift_name("companion")));
 @end;
 
-__attribute__((swift_name("KotlinCoroutineContext")))
-@protocol NtvKotlinCoroutineContext
-@required
-- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<NtvKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
-- (id<NtvKotlinCoroutineContextElement> _Nullable)getKey:(id<NtvKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
-- (id<NtvKotlinCoroutineContext>)minusKeyKey:(id<NtvKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
-- (id<NtvKotlinCoroutineContext>)plusContext:(id<NtvKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end;
-
-__attribute__((swift_name("KotlinCoroutineContextElement")))
-@protocol NtvKotlinCoroutineContextElement <NtvKotlinCoroutineContext>
-@required
-@property (readonly) id<NtvKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
-@end;
-
-__attribute__((swift_name("KotlinAbstractCoroutineContextElement")))
-@interface NtvKotlinAbstractCoroutineContextElement : NtvBase <NtvKotlinCoroutineContextElement>
-- (instancetype)initWithKey:(id<NtvKotlinCoroutineContextKey>)key __attribute__((swift_name("init(key:)"))) __attribute__((objc_designated_initializer));
-@property (readonly) id<NtvKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
-@end;
-
-__attribute__((swift_name("KotlinContinuationInterceptor")))
-@protocol NtvKotlinContinuationInterceptor <NtvKotlinCoroutineContextElement>
-@required
-- (id<NtvKotlinContinuation>)interceptContinuationContinuation:(id<NtvKotlinContinuation>)continuation __attribute__((swift_name("interceptContinuation(continuation:)")));
-- (void)releaseInterceptedContinuationContinuation:(id<NtvKotlinContinuation>)continuation __attribute__((swift_name("releaseInterceptedContinuation(continuation:)")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineDispatcher")))
-@interface NtvKotlinx_coroutines_coreCoroutineDispatcher : NtvKotlinAbstractCoroutineContextElement <NtvKotlinContinuationInterceptor>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (instancetype)initWithKey:(id<NtvKotlinCoroutineContextKey>)key __attribute__((swift_name("init(key:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) NtvKotlinx_coroutines_coreCoroutineDispatcherKey *companion __attribute__((swift_name("companion")));
-- (void)dispatchContext:(id<NtvKotlinCoroutineContext>)context block:(id<NtvKotlinx_coroutines_coreRunnable>)block __attribute__((swift_name("dispatch(context:block:)")));
-- (void)dispatchYieldContext:(id<NtvKotlinCoroutineContext>)context block:(id<NtvKotlinx_coroutines_coreRunnable>)block __attribute__((swift_name("dispatchYield(context:block:)")));
-- (id<NtvKotlinContinuation>)interceptContinuationContinuation:(id<NtvKotlinContinuation>)continuation __attribute__((swift_name("interceptContinuation(continuation:)")));
-- (BOOL)isDispatchNeededContext:(id<NtvKotlinCoroutineContext>)context __attribute__((swift_name("isDispatchNeeded(context:)")));
-- (NtvKotlinx_coroutines_coreCoroutineDispatcher *)limitedParallelismParallelism:(int32_t)parallelism __attribute__((swift_name("limitedParallelism(parallelism:)")));
-- (NtvKotlinx_coroutines_coreCoroutineDispatcher *)plusOther:(NtvKotlinx_coroutines_coreCoroutineDispatcher *)other __attribute__((swift_name("plus(other:)"))) __attribute__((unavailable("Operator '+' on two CoroutineDispatcher objects is meaningless. CoroutineDispatcher is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The dispatcher to the right of `+` just replaces the dispatcher to the left.")));
-- (void)releaseInterceptedContinuationContinuation:(id<NtvKotlinContinuation>)continuation __attribute__((swift_name("releaseInterceptedContinuation(continuation:)")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@end;
-
 __attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
 @protocol NtvKotlinx_serialization_coreEncoder
 @required
@@ -1904,39 +1852,6 @@ __attribute__((swift_name("Kotlinx_serialization_jsonJsonElement.Companion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) NtvKotlinx_serialization_jsonJsonElementCompanion *shared __attribute__((swift_name("shared")));
 - (id<NtvKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end;
-
-__attribute__((swift_name("KotlinCoroutineContextKey")))
-@protocol NtvKotlinCoroutineContextKey
-@required
-@end;
-
-__attribute__((swift_name("KotlinContinuation")))
-@protocol NtvKotlinContinuation
-@required
-- (void)resumeWithResult:(id _Nullable)result __attribute__((swift_name("resumeWith(result:)")));
-@property (readonly) id<NtvKotlinCoroutineContext> context __attribute__((swift_name("context")));
-@end;
-
-__attribute__((swift_name("KotlinAbstractCoroutineContextKey")))
-@interface NtvKotlinAbstractCoroutineContextKey<B, E> : NtvBase <NtvKotlinCoroutineContextKey>
-- (instancetype)initWithBaseKey:(id<NtvKotlinCoroutineContextKey>)baseKey safeCast:(E _Nullable (^)(id<NtvKotlinCoroutineContextElement>))safeCast __attribute__((swift_name("init(baseKey:safeCast:)"))) __attribute__((objc_designated_initializer));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineDispatcher.Key")))
-@interface NtvKotlinx_coroutines_coreCoroutineDispatcherKey : NtvKotlinAbstractCoroutineContextKey<id<NtvKotlinContinuationInterceptor>, NtvKotlinx_coroutines_coreCoroutineDispatcher *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithBaseKey:(id<NtvKotlinCoroutineContextKey>)baseKey safeCast:(id<NtvKotlinCoroutineContextElement> _Nullable (^)(id<NtvKotlinCoroutineContextElement>))safeCast __attribute__((swift_name("init(baseKey:safeCast:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-+ (instancetype)key __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) NtvKotlinx_coroutines_coreCoroutineDispatcherKey *shared __attribute__((swift_name("shared")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreRunnable")))
-@protocol NtvKotlinx_coroutines_coreRunnable
-@required
-- (void)run __attribute__((swift_name("run()")));
 @end;
 
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))

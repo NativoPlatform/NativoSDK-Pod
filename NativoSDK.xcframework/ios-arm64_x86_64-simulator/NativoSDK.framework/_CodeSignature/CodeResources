@@ -10,7 +10,7 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
 		<data>
-		F98P7xyNvqHhs/+CZg9TkgLRc/A=
+		wPL9y1dw3ILzZRagCR1eMJA3ODE=
 		</data>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
 		<data>
@@ -22,15 +22,15 @@
 		</data>
 		<key>Frameworks/NtvCore.framework/NtvCore</key>
 		<data>
-		HOjHuxYy22LqqwDbw1J6PuvgzQ8=
+		rEzKaurxcCCA9QJeu3wUs1LfXOQ=
 		</data>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		VZx9htgKPc9zJp2q6Izh0qWC2n4=
+		cghhFP591jot6oi2i57l8Fa87j0=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
-		17FL5WdmgowMsATJ6aKDmSQgQis=
+		BRrVaJaJnjrmK2lcCIfCTryijgs=
 		</data>
 		<key>Headers/NtvAdData.h</key>
 		<data>
@@ -294,11 +294,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			F98P7xyNvqHhs/+CZg9TkgLRc/A=
+			wPL9y1dw3ILzZRagCR1eMJA3ODE=
 			</data>
 			<key>hash2</key>
 			<data>
-			5OVnz+KkuF3WAsDKzoZrmG5f3sYDW7Q2glJ0aMLuOAU=
+			ftSCYuTH6ZMX17ZGVr6RHZHimiw4DeNY4iMRgW/zEBc=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/Info.plist</key>
@@ -327,33 +327,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HOjHuxYy22LqqwDbw1J6PuvgzQ8=
+			rEzKaurxcCCA9QJeu3wUs1LfXOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			VGZg2Y+Y1YbEqutVI6eO/qhnvYOtRGPwYLd/Z607QIY=
+			3nbnWQ/pniLrPAyMBzFGKNlfSIFDAfN3EWl5ds1mWpw=
 			</data>
 		</dict>
 		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VZx9htgKPc9zJp2q6Izh0qWC2n4=
+			cghhFP591jot6oi2i57l8Fa87j0=
 			</data>
 			<key>hash2</key>
 			<data>
-			fHDusaujbtpTyXX4Pzjiib+fUSZGZBOtmgnyoF741Ss=
+			J9oUnIpaDdrogOINj20qtpEGuYtiTGlQrLEWgJjjX2E=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			17FL5WdmgowMsATJ6aKDmSQgQis=
+			BRrVaJaJnjrmK2lcCIfCTryijgs=
 			</data>
 			<key>hash2</key>
 			<data>
-			wRuzFZcBBZ4AAEHvvuBuoVKwHB7AvZ48AoGFZmHhPAY=
+			hTyzo+dsC5BiyLNr9FAbmmWLo6PBqaTG0RXa+QwfLpg=
 			</data>
 		</dict>
 		<key>Headers/NtvAdData.h</key>
