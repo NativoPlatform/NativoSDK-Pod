@@ -1,6 +1,0 @@
-framework module NtvCore {
-    umbrella header "NtvCore.h"
-
-    export *
-    module * { export * }
-}

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NtvCore.h</key>
 		<data>
-		wPL9y1dw3ILzZRagCR1eMJA3ODE=
+		aPmRWZKThmVPgOtedOzAT36yAz0=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -23,11 +23,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wPL9y1dw3ILzZRagCR1eMJA3ODE=
+			aPmRWZKThmVPgOtedOzAT36yAz0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ftSCYuTH6ZMX17ZGVr6RHZHimiw4DeNY4iMRgW/zEBc=
+			EOdtdbxyXHLJK59GfxU6QkRiyRdybt6vcT1BLhIJ2MY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

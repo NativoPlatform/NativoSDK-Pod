@@ -844,12 +844,8 @@ __attribute__((swift_name("CoreSectionWrapper")))
 __attribute__((swift_name("CoreSessionDelegate")))
 @protocol NtvCoreSessionDelegate
 @required
-- (NSString * _Nullable)getAdvertiserIdentifier __attribute__((swift_name("getAdvertiserIdentifier()")));
 - (NSString * _Nullable)getUserAgent __attribute__((swift_name("getUserAgent()")));
-- (NSString * _Nullable)getVisitorID __attribute__((swift_name("getVisitorID()")));
 - (void)makeRequestWithWebViewHtml:(NSString *)html __attribute__((swift_name("makeRequestWithWebView(html:)")));
-- (void)removeVisitorIDCookie __attribute__((swift_name("removeVisitorIDCookie()")));
-- (void)setVisitorIDCookie __attribute__((swift_name("setVisitorIDCookie()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -859,10 +855,18 @@ __attribute__((swift_name("CoreSessionManager")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)coreSessionManager __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) NtvCoreSessionManager *shared __attribute__((swift_name("shared")));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)getValueForCookieName:(NSString *)name completionHandler:(void (^)(NSString * _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("getValueForCookie(name:completionHandler:)")));
 - (void)managePrivacyConsentCookie __attribute__((swift_name("managePrivacyConsentCookie()")));
+@property (readonly) NSString *CCPA_COOKIE __attribute__((swift_name("CCPA_COOKIE")));
+@property (readonly) NSString *GDPR_COOKIE __attribute__((swift_name("GDPR_COOKIE")));
+@property (readonly) NSString *VISITOR_COOKIE __attribute__((swift_name("VISITOR_COOKIE")));
 @property id<NtvCoreSessionDelegate> _Nullable delegate __attribute__((swift_name("delegate")));
 @property (readonly) BOOL hasAdTrackingConsent __attribute__((swift_name("hasAdTrackingConsent")));
-@property (readonly) NSString * _Nullable visitorID __attribute__((swift_name("visitorID")));
 @end;
 
 

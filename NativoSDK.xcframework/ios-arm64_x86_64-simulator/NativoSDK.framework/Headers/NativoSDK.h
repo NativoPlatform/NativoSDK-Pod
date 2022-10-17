@@ -27,7 +27,7 @@ extern const unsigned char NativoSDKVersionString[];
 
 
 /**
- The entry point to access and interact with Nativo ads.
+ The Nativo SDK is used to render native article, native display, standard display, story and video ad formats with Nativo. This is the entry point to access and interact with Nativo ads.
  Refer to https://sdk.nativo.com for guides and documentation.
   
  */
@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract Set the delegate to be notified of section events. Before calling any Nativo methods you must set the delegate for your section.
  @param delegate The ViewController or object that conforms to NtvSectionDelegate.
  @param sectionUrl The section URL of the section. Please contact your account manager at Nativo for details.
- @param keyValues Key-value pairs used for targeting in this section.
+ @param keyValues Key-value pairs used for contextual targeting in this section.
  
  */
 + (void)setSectionDelegate:(id<NtvSectionDelegate>)delegate forSection:(NSString *)sectionUrl withTargeting:(nullable NSDictionary<NSString *, id>*)keyValues;
@@ -89,14 +89,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-/** @name View API */
+/** @name Inject Ad */
 
 /**
- @abstract View ad injection API. Attempts to place an ad in the view provided.
- @discussion Calling this method the first time without a previous prefetch call will return false and will make an async request for a new ad. When the new ad returns, NtvSectionDelegate method `section:needsPlaceAdInViewAtLocation:` will be called and you will need to reload your datasource and call this method again. Alternatively, if you have called the prefetch method earlier, this method will return true and will immediatly place the ad in the view provided.
+ @abstract View ad injection API. Attempts to place an ad in the view provided, using any prefetched ad.
+ @discussion It is possible that calling this method the first time will return false if an ad has not been prefetched yet. Prefetching should happen automatically, and when the new ad returns, NtvSectionDelegate method `didReceiveAd`, or `didAssignAdToLocation` will be called and you will need to reload your datasource so that this method can be called again.
  @param view UIView where ad will be injected.
  @param location The location identifier with which the ad will be associated.
- @param container The view that contains the ad placement. Used for tracking purposes.
+ @param container The scroll view that contains the ad placement. Used for tracking purposes.
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
  @return Will return true if Nativo ad returned with fill and was successfully injected into the view
@@ -122,6 +122,7 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion The same as `prefetchAdForSection()` however this only loads an ad for a specific location. https://sdk.nativo.com/docs/optimization_ios
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param location The location identifier for the ad.
+ @param container The scroll view that contains the ad placement.
  @param options Dictionary of options used to request ads. Pass 'nil' for no options.
 
 */
@@ -149,6 +150,7 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion Used to get an adjusted an indexPath that has been modified to account for the number of ads that have been received. Used to prevent items in feed from being skipped/overridden by ads. For example, lets say there exists 5 articles in your datasource, and you have one ad at the third row. That makes 6 rows total (indexPaths.row 0-5). Lets say the user clicks on row 4. Now if even though it is the 4th row, you need to access the 3rd item in your datasource, since first row = datasource[0], second row = datasource[1], third row is nativo ad, then forth row = datasource[2]. If you had used the vanilla indexPath you would have accessed datasource[3] and an item in your feed would have been skipped. Using this method you can prevent items in your feed from getting skipped, or worse, array out of bounds errors.
  @param indexPath The indexPath provided by the `UITableView` or `UICollectionView` delegate methods.
  @param sectionUrl The Nativo section identifier used in the current section.
+ @param container The scroll view that contains the ad placement.
  @return Modified `NSIndexPath` based on number of ads with content received.
  
  */
@@ -160,6 +162,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param section The section of the `UITableView` or `UICollectionView`.
  @param itemsCount The current number of items in your datasource for given section
+ @param container The scroll view that contains the ad placement.
  @return Number of ads with content in section.
  
  */
@@ -168,7 +171,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @abstract Reset the map of ads that have been received in a section.
  @param sectionURL The section identifier used to request ads from Nativo.
- @param container The container where the ads are located, or nil if should remove all ads in section.
+ @param container The scroll view that contains the ad placement, or nil if should remove all ads in section.
  
  */
 + (void)clearAdsInSection:(NSString *)sectionURL inContainer:(nullable UIView *)container;
@@ -189,11 +192,13 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion Use this method when you need to check an ads [NtvAdData adType] or get its [NtvAdData sponsoredArticleURL]. This method will not make a request to get the ad, it simply checks if an ad exists in cache. Requests are made as needed when calling TableView/CollectionView API, View API, or Prefetch API methods.
  @param location The location identifier or indexPath with which the ad is associated.
  @param sectionUrl The section identifier used to request ads from Nativo.
+ @param container The scroll view that contains the ad placement.
  @return NtvAdData Ad data if available at location identifier.
  
  */
 + (nullable NtvAdData *)getCachedAdAtLocationIdentifier:(id)location forSection:(NSString *)sectionUrl container:(UIView *)container;
-+ (nullable NtvAdData *)getCachedAdAtIndex:(NSIndexPath *)indexPath forSection:(NSString *)sectionUrl container:(UIView *)container; // Convenience for use with table or collection views
+// Convenience for use with table or collection views
++ (nullable NtvAdData *)getCachedAdAtIndex:(NSIndexPath *)indexPath forSection:(NSString *)sectionUrl container:(UIView *)container;
 
 
 
@@ -205,11 +210,12 @@ NS_ASSUME_NONNULL_BEGIN
  @param viewController The view controller used to display sponsored articles.
  @param sectionUrl The section identifier used to request ads from Nativo.
  @param location The location identifier with which the ad is associated.
- @param container The root container the ad belongs to
+ @param container The scroll view that contains the ad unit.
  
  */
 + (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl withAdAtLocationIdentifier:(id)location fromAdContainer:(UIView *)container;
-+ (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl withAdAtIndexPath:(NSIndexPath *)indexPath fromAdContainer:(UIView *)container; // Convenience for use with table or collection views
+// Convenience for use with table or collection views
++ (void)injectSponsoredLandingPageViewController:(UIViewController<NtvLandingPageInterface> *)viewController forSection:(NSString *)sectionUrl withAdAtIndexPath:(NSIndexPath *)indexPath fromAdContainer:(UIView *)container;
 
 
 
