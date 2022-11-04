@@ -8,30 +8,6 @@
 		<data>
 		iWhPV40waUSpqONRuBLSO0UJbqo=
 		</data>
-		<key>Frameworks/NtvCore.framework/.DS_Store</key>
-		<data>
-		I4r/aOQYCvCQAjBg926VwbC9/2w=
-		</data>
-		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
-		<data>
-		aPmRWZKThmVPgOtedOzAT36yAz0=
-		</data>
-		<key>Frameworks/NtvCore.framework/Info.plist</key>
-		<data>
-		3cCnKW+pg+mxt6qx7fh9LWk6/qo=
-		</data>
-		<key>Frameworks/NtvCore.framework/Modules/module.modulemap</key>
-		<data>
-		NWz9UCYCk8+TlOsPbbAx8E3m/ro=
-		</data>
-		<key>Frameworks/NtvCore.framework/NtvCore</key>
-		<data>
-		EG8OwUT0Fe9E/JPZ9tXDbtv0N2s=
-		</data>
-		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
-		<data>
-		VqjuowuP9L7i8A8eVg4RE9Bje/0=
-		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
 		m/2vvxWlnOJ4mB6ya7PqXC4DgLo=
@@ -274,7 +250,7 @@
 		</data>
 		<key>NtvVideoControlsView.nib</key>
 		<data>
-		2iBafR58tmqqHZBk0gE8oxjL0xc=
+		6y+bBwpEPRjDmX4OV0ezOw3Rxc4=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -288,41 +264,6 @@
 			<key>hash2</key>
 			<data>
 			cXmMn1K/oAYb9O671O4IuwCgH8AUXmJI61b+FSqfHMk=
-			</data>
-		</dict>
-		<key>Frameworks/NtvCore.framework/Headers/NtvCore.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			EOdtdbxyXHLJK59GfxU6QkRiyRdybt6vcT1BLhIJ2MY=
-			</data>
-		</dict>
-		<key>Frameworks/NtvCore.framework/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			/fnPeMfxcwqtM8c8/qmd+xQTAYjx7u9BU501EpP/uGE=
-			</data>
-		</dict>
-		<key>Frameworks/NtvCore.framework/Modules/module.modulemap</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			23Y7Jpy2WPr7lHk8TYlk83qqjbqmizxFYck45TH+GUo=
-			</data>
-		</dict>
-		<key>Frameworks/NtvCore.framework/NtvCore</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			5KNsyiZfNB19gBFy+aKzz8wul+AvxE2s2w9E3hOiA/g=
-			</data>
-		</dict>
-		<key>Frameworks/NtvCore.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			j4Pxmf89/xyIrq3S9E+B6qgKuxsLdz0cqCetfw/Cl1M=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
@@ -742,7 +683,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3KFys/16nnxD7gC4iBkEJO2unjyckTUDmvLxPUIGuD0=
+			AitTyr17xLK7MZOWjAaCkO4ZyVQGP/+5LhUF0G/gZ08=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
