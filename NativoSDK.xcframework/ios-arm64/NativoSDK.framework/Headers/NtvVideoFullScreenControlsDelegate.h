@@ -2,10 +2,12 @@
 //  NtvVideoFullScreenControlsDelegate.h
 //  NativoSDK
 //
-//  Copyright © 2021 Nativo, Inc. All rights reserved.
+//  Copyright © 2023 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <NativoSDK/NtvVideoEventListener.h>
+#import <NativoSDK/NtvVideoPlayer.h>
 @class AVPlayer;
 @class AVPlayerLayer;
 
@@ -21,22 +23,24 @@ NS_ASSUME_NONNULL_BEGIN
 /// Return the view that will be used to diplay video
 @property (nonatomic, readonly) UIView *videoContainer;
 
-/// Set the given player in your Custom full screen controls class. Use to play, pause, observe state.
-- (void)setPlayer:(nullable AVPlayer *)player;
-
 /// Use this method to return a button that can be used to clickout to an advertisers site, where users can learn more. A new click target will automatically be added to this button to open the ad's link in Safari.
 - (UIButton *)learnMoreButton;
 
+///@name Observe
 
 @optional
 
-///@name Observe
+/// Return an implementation of the NtvVideoEventListener to listen for video events
+@property (nonatomic, readonly, null_unspecified) id<NtvVideoEventListener> videoEventListener;
 
 /// Used to be notified when a new video source is loading. Use to update UI.
-- (void)willLoadNewPlayerItem;
+- (void)willLoadNewPlayerItem DEPRECATED_MSG_ATTRIBUTE("Use videoEventListener");
 
 /// Used to be notified when a new video is being played. Use to update UI and observe player item state as neccesary.
-- (void)didLoadNewPlayerItem:(nullable AVPlayerItem *)playerItem;
+- (void)didLoadNewPlayerItem:(nullable AVPlayerItem *)playerItem DEPRECATED_MSG_ATTRIBUTE("Use videoEventListener");
+
+/// Set the given player in your Custom full screen controls class. Use to play, pause, observe state.
+- (void)setPlayer:(nullable AVPlayer *)player DEPRECATED_MSG_ATTRIBUTE("Use NtvVideoPlayer instead");
 
 
 ///@name Ad Data Labels and Sharing

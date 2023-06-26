@@ -2,7 +2,7 @@
 //  NtvAdInterface.h
 //  NativoSDK
 //
-//  Copyright © 2021 Nativo, Inc. All rights reserved.
+//  Copyright © 2023 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -23,6 +23,9 @@
 /// The label where the name of the ad's author/advertiser name should display
 @property (nonatomic, readonly, null_unspecified) UILabel *authorNameLabel;
 
+/// The `UIImageView` where author/advertiser image of the ad should display
+@property (nonatomic, readonly, null_unspecified) UIImageView *authorImageView;
+
 @optional
 
 /// The label where the preview text of the ad should display. Use this or `previewTextView`, not both.
@@ -34,15 +37,12 @@
 /// The `UIImageView` where image of the ad should display
 @property (nonatomic, readonly, null_unspecified) UIImageView *adImageView;
 
-/// The `UIImageView` where author/advertiser image of the ad should display
-@property (nonatomic, readonly, null_unspecified) UIImageView *authorImageView;
-
 /// The label where the date of the ad should display
 @property (nonatomic, readonly, null_unspecified) UILabel *dateLabel;
 
 /**
  @abstract The view that will contain the AdChoices icon button.
- @discussion This will optionally be displayed only if the ad returned uses audience data targeting. The AdChoices button will click-out to a Nativo website that explains AdChoices and audience targeting. If the ad doesn't use targeting, then this view will be set to zero height and width. Your ad view should handle this by setting appropriate constraints to handle this change in size. Will add 3px insets on each side. Recommended 20x20 width and height. You can test this by calling `NativoSDK.enableTestAdvertisementsWithAdType(NtvTestAdTypeAdChoicesDisplay)`.
+ @discussion This will optionally be displayed only if the ad returned uses audience data targeting. The AdChoices button will click-out to a Nativo website that explains AdChoices and audience targeting. If the ad doesn't use targeting, then this view will be set to zero height and width. Your ad view should handle this by setting appropriate constraints to handle this change in size. Will add 3px insets on each side. Recommended 20x20 width and height.
  */
 @property (nonatomic, readonly, null_unspecified) UIView *adChoicesIconView;
 
@@ -64,7 +64,7 @@
 
 /**
  @abstract Called with isSponsored `YES` when object is being used as an ad
- @discussion Implement this method when using the same view for both articles and sponsored articles. If using this approach, you should implement this method and show sponsored indicators if `YES`, otherwise hide sponsored indicators if `NO`. See https://sdk.nativo.com/docs/dual-disclosure-best-practices.
+ @discussion Implement this method when using the same view for both articles and sponsored articles. If using this approach, you should implement this method and show sponsored indicators if `YES`, otherwise hide sponsored indicators if `NO`.
  */
 - (void)displaySponsoredIndicators:(BOOL)isSponsored;
 
