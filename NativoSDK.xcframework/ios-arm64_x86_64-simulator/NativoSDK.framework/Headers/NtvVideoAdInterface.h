@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import <NativoSDK/NtvAdData.h>
-#import <NativoSDK/NtvVideoPlayer.h>
 #import <NativoSDK/NtvVideoEventListener.h>
 @class AVPlayerItem;
 @class AVPlayer;
