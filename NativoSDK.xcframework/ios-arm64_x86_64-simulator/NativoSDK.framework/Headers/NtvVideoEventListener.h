@@ -1,5 +1,5 @@
 //
-//  VideoEventListener.h
+//  NtvVideoEventListener.h
 //  NativoSDK
 //
 //  Copyright © 2023 Nativo, Inc. All rights reserved.
@@ -9,6 +9,9 @@
 #import <NativoSDK/NtvAdData.h>
 #import <NativoSDK/NtvVideoPlayer.h>
 
+/**
+ Implement the NtvVideoEventListener protocol to handle callbacks for video events as part of the NtvVideoAdInterface.
+ */
 @protocol NtvVideoEventListener <NSObject>
 @optional
 
