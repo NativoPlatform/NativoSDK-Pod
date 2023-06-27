@@ -13,7 +13,6 @@
  Implement the NtvVideoEventListener protocol to handle callbacks for video events as part of the NtvVideoAdInterface.
  */
 @protocol NtvVideoEventListener <NSObject>
-@optional
 
 ///@name Video Player Events
 
