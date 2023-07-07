@@ -46,6 +46,7 @@ typedef NS_ENUM(NSUInteger, NtvVideoState) {
 /// Get the current video state
 - (NtvVideoState)getVideoState;
 
+/// Seek to desired position
 - (void)seekTo:(long)posistion;
 
 /// Get the video's current position in milliseconds
@@ -56,5 +57,8 @@ typedef NS_ENUM(NSUInteger, NtvVideoState) {
 
 /// Get the video's total duration in milliseconds
 - (long)getDuration;
+
+/// Exit the full screen video player if active
+- (void)exitFullscreen;
 
 @end
