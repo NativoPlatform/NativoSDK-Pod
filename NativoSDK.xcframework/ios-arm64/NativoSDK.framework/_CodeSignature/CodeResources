@@ -80,9 +80,13 @@
 		<data>
 		0pcmH3J36kIfz7vk8w3VD7xpW7g=
 		</data>
-		<key>NtvVideoControlsView.nib</key>
+		<key>NtvVideoControlsView.nib/objects-14.0+.nib</key>
 		<data>
-		rxJLSXAgLW88k84bPggLYuACj7E=
+		egh6p07IpjkH/SevlZxCOP1E8aM=
+		</data>
+		<key>NtvVideoControlsView.nib/runtime.nib</key>
+		<data>
+		MAjysAqg8C8QcwwhMdZTN0/DO5A=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -217,11 +221,18 @@
 			0Jb3UEM8Cx8kDgQsXEUMyIGqGPgiPnzgEuEHBrKSSt8=
 			</data>
 		</dict>
-		<key>NtvVideoControlsView.nib</key>
+		<key>NtvVideoControlsView.nib/objects-14.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			grfLb+HAcjV7ST5bWqYPumzAnYHzoiN+dJASZwqxZ/0=
+			JsK/Ws5VHDdZ/DIri3O6HgsctQKpveaIR3XjeOXUKow=
+			</data>
+		</dict>
+		<key>NtvVideoControlsView.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+RLeEpnlg/f2GPhW+aHLtL9oxBDUv8LGkQvIJwvqZpI=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
