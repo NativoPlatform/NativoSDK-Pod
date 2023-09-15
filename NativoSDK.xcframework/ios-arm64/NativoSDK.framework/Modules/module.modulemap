@@ -1,6 +1,6 @@
 framework module NativoSDK {
   umbrella header "NativoSDK.h"
-
   export *
+
   module * { export * }
 }
