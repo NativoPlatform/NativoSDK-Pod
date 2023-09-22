@@ -5,7 +5,7 @@
 //  Copyright © 2023 Nativo, Inc. All rights reserved.
 //
 
-@import WebKit;
+#import <WebKit/WKWebView.h>
 
 /**
  WKWebView subclass used for displaying web content. This class has a custom init that will ensure the web view scales properly for mobile devices.

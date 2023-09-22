@@ -7,9 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <NativoSDK/NtvAdData.h>
+#import <WebKit/WKWebView.h>
 @class NtvContentWebView;
-
-@import WebKit;
 
 @protocol NtvLandingPageInterface <NSObject>
 
