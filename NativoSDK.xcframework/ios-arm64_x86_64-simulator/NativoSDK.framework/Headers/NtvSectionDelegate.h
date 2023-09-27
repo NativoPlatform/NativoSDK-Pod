@@ -2,7 +2,7 @@
 //  NtvSectionDelegate.h
 //  NativoSDK
 //
-//  Copyright © 2021 Nativo, Inc. All rights reserved.
+//  Copyright © 2023 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -86,6 +86,24 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)section:(NSString *)sectionUrl needsDisplayClickoutURL:(NSURL *)url;
 
 
+/// @name Handle Full Screen Player
+
+/**
+ @abstract Return the view controller where you want the full screen video and story ad player to be injected.
+ @discussion Optional method. Control where the full screen player will be injected. By default will inject in `window.rootViewController`. The NtvVideoAdDelegate protocol method 'viewController' will override this if implemented.
+ @note If using VAST video demand, the view controller returned here will also be used as a parameter for rendering VAST video. If the view controller returned here does not match the video's parent view controller, the Google IMA SDK will throw an exception.
+ @return The view controller where the full screen video and story ad player will be injected.
+ 
+ */
+- (UIViewController *)viewControllerForFullScreenInSection:(NSString *)sectionUrl;
+
+/**
+@abstract When the user clicks the share button on a video they will be presented with a UIActivityController. By default will be presented using the window's root view controller.
+@discussion Optional method. By default will be presented in the window's root view controller.
+
+*/
+- (void)section:(NSString *)sectionUrl shouldPresentShareActivity:(UIActivityViewController *)shareActivity;
+
 
 /// @name Register Nibs
 
@@ -122,25 +140,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable Class)section:(NSString *)sectionUrl registerClassNameForAdTemplateType:(NtvAdTemplateType)templateType atLocationIdentifier:(id)locationIdentifier;
 
-
-
-/// @name Handle Full Screen Player
-
-/**
- @abstract Return the view controller where you want the full screen video and story ad player to be injected.
- @discussion Optional method. Control where the full screen player will be injected. By default will inject in `window.rootViewController`. The NtvVideoAdDelegate protocol method 'viewController' will override this if implemented.
- @note If using VAST video demand, the view controller returned here will also be used as a parameter for rendering VAST video. If the view controller returned here does not match the video's parent view controller, the Google IMA SDK will throw an exception.
- @return The view controller where the full screen video and story ad player will be injected.
- 
- */
-- (UIViewController *)viewControllerForFullScreenInSection:(NSString *)sectionUrl;
-
-/**
-@abstract When the user clicks the share button on a video they will be presented with a UIActivityController. By default will be presented using the window's root view controller.
-@discussion Optional method. By default will be presented in the window's root view controller.
-
-*/
-- (void)section:(NSString *)sectionUrl shouldPresentShareActivity:(UIActivityViewController *)shareActivity;
 
 
 @end

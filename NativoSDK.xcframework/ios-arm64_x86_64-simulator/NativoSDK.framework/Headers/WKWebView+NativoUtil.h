@@ -2,7 +2,7 @@
 //  WKWebView+NativoUtil.h
 //  NativoSDK
 //
-//  Copyright © 2021 Nativo, Inc. All rights reserved.
+//  Copyright © 2023 Nativo, Inc. All rights reserved.
 //
 
 #import <WebKit/WebKit.h>
@@ -34,9 +34,9 @@
 - (void)expandWebViewToFitContentsWithCompletion:(void (^_Nullable)(void))completion;
 
 /**
- @abstract Used to stop video playback on the webView. The implementation uses JavaScript to parse the html for video tags to pause and exit fullscreen mode.
+ @abstract Used to stop loading, rendering and tracking all parts of the web view. Call when the sponsored content landing page is dismissed.
  */
-- (void)stopVideoPlayback;
+- (void)stopLoadingNativo;
 
 /**
  @abstract Manual override to send UIScroll content offset events to Nativo JS trackers

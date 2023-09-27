@@ -2,7 +2,7 @@
 //  NtvCollectionViewCell.h
 //  NativoSDK
 //
-//  Copyright © 2021 Nativo, Inc. All rights reserved.
+//  Copyright © 2023 Nativo, Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

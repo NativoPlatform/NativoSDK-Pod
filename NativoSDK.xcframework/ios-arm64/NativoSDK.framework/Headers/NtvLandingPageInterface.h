@@ -2,14 +2,13 @@
 //  NtvLandingPageInterface.h
 //  NativoSDK
 //
-//  Copyright © 2021 Nativo, Inc. All rights reserved.
+//  Copyright © 2023 Nativo, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <NativoSDK/NtvAdData.h>
+#import <WebKit/WKWebView.h>
 @class NtvContentWebView;
-
-@import WebKit;
 
 @protocol NtvLandingPageInterface <NSObject>
 
