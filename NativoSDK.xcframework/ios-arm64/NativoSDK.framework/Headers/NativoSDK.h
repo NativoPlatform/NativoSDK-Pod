@@ -38,18 +38,30 @@ NS_ASSUME_NONNULL_BEGIN
 /** @name Set Delegates */
 
 /**
- @abstract Set the delegate to be notified of section events. Before calling any Nativo methods you must set the delegate for your section.
+ @abstract Set the delegate to be notified of section events. Starts the initial prefetch request for the section.
+ @discussion Before calling any Nativo methods you must set the delegate for your section.
  @param delegate The ViewController or object that conforms to NtvSectionDelegate.
- @param sectionUrl The section URL of the section. Please contact your account manager at Nativo for details.
+ @param sectionUrl The section URL used for making ad requests.
  
  */
 + (void)setSectionDelegate:(id<NtvSectionDelegate>)delegate forSection:(NSString *)sectionUrl;
 
 /**
- @abstract Set the delegate to be notified of section events. Before calling any Nativo methods you must set the delegate for your section.
+ @abstract Set the delegate to be notified of section events. Starts the initial prefetch request for the section.
+ @discussion Before calling any Nativo methods you must set the delegate for your section. This method will also add the given options to each automatic prefetch request.
  @param delegate The ViewController or object that conforms to NtvSectionDelegate.
- @param sectionUrl The section URL of the section. Please contact your account manager at Nativo for details.
- @param keyValues Key-value pairs used for contextual targeting in this section.
+ @param sectionUrl The section URL used for making ad requests.
+ @param options Set options to be added to each automatic prefetch request in this section.
+ 
+ */
++ (void)setSectionDelegate:(id<NtvSectionDelegate>)delegate forSection:(NSString *)sectionUrl withOptions:(nullable NSDictionary<NSString *, NSString *>*)options;
+
+/**
+ @abstract Set the delegate to be notified of section events. Starts the initial prefetch request for the section.
+ @discussion Before calling any Nativo methods you must set the delegate for your section. This method will also add the given key-value pairs to each automatic prefetch request.
+ @param delegate The ViewController or object that conforms to NtvSectionDelegate.
+ @param sectionUrl The section URL used for making ad requests.
+ @param keyValues Key-value pairs used for contextual targeting in this section. Accepts strings, numbers, and arrays.
  
  */
 + (void)setSectionDelegate:(id<NtvSectionDelegate>)delegate forSection:(NSString *)sectionUrl withTargeting:(nullable NSDictionary<NSString *, id>*)keyValues;
