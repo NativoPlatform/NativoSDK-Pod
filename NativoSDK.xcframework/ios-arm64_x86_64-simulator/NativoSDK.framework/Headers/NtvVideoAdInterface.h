@@ -59,8 +59,8 @@ extern NSString * _Nonnull const NtvAudioCategoryChangeReasonPlayMutedVideoWithB
 
 /**
 @abstract Optional view for rendering important medical safety information(ISI) for FTC compliance with medical & pharmaceutical ads.
-@discussion The ISI info is a block of scrolling text that will be presented somewhere within the ad unit. An ideal location would be somewhere below the ad's title and author name, with a width of at least 150-points. The height will be set to 55. If this view is not provided then the Nativo SDK will attempt to place the ISI info within the ad's video view, but only if the view has at least a 150-point width and a 75-point height. If this fails, then the ad will be discarded.
- If you don't want ads containing ISI in your app, you can disable them.
+@discussion The ISI info is a block of scrolling text that will be presented somewhere within the ad unit. By default the text will be injected inside of `videoView` if it meets the minimum size requirements (150-point width, 75-point height). Optionally you can use this `isiContentView` to place the text in another location. An ideal spot would be somewhere below the ad's title and author name, with a width of at least 150-points. The height will be set to 55. If this fails then the ad will be discarded.
+ You can disable ads with ISI by sending option { "ntv_isi" : "0" } on requests.
 */
 @property (nonatomic, readonly, null_unspecified) UIView *isiContentView;
 
