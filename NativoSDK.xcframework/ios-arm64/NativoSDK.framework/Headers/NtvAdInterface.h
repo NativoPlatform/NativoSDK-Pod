@@ -46,6 +46,13 @@
  */
 @property (nonatomic, readonly, null_unspecified) UIView *adChoicesIconView;
 
+/**
+@abstract Optional view for rendering important medical safety information(ISI) for FTC compliance with medical & pharmaceutical ads.
+@discussion The ISI info is a block of scrolling text that will be presented somewhere within the ad unit. By default the text will be injected inside of `adImageView` if it meets the minimum size requirements (150-point width, 75-point height). Optionally you can use this `isiContentView` to place the text in another location. An ideal spot would be somewhere below the ad's title and author name, with a width of at least 150-points. The height will be set to 55. If this fails then the ad will be discarded.
+ You can disable ads with ISI by sending option { "ntv_isi" : "0" } on requests.
+*/
+@property (nonatomic, readonly, null_unspecified) UIView *isiContentView;
+
 
 ///@name Sharing
 
