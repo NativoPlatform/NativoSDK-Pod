@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NativoSDK"
-  s.version      = "7.2.0-alpha.10"
+  s.version      = "7.2.0-alpha.11"
   s.summary      = "The Nativo SDK enables the best user experience for mobile ads."
   s.description  = "The Nativo SDK is used to retrieve native article, video, story and display ads from Nativo. Enabling the best user experience for mobile ad content."
   s.homepage     = "https://sdk.nativo.com"
