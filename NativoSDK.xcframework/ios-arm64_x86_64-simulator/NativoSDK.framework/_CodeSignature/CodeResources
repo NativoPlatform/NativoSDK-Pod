@@ -84,6 +84,10 @@
 		<data>
 		SU1FjY+jrTMOjj9wNkNP6Cyy0Os=
 		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		GPBqCt4gBOX3PrML3JFfyJakIjc=
+		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
 		Ems7L7olaMFNsfopu9Q6LFMf1o4=
@@ -222,6 +226,13 @@
 			<key>hash2</key>
 			<data>
 			mYAWDTGw7wrl2WRPkwKRhjFk35M0LHT/BV+kagZWugY=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dwTDgFpoCPQ2DC8pNn35CJsrJHCz1SSf0CtZUIRf/Uc=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
