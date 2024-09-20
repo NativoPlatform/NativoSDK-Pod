@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		l4z/6uSzCCZdwGj/t6uQdd3PMBM=
+		3DR776PlNhsiULHJxKgLpouzQ+I=
 		</data>
 		<key>Headers/NativoSDK.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yDJvzfxrRkaILFQmrNJXiXls0F0=
+		4/HnE/sfft+oIoLa3JNovXDjatc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -82,7 +82,11 @@
 		</data>
 		<key>NtvVideoControlsView.nib</key>
 		<data>
-		h/wQAjxvXx4I/3S8lHSbFHS88S4=
+		0JHK+IdP0Ra+As86B+3Gk7cwnbQ=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		GPBqCt4gBOX3PrML3JFfyJakIjc=
 		</data>
 		<key>click-out-icon.ttf</key>
 		<data>
@@ -95,7 +99,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7YrlikguKORPryoXGp9qOsEQlMZJvbEXqLR/DGP+VxE=
+			z/NfbMvbDRzCqvzleml9c86VYhS+1nrP9IcsMv1+YEI=
 			</data>
 		</dict>
 		<key>Headers/NativoSDK.h</key>
@@ -221,7 +225,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8/ytmSZKBSXr/4VQlEO60pv2xlc03hfa2cS6dzBdGyY=
+			LxOTeZ+B+eHUbJtNNGv3uK6eRmhbsCyDzdd539wjkLY=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dwTDgFpoCPQ2DC8pNn35CJsrJHCz1SSf0CtZUIRf/Uc=
 			</data>
 		</dict>
 		<key>click-out-icon.ttf</key>
